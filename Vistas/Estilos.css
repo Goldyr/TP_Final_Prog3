@@ -1,0 +1,51 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
+
+
+/* ESTILOS EN GENERAL */
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    color: white;
+    height: 40px;
+    margin: 0;
+}
+
+    .nav-menu li {
+        height: 100%;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu a:hover {
+        font-weight: bold;
+    }

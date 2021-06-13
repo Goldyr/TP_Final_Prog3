@@ -6,17 +6,31 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <link rel="stylesheet" type="text/css" href="Estilos.css" />
 </head>
 <body>
-    <ul class="menu">
-        <a href="Inicio.aspx"><li>Inicio</li></a>
-        <a href="InfoUsuario.aspx"><li>Info.Usuario</li></a>
-        <a href="Contacto.aspx"><li>Contacto</li></a>
-        <a href="Carrito.aspx"><li>Carrito</li></a>
-        <a href="Registrarse.aspx"><li>Registrarse</li></a>
-    </ul>
     <form id="form1" runat="server">
+        <header class="main-header">
+            <nav class="main-header__nav-menu">
+                <ul class="nav-menu">
+                   <li>
+                       <a href="Inicio.aspx">Inicio</a>
+                   </li>
+                   <li>
+                       <a href="InfoUsuario.aspx">Info.Usuario</a>
+                   </li>
+                   <li>
+                       <a href="Contacto.aspx">Contacto</a>
+                   </li>
+                   <li>
+                       <a href="Carrito.aspx">Carrito</a>
+                   </li>
+                   <li>
+                        <a href="Registrarse.aspx">Registrarse</a>
+                   </li>
+                </ul>
+            </nav>
+          </header>
         <a class="admin" href="BMLJuegos.aspx">Formulario para EDITAR/ELIMINAR JUEGOS*</a>
         <br />
         <br />

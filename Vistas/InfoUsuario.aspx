@@ -6,17 +6,31 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <link rel="stylesheet" type="text/css" href="Estilos.css" />
 </head>
 <body>
-    <ul class="menu">
-        <li><a href="Inicio.aspx">Inicio</a></li>
-        <li class="seleccionado"><a href="InfoUsuario.aspx">Info.Usuario</a></li>
-        <li><a href="Contacto.aspx">Contacto</a></li>
-        <li><a href="Carrito.aspx">Carrito</a></li>
-        <li><a href="Registrarse.aspx">Registrarse</a></li>
-    </ul>
     <form id="form1" runat="server">
+        <header class="main-header">
+            <nav class="main-header__nav-menu">
+                <ul class="nav-menu">
+                   <li>
+                       <a href="Inicio.aspx">Inicio</a>
+                   </li>
+                   <li>
+                       <a href="InfoUsuario.aspx">Info.Usuario</a>
+                   </li>
+                   <li>
+                       <a href="Contacto.aspx">Contacto</a>
+                   </li>
+                   <li>
+                       <a href="Carrito.aspx">Carrito</a>
+                   </li>
+                   <li>
+                        <a href="Registrarse.aspx">Registrarse</a>
+                   </li>
+                </ul>
+            </nav>
+          </header>
         <div>
             INFORMACION DEL USUARIO<br />
             Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
