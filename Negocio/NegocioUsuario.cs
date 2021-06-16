@@ -16,7 +16,13 @@ namespace Negocio
 
             if (!dao.ExisteUsuario(user)) return false;
 
-            dao.GetUsuario(user);
+            string consulta1 = $"SELECT * FROM Usuarios WHERE ID_U = '{user.Id}'" +
+                                $"AND Estado_U = 1";
+
+            string consulta2 = $"SELECT * FROM Usuarios WHERE Mail_U = '{user.Mail}'" +
+                                $"AND Estado_U = 1";
+
+            dao.GetUsuario(user, consulta2);
 
             return true;
        
