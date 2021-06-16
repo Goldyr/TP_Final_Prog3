@@ -9,22 +9,22 @@ namespace Entidades
     public class Distribuidora
     {
         //Parametros
-        private int id_Dis;
-        private string nombre_Dis;
+        private string codigo;
+        private string nombre;
 
         //Constructores
         public Distribuidora() { }
 
         //Set & Get
-        public int ID
+        public string Codigo
         {
-            set { id_Dis = value; }
-            get { return id_Dis; }
+            set { codigo = value; }
+            get { return codigo; }
         }
         public string Nombre
         {
-            set { nombre_Dis = value; }
-            get { return nombre_Dis; }
+            set { nombre = value; }
+            get { return nombre; }
         }
     }
 }

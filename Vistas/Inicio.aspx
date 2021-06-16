@@ -17,20 +17,22 @@
                 <div class="main-header__content__log-in">
                     <!-- USUARIO -->
                     <div class="main-header__content__div">
-                        <p>Usuario</p>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:Label ID="header_lblUsuario" runat="server" Text="Usuario"/>
+                        <asp:TextBox ID="header_tbUsuario" runat="server"></asp:TextBox>
                     </div>
                      <!-- CONTRASEÑA-->
                      <div class="main-header__content__div">
-                        <p>Contraseña</p>
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:Label ID="header_lblContra" runat="server" Text="Contraseña"/>
+                        <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
                      </div>
+                    <asp:Button  ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx"/>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </div>
                  <!-- SEARCH  -->
                 <div class="main-header__content__search">
-                   <p>Búsqueda</p>
-                   <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                   <asp:Button ID="Button1" runat="server" Text="Buscar" />
+                    <asp:Label ID="header_lblBusqueda" runat="server" Text="Búsqueda"/>
+                   <asp:TextBox ID="header_tbBusqueda" runat="server"></asp:TextBox>
+                   <asp:Button ID="header_btnbusqueda" runat="server" Text="Buscar" />
                 </div>
             </div>
             <!-- MENU DE NAVEGACION -->
@@ -56,16 +58,115 @@
         </header>
         <!-- Pagina inicial  -->
         <section class="pInicio">
-
-        <asp:ListView ID="ListView1" runat="server"/>
-        <asp:DataList ID="DataList1" runat="server"/>
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"/>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server"/>
-
-        <span class="pInicio__admin-opc"><a href="OpcionesAdmin.aspx">OPCIONES DE ADMINISTRADOR</a></span>
-        <p>Inicio de la pagina</p>
-        <p> El ListView va a tener los juegos mas recientes</p>
+             <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc"><asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]"/>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [Codigo_J], [PU_J], [Descuento_J] FROM [Juegos]"/>
+            <div class="pInicio__Juegos">
+                 <asp:ListView ID="ListView1" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2">
+            <AlternatingItemTemplate>
+                <span style="">Nombre:
+                <asp:Label ID="Nombre_JLabel" runat="server" Text='<%# Eval("Nombre_J") %>' />
+                <br />
+                Codigo:
+                <asp:Label ID="Codigo_JLabel" runat="server" Text='<%# Eval("Codigo_J") %>' />
+                <br />
+                Precio:
+                <asp:Label ID="PU_JLabel" runat="server" Text='<%# Eval("PU_J") %>' />
+                <br />
+                Descuento:
+                <asp:Label ID="Descuento_JLabel" runat="server" Text='<%# Eval("Descuento_J") %>' />
+                <br />
+                <br />
+                </span>
+            </AlternatingItemTemplate>
+            <EditItemTemplate>
+                <span style="">Nombre_J:
+                <asp:TextBox ID="Nombre_JTextBox" runat="server" Text='<%# Bind("Nombre_J") %>' />
+                <br />
+                Codigo_J:
+                <asp:Label ID="Codigo_JLabel1" runat="server" Text='<%# Eval("Codigo_J") %>' />
+                <br />
+                PU_J:
+                <asp:TextBox ID="PU_JTextBox" runat="server" Text='<%# Bind("PU_J") %>' />
+                <br />
+                Descuento_J:
+                <asp:TextBox ID="Descuento_JTextBox" runat="server" Text='<%# Bind("Descuento_J") %>' />
+                <br />
+                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                <br />
+                <br />
+                </span>
+            </EditItemTemplate>
+            <EmptyDataTemplate>
+                <span>No data was returned.</span>
+            </EmptyDataTemplate>
+            <InsertItemTemplate>
+                <span style="">Nombre_J:
+                <asp:TextBox ID="Nombre_JTextBox" runat="server" Text='<%# Bind("Nombre_J") %>' />
+                <br />
+                Codigo_J:
+                <asp:TextBox ID="Codigo_JTextBox" runat="server" Text='<%# Bind("Codigo_J") %>' />
+                <br />
+                PU_J:
+                <asp:TextBox ID="PU_JTextBox" runat="server" Text='<%# Bind("PU_J") %>' />
+                <br />
+                Descuento_J:
+                <asp:TextBox ID="Descuento_JTextBox" runat="server" Text='<%# Bind("Descuento_J") %>' />
+                <br />
+                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                <br />
+                <br />
+                </span>
+            </InsertItemTemplate>
+            <ItemTemplate>
+                <span style="">Nombre:
+                <asp:Label ID="Nombre_JLabel" runat="server" Text='<%# Eval("Nombre_J") %>' />
+                <br />
+                Codigo:
+                <asp:Label ID="Codigo_JLabel" runat="server" Text='<%# Eval("Codigo_J") %>' />
+                <br />
+                Precio:
+                <asp:Label ID="PU_JLabel" runat="server" Text='<%# Eval("PU_J") %>' />
+                <br />
+                Descuento:
+                <asp:Label ID="Descuento_JLabel" runat="server" Text='<%# Eval("Descuento_J") %>' />
+                <br />
+                <br />
+                </span>
+            </ItemTemplate>
+            <LayoutTemplate>
+                <div id="itemPlaceholderContainer" runat="server" style="">
+                    <span runat="server" id="itemPlaceholder" />
+                </div>
+                <div style="">
+                </div>
+            </LayoutTemplate>
+            <SelectedItemTemplate>
+                <span style="">Nombre_J:
+                <asp:Label ID="Nombre_JLabel" runat="server" Text='<%# Eval("Nombre_J") %>' />
+                <br />
+                Codigo_J:
+                <asp:Label ID="Codigo_JLabel" runat="server" Text='<%# Eval("Codigo_J") %>' />
+                <br />
+                PU_J:
+                <asp:Label ID="PU_JLabel" runat="server" Text='<%# Eval("PU_J") %>' />
+                <br />
+                Descuento_J:
+                <asp:Label ID="Descuento_JLabel" runat="server" Text='<%# Eval("Descuento_J") %>' />
+                <br />
+                <br />
+                </span>
+            </SelectedItemTemplate>
+            </asp:ListView>
+            </div>
+            <div class="pInicio__Categorias">
+                 <asp:CheckBoxList ID="CheckBoxList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat">
+                </asp:CheckBoxList>
+            </div>
+   
+        <p>El ListView va a tener los juegos mas recientes</p>
         <p> El DataList va a estar formado por botones, los cuales tienen las Categorias de los juegos</p>
         <p> En Opciones de Administrador se van a agregar los catalogos nuevos y se va a acceder mediante una contraseña</p>
        

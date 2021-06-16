@@ -9,46 +9,46 @@ namespace Entidades
     public class Juego
     {
         //Parametros
-        private int id_J;
-        private string nombre_J;
-        private int idDes_J;
-        private int id_Dis_J;
-        private int precio_J;
-        private int descuento_J;
+        private string codigo;
+        private string nombre;
+        private string codigoDes;
+        private string codigoDis;
+        private float pu;
+        private float descuento;
 
         //Constructores
         public Juego() { }
 
         //Set & Get
-        public int ID
+        public string Codigo
         {
-            set { id_J = value; }
-            get { return id_J; }
+            set { codigo = value; }
+            get { return codigo; }
         }
         public string Nombre
         {
-            set { nombre_J = value; }
-            get { return nombre_J; }
+            set { nombre = value; }
+            get { return nombre; }
         }
-        public int ID_Desarrolladora
+        public string CodigoDes
         {
-            set { idDes_J = value; }
-            get { return idDes_J; }
+            set { codigoDes = value; }
+            get { return codigoDes; }
         }
-        public int ID_Distribuidora
+        public string CodigoDis
         {
-            set { id_Dis_J = value; }
-            get { return id_Dis_J; }
+            set { codigoDis = value; }
+            get { return codigoDis; }
         }
-        public int Precio
+        public float PU
         {
-            set { precio_J = value; }
-            get { return precio_J; }
+            set { pu = value; }
+            get { return pu; }
         }
-        public int Descuento
+        public float Descuento
         {
-            set { descuento_J = value; }
-            get { return descuento_J; }
+            set { descuento = value; }
+            get { return descuento; }
         }
     }
 }

@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Desarrolladora
+    public class Desarrolladora
     {
         //Parametros
-        private int id_Des;
-        private string nombre_Des;
+        private int codigo;
+        private string nombre;
 
         //Constructores
         public Desarrolladora() { }
 
         //Set & Get
-        public int ID
+        public int Codigo
         {
-            set { id_Des = value; }
-            get { return id_Des; }
+            set { codigo = value; }
+            get { return codigo; }
         }
         public string Nombre
         {
-            set { nombre_Des = value; }
-            get { return nombre_Des; }
+            set { nombre = value; }
+            get { return nombre; }
         }
     }
 
