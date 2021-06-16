@@ -8,47 +8,44 @@ namespace Entidades
 {
     public class Juego
     {
-        //Parametros
-        private string codigo;
-        private string nombre;
-        private string codigoDes;
-        private string codigoDis;
-        private float pu;
-        private float descuento;
+       //Parametros
+       private string Codigo;
+       private string Nombre;
+       private string CodigoDes;
+       private string CodigoDis;
+       private string Descripcion;
+       private string Imagen;
+       private string Fecha;
+       private float Precio;
+       private float Descuento;
 
-        //Constructores
-        public Juego() { }
 
-        //Set & Get
-        public string Codigo
-        {
-            set { codigo = value; }
-            get { return codigo; }
+       //Constructores
+       public Juego() { 
+        
         }
-        public string Nombre
-        {
-            set { nombre = value; }
-            get { return nombre; }
-        }
-        public string CodigoDes
-        {
-            set { codigoDes = value; }
-            get { return codigoDes; }
-        }
-        public string CodigoDis
-        {
-            set { codigoDis = value; }
-            get { return codigoDis; }
-        }
-        public float PU
-        {
-            set { pu = value; }
-            get { return pu; }
-        }
-        public float Descuento
-        {
-            set { descuento = value; }
-            get { return descuento; }
-        }
+
+       //Sets 
+        
+       public void SetCodigo( string _Codigo) { Codigo = _Codigo; }
+       public void SetNombre(string _Nombre) { Nombre = _Nombre; }
+       public void SetDescuento(float _Descuento) { Descuento = _Descuento; }
+       public void SetPrecio(float _Precio) { Precio = _Precio; }
+       public void SetImagen(string _Img) { Imagen = _Img; }
+       public void SetCodigoDis(string _CodigoDis) { CodigoDis = _CodigoDis; }
+       public void SetCodigoDes(string _CodigoDes) { CodigoDes = _CodigoDes; }
+       public void SetDescripcion(string _Descrip) { Descripcion = _Descrip; }
+       public void SetFecha(string _Fecha) { Fecha = _Fecha; }
+       //Get
+       public string GetCodigo() { return this.Codigo; }
+       public string GetNombre() { return this.Nombre; }
+       public string GetCodigoDes() { return this.CodigoDes; }
+       public string GetCodigoDis() { return this.CodigoDis; }
+       public string GetImagen() { return this.Imagen; }
+       public string GetFecha() { return this.Fecha; }
+       public string GetDescripcion() { return this.Descripcion; }
+       public float GetPrecio() { return this.Precio; }
+       public float GetDescuento() { return this.Descuento; }
+
     }
 }

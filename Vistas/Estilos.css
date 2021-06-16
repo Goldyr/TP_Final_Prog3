@@ -39,8 +39,8 @@ a {
 }
 
     .nav-menu li {
-        height: 100%;
-        width: 120px;
+        height: 83%;
+        width: 139px;
         display: flex;
         justify-content: center;
         align-items: center;

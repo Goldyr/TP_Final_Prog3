@@ -34,31 +34,63 @@
         <div>
             AGREGAR JUEGO<br />
             <br />
-            EDITORA<br />
+            DESARROLLADORA<br />
             Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Nom_Des_txtBox" runat="server"></asp:TextBox>
+            <br />
+            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_Des_txtBox" runat="server"></asp:TextBox>
             <br />
             <br />
             DISTRIBUIDORA<br />
             Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Nom_Dis_txtBox" runat="server"></asp:TextBox>
             <br />
+            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="Cod_Dis_txtBox" runat="server"></asp:TextBox>
             <br />
             <br />
             JUEGO<br />
-            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Nom_J_txtBox" runat="server"></asp:TextBox>
+            <br />
+            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_J_txtBox" runat="server"></asp:TextBox>
             <br />
             Descripcion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Des_J_txtBox" runat="server"></asp:TextBox>
             <br />
             Categoria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="Cat_J_txtBox" runat="server"></asp:TextBox>
             <br />
-            etc...<br />
-            <asp:Button ID="Button1" runat="server" Text="Confirmar" />
+            Imagen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="Img_J_txtBox" runat="server"></asp:TextBox>
+            <br />
+            Fecha Lanzamiento&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="FL_J_txtBox" runat="server" ></asp:TextBox>
+            <br />
+            Descuento&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="Desc_J_txtBox" runat="server" ></asp:TextBox>
+            <br />
+            Precio&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="Pre_J_txtBox" runat="server" ></asp:TextBox>
             <br />
             <br />
-            Esta seccion se accede desde el HyperLink AGREGAR JUEGOS ubicado en OPCIONES DE ADMINISTRADOR</div>
+            Distribuidora&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="ddl_Dis_J" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Dis" DataValueField="Codigo_Dis">
+            </asp:DropDownList>
+            <br />
+            Desarrolladora
+            <asp:DropDownList ID="ddl_Des_J" runat="server" DataSourceID="SqlDataSource2" DataTextField="Nombre_Des" DataValueField="Codigo_Des">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="btn_confirmar_Click" />
+            <br />
+            <br />
+            <asp:Label ID="lbl_prueba" runat="server"></asp:Label>
+            <br />
+            <br />
+            Esta seccion se accede desde el HyperLink AGREGAR JUEGOS ubicado en OPCIONES DE ADMINISTRADOR<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_Dis], [Codigo_Dis] FROM [Distribuidoras]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Codigo_Des], [Nombre_Des] FROM [Desarrolladores]"></asp:SqlDataSource>
+         </div>
     </form>
 </body>
 </html>
