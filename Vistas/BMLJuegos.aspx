@@ -90,12 +90,12 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Fecha Lanzamiento">
                             <ItemTemplate>
-                                <asp:Label ID="lbl_FechaLanzamiento_BML" runat="server" Text='<%# Bind("Fecha_Lanzamiento") %>'></asp:Label>
+                                <asp:Label ID="lbl_FechaLanzamiento_BML" runat="server" Text='<%# Bind("Fecha_Lanzamiento_J") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Estado">
                             <ItemTemplate>
-                                <asp:Label ID="lbl_Estado_BML" runat="server" Text='<%# Bind("Estado") %>'></asp:Label>
+                                <asp:Label ID="lbl_Estado_BML" runat="server" Text='<%# Bind("Estado_J") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Descripcion">
@@ -103,7 +103,7 @@
                                 <asp:TextBox ID="txt_Descripcion_eit" runat="server" Text='<%# Bind("Descripcion") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbl_Descripcion_BML" runat="server" Text='<%# Bind("Descripcion") %>'></asp:Label>
+                                <asp:Label ID="lbl_Descripcion_BML" runat="server" Text='<%# Bind("Descripcion_J") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

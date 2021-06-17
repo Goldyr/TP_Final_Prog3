@@ -14,7 +14,7 @@ namespace Dao
         AccesoDatos datos = new AccesoDatos();
        
         //HACER VERIFICAR CODIGO del juego
-        public bool ExisteJuego(Juego _Juego, string Consulta)
+        public bool ExisteJuego(string Consulta)
         {
 
             return datos.existe(Consulta);
@@ -65,7 +65,7 @@ namespace Dao
         public DataTable ListarJuegos()
         {
             DataTable dt = new DataTable();
-            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDist_J, Descuento_J, Fecha_Lanzamiento, Estado, Descripcion FROM Juegos";
+            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDist_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J FROM Juegos";
             dt = datos.ObtenerTabla("prueba", consulta);
             return dt;
         }
@@ -86,6 +86,14 @@ namespace Dao
             {
                 return false; //Devuelve false si no borro algo
             }
+        }
+
+        public DataTable Obtener_CantKey(Key _Key)  //esta funcion va a buscar el juego y la cantidad de keys que tiene. Solo se ejecuta si es que ingresa un codigo de juego existente en la tabla keys
+        {
+            string consulta = $"SELECT COUNT(k.Serie_K) as Cantidad, j.Nombre_J FROM Juegos AS j INNER JOIN KEYS as k ON j.Codigo_J = k.CodigoJuego_K WHERE j.Codigo_J = '{_Key.GetCodJuego()}' GROUP BY j.Nombre_J";
+            DataTable tabla = datos.ObtenerTabla("Keys", consulta);
+
+            return tabla;
         }
     }
 }

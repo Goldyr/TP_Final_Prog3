@@ -39,9 +39,15 @@
         <br />
         AGREGAR KEYS<br />
         <div>
-            Ingrese ID de juego <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            Ingrese ID de juego <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
             <br />
-            --descripcion del juego y cantidad de keys, del ID buscado--<br />
+            <br />
+            Juego: <asp:Label ID="lblJuego" runat="server"></asp:Label>
+&nbsp;&nbsp; Cantidad de Keys:
+            <asp:Label ID="lblKeys" runat="server"></asp:Label>
+            <br />
+            <br />
             <br />
             Agregar Keys
             <asp:TextBox ID="TextBox2" runat="server" TextMode="Number"></asp:TextBox>
