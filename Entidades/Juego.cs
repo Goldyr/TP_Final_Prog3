@@ -18,15 +18,15 @@ namespace Entidades
        private string Fecha;
        private float Precio;
        private float Descuento;
-
+       private bool Estado;
 
        //Constructores
        public Juego() { 
         
         }
 
-       //Sets 
-        
+        //Sets 
+       public void SetEstado(bool _Estado) { Estado = _Estado; }
        public void SetCodigo( string _Codigo) { Codigo = _Codigo; }
        public void SetNombre(string _Nombre) { Nombre = _Nombre; }
        public void SetDescuento(float _Descuento) { Descuento = _Descuento; }
@@ -36,7 +36,9 @@ namespace Entidades
        public void SetCodigoDes(string _CodigoDes) { CodigoDes = _CodigoDes; }
        public void SetDescripcion(string _Descrip) { Descripcion = _Descrip; }
        public void SetFecha(string _Fecha) { Fecha = _Fecha; }
-       //Get
+
+        //Get
+       public bool GetEstado() { return this.Estado; }
        public string GetCodigo() { return this.Codigo; }
        public string GetNombre() { return this.Nombre; }
        public string GetCodigoDes() { return this.CodigoDes; }

@@ -69,6 +69,27 @@ namespace Dao
             dt = datos.ObtenerTabla("prueba", consulta);
             return dt;
         }
+
+        public Juego getJuego(Juego _juego)
+        {
+   
+            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDist_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J FROM Juegos where Codigo_J = '{_juego.GetCodigo()}'";
+            DataTable tabla = datos.ObtenerTabla("Juego", consulta) ;
+            _juego.SetNombre(tabla.Rows[0][0].ToString());
+            _juego.SetCodigo(tabla.Rows[0][1].ToString());
+            _juego.SetPrecio(Convert.ToSingle(tabla.Rows[0][2].ToString()));  // a arrglar ya que es un float
+            _juego.SetCodigoDes(tabla.Rows[0][3].ToString());
+            _juego.SetCodigoDis(tabla.Rows[0][4].ToString());
+            _juego.SetDescuento(Convert.ToSingle(tabla.Rows[0][5].ToString()));   // a arrglar ya que es un float
+            _juego.SetFecha(tabla.Rows[0][6].ToString());
+            _juego.SetEstado(Convert.ToBoolean(tabla.Rows[0][7].ToString()));
+            _juego.SetDescripcion(tabla.Rows[0][8].ToString());
+
+            return _juego;
+        }
+
+
+
         //Elimina un juego depende el id //Ejecuta procedimiento
         public bool EliminarJuego(Juego _juego)
         {
@@ -88,12 +109,13 @@ namespace Dao
             }
         }
 
-        public DataTable Obtener_CantKey(Key _Key)  //esta funcion va a buscar el juego y la cantidad de keys que tiene. Solo se ejecuta si es que ingresa un codigo de juego existente en la tabla keys
+        public int Obtener_CantKey(string codigo)  //esta funcion va a buscar el juego y la cantidad de keys que tiene. Solo se ejecuta si es que ingresa un codigo de juego existente en la tabla keys
         {
-            string consulta = $"SELECT COUNT(k.Serie_K) as Cantidad, j.Nombre_J FROM Juegos AS j INNER JOIN KEYS as k ON j.Codigo_J = k.CodigoJuego_K WHERE j.Codigo_J = '{_Key.GetCodJuego()}' GROUP BY j.Nombre_J";
-            DataTable tabla = datos.ObtenerTabla("Keys", consulta);
+            string consulta = $"select count(CodigoJuego_K) as Cantidad from Keys where CodigoJuego_K = '{codigo}'";
+            DataTable t1 = datos.ObtenerTabla("Keys", consulta);
 
-            return tabla;
+            return Convert.ToInt32(t1.Rows[0][0].ToString());
+            
         }
     }
 }

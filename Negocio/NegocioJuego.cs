@@ -45,31 +45,36 @@ namespace Negocio
             
         }
 
-        public DataTable NJ_BuscarJuego_Key(Key _Key)
+        public DataTable NJ_BuscarJuego_Key(string codigo)
         {
-            string consulta = $"SELECT * FROM Keys WHERE CodigoJuego_K  = '{_Key.GetCodJuego()}' ";
+            DataTable tabla_key = new DataTable();
+            DataColumn columna = new DataColumn("Nombre", System.Type.GetType("System.String"));
+            tabla_key.Columns.Add("Nombre");
 
-            if (dao.ExisteJuego(consulta))  //si el codigo ingresado existe en la tabla keys, obtiene la cantidad de keys
-            {
-                DataTable tabla_key = dao.Obtener_CantKey(_Key);
-                return tabla_key;
+            columna = new DataColumn("Cantidad", System.Type.GetType("System.String"));
+            tabla_key.Columns.Add("Cantidad");
+
+            DataRow dr = tabla_key.NewRow();
+
+            string consulta = $"SELECT * FROM juegos WHERE Codigo_J  = '{codigo}' ";
+            if (dao.ExisteJuego(consulta)) {
+
+                Juego _juego = new Juego();
+                _juego.SetCodigo(codigo);
+                _juego = dao.getJuego(_juego);
+
+                dr["Nombre"] = _juego.GetNombre();
+                dr["Cantidad"] = dao.Obtener_CantKey(codigo);
+                 
             }
-            else  //sino crea esta tabla que tiene "valores nulos" para demostrar q no existe
+            else  //sino manda esto valores a la tabla
             {
-                DataTable tabla_nula = new DataTable();
-                DataColumn columna = new DataColumn("vacio", System.Type.GetType("System.String"));
-                tabla_nula.Columns.Add("vacio");
-
-                columna = new DataColumn("vacio2", System.Type.GetType("System.String"));
-                tabla_nula.Columns.Add("vacio2");
-
-                DataRow dr = tabla_nula.NewRow();
-                dr["vacio"] = "--";
-                dr["vacio2"] = "--";
-                tabla_nula.Rows.Add(dr);
-
-                return tabla_nula;
+                dr["Nombre"] = "--";
+                dr["Cantidad"] = "--";
+               
             }
+            tabla_key.Rows.Add(dr);
+            return tabla_key;
         }
     }
 }

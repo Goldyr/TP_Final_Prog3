@@ -22,3 +22,9 @@ C:\Users\S\Desktop\clon\Entidades\obj\Debug\Entidades.csprojAssemblyReference.ca
 C:\Users\S\Desktop\clon\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\S\Desktop\clon\Entidades\obj\Debug\Entidades.dll
 C:\Users\S\Desktop\clon\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Maty\Desktop\final\Entidades\bin\Debug\Entidades.dll
+C:\Users\Maty\Desktop\final\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Maty\Desktop\final\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Maty\Desktop\final\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Maty\Desktop\final\Entidades\obj\Debug\Entidades.dll
+C:\Users\Maty\Desktop\final\Entidades\obj\Debug\Entidades.pdb
