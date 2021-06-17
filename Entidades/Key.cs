@@ -9,28 +9,21 @@ namespace Entidades
     public class Key
     {
         //Parametros
-        private string serial;
-        private string codJuego;
-        private bool estado;
+        private string Serial;
+        private string CodJuego;
+        private bool Estado;
 
         //Constructores
         public Key() { }
 
         //Set & Get
-        public string Serial
-        {
-            set { serial = value; }
-            get { return serial; }
-        }
-        public string CodJuego
-        {
-            set { codJuego = value; }
-            get { return codJuego; }
-        }
-        public bool Estado
-        {
-            set { estado = value; }
-            get { return estado; }
-        }
+
+        public void SetSerial(string _Serial) { Serial = _Serial; }
+        public void SetCodJuego(string _CodJuego) { CodJuego = _CodJuego; }
+        public void SetEstado(bool _Estado) { Estado = _Estado; }
+
+        public string GetSerial() { return this.Serial; }
+        public string GetCodJuego() { return this.CodJuego; }
+        public bool GetEstado() { return this.Estado; }
     }
 }

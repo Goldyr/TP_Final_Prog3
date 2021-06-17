@@ -20,3 +20,14 @@ C:\Users\Rivas\Source\Repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.Core
 C:\Users\Rivas\Source\Repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Rivas\Source\Repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
 C:\Users\Rivas\Source\Repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Negocio.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Dao.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Entidades.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Dao.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb

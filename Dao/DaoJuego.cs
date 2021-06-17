@@ -61,6 +61,32 @@ namespace Dao
             SqlParametros.Value = _Juego.GetImagen();
 
         }
+        //Devuelve una DataTable con todos los juegos
+        public DataTable ListarJuegos()
+        {
+            DataTable dt = new DataTable();
+            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDist_J, Descuento_J, Fecha_Lanzamiento, Estado, Descripcion FROM Juegos";
+            dt = datos.ObtenerTabla("prueba", consulta);
+            return dt;
+        }
+        //Elimina un juego depende el id //Ejecuta procedimiento
+        public bool EliminarJuego(Juego _juego)
+        {
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter Parametros = new SqlParameter();
+            Parametros = Comando.Parameters.Add("@CodJuego", SqlDbType.Char);
+            Parametros.Value = _juego.GetCodigo();
+
+            int filas = datos.EjecutarProcedimientoAlmacenado(Comando, "spEliminarJuego");
+            if(filas == 1)
+            {
+                return true; //Devuelve true si borro algo
+            }
+            else
+            {
+                return false; //Devuelve false si no borro algo
+            }
+        }
     }
 }
 /*create PROCEDURE spAgregar_Juegos
