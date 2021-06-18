@@ -15,6 +15,7 @@ namespace Entidades
         //Constructores
         public Categoria()
         {
+            nombre = codigo = "";
         }
 
 
