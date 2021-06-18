@@ -76,5 +76,10 @@ namespace Negocio
             tabla_key.Rows.Add(dr);
             return tabla_key;
         }
+        //Llama a dao para que modifique el juego
+        public bool NJ_ModificarJuego(Juego juego_upd)
+        {
+            return dao.ModificarJuego(juego_upd);
+        }
     }
 }

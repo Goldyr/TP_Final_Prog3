@@ -117,6 +117,93 @@ namespace Dao
             return Convert.ToInt32(t1.Rows[0][0].ToString());
             
         }
+        //Modifica un juego en la base de datos devuelve true en caso de haberlo modificado correctamente
+        public bool ModificarJuego(Juego _juego)
+        {
+            SqlCommand Comando = new SqlCommand();
+            System.Diagnostics.Debug.WriteLine(
+              _juego.GetNombre() +
+              _juego.GetCodigo() +
+              _juego.GetPrecio() +
+              _juego.GetCodigoDes() +
+              _juego.GetCodigoDis() +
+              _juego.GetDescuento() +
+              _juego.GetFecha() +
+              _juego.GetEstado() +
+              _juego.GetDescripcion()
+              );
+
+            //Agrego parametros
+            ArmarParametrosModificarJuego(ref Comando, _juego);
+            /*
+            Parametros = Comando.Parameters.Add("@Nombre", SqlDbType.VarChar, 50);
+            Parametros.Value = _juego.GetNombre();
+            Parametros = Comando.Parameters.Add("@Codigo", SqlDbType.Char, 10);
+            Parametros.Value = _juego.GetCodigo();
+            Parametros = Comando.Parameters.Add("@Precio", SqlDbType.Decimal);
+            Parametros.Value = _juego.GetPrecio();
+            Parametros = Comando.Parameters.Add("@Codigo_Des", SqlDbType.Char, 10);
+            Parametros.Value = _juego.GetCodigoDes();
+            Parametros = Comando.Parameters.Add("@Codigo_Dis", SqlDbType.Char, 10);
+            Parametros.Value = _juego.GetCodigoDis();
+            Parametros = Comando.Parameters.Add("@Descuento", SqlDbType.Decimal);
+            Parametros.Value = _juego.GetDescuento();
+            Parametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
+            Parametros.Value = _juego.GetFecha();
+            Parametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
+            Parametros.Value = _juego.GetEstado();
+            Parametros = Comando.Parameters.Add("@Descripcion", SqlDbType.NChar, 100);
+            Parametros.Value = _juego.GetDescripcion();
+            */
+
+            System.Diagnostics.Debug.WriteLine(
+                _juego.GetNombre() +
+                _juego.GetCodigo() +
+                _juego.GetPrecio() +
+                _juego.GetCodigoDes() +
+                _juego.GetCodigoDis() +
+                _juego.GetDescuento() +
+                _juego.GetFecha() +
+                _juego.GetEstado() +
+                _juego.GetDescripcion()
+                );
+            //Ejecuto comando y retorna dependiendo que pase
+            int filas = datos.EjecutarProcedimientoAlmacenado(Comando, "spModificar_Juego");
+            if (filas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void ArmarParametrosModificarJuego(ref SqlCommand Comando, Juego _Juego)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Nombre", SqlDbType.VarChar, 50);
+            SqlParametros.Value = _Juego.GetNombre();
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 100);
+            SqlParametros.Value = _Juego.GetDescripcion();
+            SqlParametros = Comando.Parameters.Add("@Codigo", SqlDbType.VarChar, 10);
+            SqlParametros.Value = _Juego.GetCodigo();
+            SqlParametros = Comando.Parameters.Add("@Codigo_Des", SqlDbType.VarChar, 10);
+            SqlParametros.Value = _Juego.GetCodigoDes();
+            SqlParametros = Comando.Parameters.Add("@Codigo_Dis", SqlDbType.VarChar, 10);
+            SqlParametros.Value = _Juego.GetCodigoDis();
+            SqlParametros = Comando.Parameters.Add("@Descuento", SqlDbType.Decimal);
+            SqlParametros.Value = _Juego.GetDescuento();
+            SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
+            SqlParametros.Value = _Juego.GetFecha();
+            SqlParametros = Comando.Parameters.Add("@Precio", SqlDbType.Decimal);
+            SqlParametros.Value = _Juego.GetPrecio();
+            SqlParametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
+            SqlParametros.Value = _Juego.GetEstado();
+
+
+        }
+
     }
 }
 /*create PROCEDURE spAgregar_Juegos
