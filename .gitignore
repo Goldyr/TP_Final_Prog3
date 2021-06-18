@@ -3,3 +3,6 @@
 *.dll
 *.cache
 *.config
+*.sqlite
+*.swp
+*.orig
