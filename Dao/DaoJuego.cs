@@ -121,52 +121,10 @@ namespace Dao
         public bool ModificarJuego(Juego _juego)
         {
             SqlCommand Comando = new SqlCommand();
-            System.Diagnostics.Debug.WriteLine(
-              _juego.GetNombre() +
-              _juego.GetCodigo() +
-              _juego.GetPrecio() +
-              _juego.GetCodigoDes() +
-              _juego.GetCodigoDis() +
-              _juego.GetDescuento() +
-              _juego.GetFecha() +
-              _juego.GetEstado() +
-              _juego.GetDescripcion()
-              );
-
+            
             //Agrego parametros
             ArmarParametrosModificarJuego(ref Comando, _juego);
-            /*
-            Parametros = Comando.Parameters.Add("@Nombre", SqlDbType.VarChar, 50);
-            Parametros.Value = _juego.GetNombre();
-            Parametros = Comando.Parameters.Add("@Codigo", SqlDbType.Char, 10);
-            Parametros.Value = _juego.GetCodigo();
-            Parametros = Comando.Parameters.Add("@Precio", SqlDbType.Decimal);
-            Parametros.Value = _juego.GetPrecio();
-            Parametros = Comando.Parameters.Add("@Codigo_Des", SqlDbType.Char, 10);
-            Parametros.Value = _juego.GetCodigoDes();
-            Parametros = Comando.Parameters.Add("@Codigo_Dis", SqlDbType.Char, 10);
-            Parametros.Value = _juego.GetCodigoDis();
-            Parametros = Comando.Parameters.Add("@Descuento", SqlDbType.Decimal);
-            Parametros.Value = _juego.GetDescuento();
-            Parametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
-            Parametros.Value = _juego.GetFecha();
-            Parametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
-            Parametros.Value = _juego.GetEstado();
-            Parametros = Comando.Parameters.Add("@Descripcion", SqlDbType.NChar, 100);
-            Parametros.Value = _juego.GetDescripcion();
-            */
-
-            System.Diagnostics.Debug.WriteLine(
-                _juego.GetNombre() +
-                _juego.GetCodigo() +
-                _juego.GetPrecio() +
-                _juego.GetCodigoDes() +
-                _juego.GetCodigoDis() +
-                _juego.GetDescuento() +
-                _juego.GetFecha() +
-                _juego.GetEstado() +
-                _juego.GetDescripcion()
-                );
+     
             //Ejecuto comando y retorna dependiendo que pase
             int filas = datos.EjecutarProcedimientoAlmacenado(Comando, "spModificar_Juego");
             if (filas == 1)
