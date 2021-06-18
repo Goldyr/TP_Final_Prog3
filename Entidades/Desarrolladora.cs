@@ -9,23 +9,20 @@ namespace Entidades
     public class Desarrolladora
     {
         //Parametros
-        private int codigo;
+        private string codigo;
         private string nombre;
 
         //Constructores
         public Desarrolladora() { }
 
         //Set & Get
-        public int Codigo
-        {
-            set { codigo = value; }
-            get { return codigo; }
-        }
-        public string Nombre
-        {
-            set { nombre = value; }
-            get { return nombre; }
-        }
+        
+        public void SetCodigo(string _Codigo) { codigo = _Codigo; }
+        public void SetNombre(string _Nombre) { nombre = _Nombre; }
+
+        public string GetCodigo() { return codigo; }
+        public string GetNombre () { return nombre; }
+        
     }
 
 }
