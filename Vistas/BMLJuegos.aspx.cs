@@ -14,7 +14,10 @@ namespace WebApplication1
         NegocioJuego ns_juego = new NegocioJuego();
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarGrid();
+            if(!IsPostBack)
+            {
+                cargarGrid();
+            }
         }
 
         protected void grdBMLJuegos_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -51,6 +54,11 @@ namespace WebApplication1
         {
             //Busco los datos del edit template
             Juego juego_upd = new Juego();
+            
+            //Debug
+            string nombre = ((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_eit_Nombre")).Text.Trim();
+            System.Diagnostics.Debug.WriteLine(nombre);
+
             juego_upd.SetNombre(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_eit_Nombre")).Text.Trim());
             juego_upd.SetCodigo(((Label)grdBMLJuegos.Rows[e.RowIndex].FindControl("lbl_eit_CodJuego")).Text.Trim());
             juego_upd.SetPrecio(Convert.ToSingle(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_PU_eit")).Text.Trim()));
@@ -62,14 +70,7 @@ namespace WebApplication1
             juego_upd.SetEstado(((CheckBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("cb_eit_Estado")).Checked);
 
 
-            if(ns_juego.NJ_ModificarJuego(juego_upd))
-            {
-                errormaybe.Text = "Anda";
-            }
-            else
-            {
-                errormaybe.Text = "Que mierda pasa";
-            }
+            ns_juego.NJ_ModificarJuego(juego_upd);
 
             grdBMLJuegos.EditIndex = -1;
 
