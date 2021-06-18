@@ -23,7 +23,7 @@ namespace Dao
 
         //AGREGAR RECIBE UN OBJETO 
         public bool AgregarJuego(Juego _Juego)
-        {
+        { 
 
             SqlCommand Comando = new SqlCommand();
             ArmarParametrosAgregarJuego(ref Comando, _Juego);

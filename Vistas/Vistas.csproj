@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarDisDes.aspx" />
     <Content Include="AgregarJuegos.aspx" />
     <Content Include="BMLJuegos.aspx" />
     <Content Include="Carrito.aspx" />
@@ -79,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarDisDes.aspx.cs">
+      <DependentUpon>AgregarDisDes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarDisDes.aspx.designer.cs">
+      <DependentUpon>AgregarDisDes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarJuegos.aspx.cs">
       <DependentUpon>AgregarJuegos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

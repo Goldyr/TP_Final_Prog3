@@ -37,6 +37,9 @@
         <a class="admin" href="AgregarJuegos.aspx">Formulario para AGREGAR JUEGOS**</a>
         <br />
         <br />
+        <a class="admin" href="AgregarDisDes.aspx">Formulario para AGREGAR DISTRIBUIDORA Y DESARROLLADORA***</a>
+        <br />
+        <br />
         AGREGAR KEYS<br />
         <div>
             Ingrese ID de juego <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
@@ -59,6 +62,7 @@
             Esta Seccion se accede desde OPCIONES DE ADMINISTRADOR en Inicio<br />
             *Este HyperLink dirije a un formulario que permite editar,eliminar y agregar juegos<br />
             **Este Hyperlink dirije a un formlario para agregar juego<br />
+            ***este Hyperlink dirije a un formulario para agregar desarrolladoras y distribuidoras<br />
             <br />
             Tambien se puede buscar un juego, que al encontrarlo te da la descripcion y la cantidad de Keys. Permite agregarle Keys</div>
     </form>
