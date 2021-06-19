@@ -2,11 +2,8 @@
 *.pdb
 *.dll
 *.cache
-<<<<<<< HEAD
 *.config
 *.sqlite
 *.swp
 *.orig
-=======
 *.config
->>>>>>> Develop

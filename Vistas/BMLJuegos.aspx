@@ -89,7 +89,7 @@
                                 <asp:SqlDataSource ID="SQLDS_hardcoded2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Codigo_Dis] FROM [Distribuidoras]"></asp:SqlDataSource>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbl_CodDis_BML" runat="server" Text='<%# Bind("CodigoDist_J") %>'></asp:Label>
+                                <asp:Label ID="lbl_CodDis_BML" runat="server" Text='<%# Bind("CodigoDis_J") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Descuento">

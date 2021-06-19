@@ -52,13 +52,11 @@
             JUEGO<br />
             Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Nom_J_txtBox" runat="server"></asp:TextBox>
             <br />
-            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_J_txtBox" runat="server"></asp:TextBox>
+            <!-- Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_J_txtBox" runat="server"></asp:TextBox> -->
             <br />
             Descripcion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="Des_J_txtBox" runat="server"></asp:TextBox>
-            <br />
-            Categoria&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Cat_J_txtBox" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             Imagen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="Img_J_txtBox" runat="server"></asp:TextBox>
@@ -80,6 +78,12 @@
             Desarrolladora
             <asp:DropDownList ID="ddl_Des_J" runat="server" DataSourceID="SqlDataSource2" DataTextField="Nombre_Des" DataValueField="Codigo_Des">
             </asp:DropDownList>
+  
+            <div>
+                <p>Categoria</p>
+                          <asp:CheckBoxList ID="Cat_Cbl_J" runat="server">
+            </asp:CheckBoxList>
+            </div>
             <br />
             <br />
             <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="btn_confirmar_Click" />

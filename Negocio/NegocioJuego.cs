@@ -18,7 +18,6 @@ namespace Negocio
             bool Agrego = false;
             string consulta = $"SELECT * FROM Juegos WHERE Nombre_J = '{_Juego.GetNombre()}' ";
 
-            
 
             if (!dao.ExisteJuego(consulta))
             {
@@ -28,6 +27,7 @@ namespace Negocio
             return Agrego;
         }
         //Llama a DaoJuego y lista todos los juegos
+
         public DataTable NJ_ListarJuego()
         {
             DataTable dt = new DataTable();
@@ -36,6 +36,7 @@ namespace Negocio
             return dt;
         }
         //Llama a DaoJuego y elimina Juego por ID 
+
         public bool NJ_EliminarJuego(string Cod_J)
         {
             Juego _juego = new Juego();
@@ -56,12 +57,18 @@ namespace Negocio
 
             DataRow dr = tabla_key.NewRow();
 
-            string consulta = $"SELECT * FROM juegos WHERE Codigo_J  = '{codigo}' ";
-            if (dao.ExisteJuego(consulta)) {
+            string consultaExiste = $"SELECT * FROM juegos WHERE Codigo_J  = '{codigo}' ";
+            if (dao.ExisteJuego(consultaExiste)) {
 
                 Juego _juego = new Juego();
+
                 _juego.SetCodigo(codigo);
-                _juego = dao.getJuego(_juego);
+
+                string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, " +
+                   $"FORMAT (Fecha_Lanzamiento_J, 'dd-MM-yy', 0) , Estado_J, Descripcion_J" +
+                   $"FROM Juegos where Codigo_J = '{_juego.GetCodigo()}'";
+            
+                _juego = dao.getJuego(_juego, consulta);
 
                 dr["Nombre"] = _juego.GetNombre();
                 dr["Cantidad"] = dao.Obtener_CantKey(codigo);
@@ -77,6 +84,18 @@ namespace Negocio
             return tabla_key;
         }
         //Llama a dao para que modifique el juego
+
+        public Juego NJ_ObtenerUltimoJuego()
+        {
+            Juego juego = new Juego();
+
+            string consulta = $"SELECT TOP 1 * FROM Juegos ORDER BY Codigo_J DESC";
+
+            juego = dao.getJuego(juego, consulta);
+
+            return juego;
+        }
+
         public bool NJ_ModificarJuego(Juego juego_upd)
         {
             return dao.ModificarJuego(juego_upd);

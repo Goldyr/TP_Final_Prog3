@@ -17,7 +17,7 @@ namespace Entidades
        private string Imagen;
        private string Fecha;
        private float Precio;
-       private float Descuento;
+       private int Descuento;
        private bool Estado;
 
        //Constructores
@@ -29,7 +29,7 @@ namespace Entidades
        public void SetEstado(bool _Estado) { Estado = _Estado; }
        public void SetCodigo( string _Codigo) { Codigo = _Codigo; }
        public void SetNombre(string _Nombre) { Nombre = _Nombre; }
-       public void SetDescuento(float _Descuento) { Descuento = _Descuento; }
+       public void SetDescuento(int _Descuento) { Descuento = _Descuento; }
        public void SetPrecio(float _Precio) { Precio = _Precio; }
        public void SetImagen(string _Img) { Imagen = _Img; }
        public void SetCodigoDis(string _CodigoDis) { CodigoDis = _CodigoDis; }

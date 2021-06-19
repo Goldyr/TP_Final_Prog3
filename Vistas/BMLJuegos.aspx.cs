@@ -64,7 +64,7 @@ namespace WebApplication1
             juego_upd.SetPrecio(Convert.ToSingle(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_PU_eit")).Text.Trim()));
             juego_upd.SetCodigoDes(((DropDownList)grdBMLJuegos.Rows[e.RowIndex].FindControl("ddl_eit_CodDes")).Text.Trim());
             juego_upd.SetCodigoDis(((DropDownList)grdBMLJuegos.Rows[e.RowIndex].FindControl("ddl_eit_CodDis")).Text.Trim());
-            juego_upd.SetDescuento(Convert.ToSingle(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_Descuento_eit")).Text));
+            juego_upd.SetDescuento(Convert.ToInt32(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_Descuento_eit")).Text));
             juego_upd.SetFecha(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_eit_FechaLanzamiento")).Text.Trim());
             juego_upd.SetDescripcion(((TextBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("txt_Descripcion_eit")).Text.Trim());
             juego_upd.SetEstado(((CheckBox)grdBMLJuegos.Rows[e.RowIndex].FindControl("cb_eit_Estado")).Checked);

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriaxJuego.cs" />
     <Compile Include="Desarrolladora.cs" />
     <Compile Include="Distribuidora.cs" />
     <Compile Include="Juego.cs" />

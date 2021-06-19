@@ -34,7 +34,7 @@ namespace WebApplication1
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
           
-            user.Mail = header_tbUsuario.Text;
+            user.Email = header_tbUsuario.Text;
             user.Password = header_tbContra.Text;
 
             if(!negUser.cargarUsuario(user))
@@ -47,9 +47,9 @@ namespace WebApplication1
                 header_lblUsuario.Visible = header_lblContra.Visible = 
                 header_btnLogIn.Visible = false;
          
-                Label1.Text = "Bienvenido " + user.Nombre + "!";
+                Label1.Text = "Bienvenido " + user.User + "!";
 
-                HttpCookie ck = new HttpCookie("NombreUsuario", user.Nombre);
+                HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
                 HttpCookie ck2 = new HttpCookie("IDUsuario", user.Id);
 
                 ck2.Expires = ck.Expires = DateTime.Now.AddDays(15);
