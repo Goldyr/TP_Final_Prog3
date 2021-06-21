@@ -1,0 +1,9 @@
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\bin\Debug\Dao.dll
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\bin\Debug\Dao.pdb
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\bin\Debug\Entidades.dll
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\bin\Debug\Entidades.pdb
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.dll
+C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.pdb
