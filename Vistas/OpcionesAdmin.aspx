@@ -44,6 +44,7 @@
         <div>
             Ingrese ID de juego <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
             <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_ID" ErrorMessage="RequiredFieldValidator" ValidationGroup="key">Debe ingresar el id de juego</asp:RequiredFieldValidator>
             <br />
             <br />
             Juego: <asp:Label ID="lblJuego" runat="server"></asp:Label>
@@ -53,9 +54,12 @@
             <br />
             <br />
             Agregar Keys
-            <asp:TextBox ID="TextBox2" runat="server" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="txt_serialkey" runat="server" ValidationGroup="key"></asp:TextBox>
+            <asp:Button ID="btn_agregarkey" runat="server" OnClick="btn_agregarkey_Click" Text="Agregar" ValidationGroup="key" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_serialkey" ErrorMessage="RequiredFieldValidator" ValidationGroup="key">Debe ingresar una serial</asp:RequiredFieldValidator>
             <br />
             <br />
+            <asp:Label ID="lbl_key" runat="server" Text="Label"></asp:Label>
             <br />
             <br />
             <br />

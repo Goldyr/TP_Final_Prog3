@@ -88,10 +88,10 @@ namespace Dao
             DataTable tabla = datos.ObtenerTabla("Juego", consulta) ;
             _juego.SetNombre(tabla.Rows[0][0].ToString());
             _juego.SetCodigo(tabla.Rows[0][1].ToString());
-            _juego.SetPrecio(Convert.ToSingle(tabla.Rows[0][2].ToString()));  // a arrglar ya que es un float
+            _juego.SetPrecio(Convert.ToSingle(tabla.Rows[0][2].ToString())); 
             _juego.SetCodigoDes(tabla.Rows[0][3].ToString());
             _juego.SetCodigoDis(tabla.Rows[0][4].ToString());
-            _juego.SetDescuento(Convert.ToInt32(tabla.Rows[0][5].ToString()));   // a arrglar ya que es un float
+            _juego.SetDescuento(Convert.ToInt32(tabla.Rows[0][5].ToString()));   
             _juego.SetDescripcion(tabla.Rows[0][6].ToString());
             _juego.SetFecha(tabla.Rows[0][7].ToString());
             _juego.SetImagen(tabla.Rows[0][8].ToString());

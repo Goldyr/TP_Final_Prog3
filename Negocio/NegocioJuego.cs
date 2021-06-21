@@ -64,9 +64,7 @@ namespace Negocio
 
                 _juego.SetCodigo(codigo);
 
-                string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, " +
-                   $"FORMAT (Fecha_Lanzamiento_J, 'dd-MM-yy', 0) , Estado_J, Descripcion_J" +
-                   $"FROM Juegos where Codigo_J = '{_juego.GetCodigo()}'";
+                string consulta = $"SELECT * FROM Juegos where Codigo_J = '{_juego.GetCodigo()}'";
             
                 _juego = dao.getJuego(_juego, consulta);
 

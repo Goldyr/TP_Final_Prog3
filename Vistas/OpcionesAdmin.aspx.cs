@@ -31,5 +31,19 @@ namespace WebApplication1
             lblKeys.Text = tabla.Rows[0][1].ToString();
             
         }
+
+        protected void btn_agregarkey_Click(object sender, EventArgs e)
+        {
+            Key _key = new Key();
+            NegocioKey _NK = new NegocioKey();
+
+            _key.SetCodJuego(txt_ID.Text.Trim());
+            _key.SetSerial(txt_serialkey.Text.Trim());
+
+            if (_NK.NK_AgregarKey(_key))
+            {
+                lbl_key.Text = "Key agregada correctamente";
+            } else lbl_key.Text = "No se pudo agregar la Key";
+        }
     }
 }
