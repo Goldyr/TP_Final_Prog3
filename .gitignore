@@ -1,3 +1,5 @@
+
+
 *.suo
 *.pdb
 *.dll
@@ -7,3 +9,4 @@
 *.swp
 *.orig
 *.config
+/.vs/
