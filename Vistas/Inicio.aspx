@@ -26,7 +26,7 @@
                         <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
                      </div>
                     <asp:Button  ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx"/>
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
                 </div>
                  <!-- SEARCH  -->
                 <div class="main-header__content__search">

@@ -33,42 +33,33 @@
           </header>
         <div>
             AGREGAR JUEGO<br />
-            <br />
-            DESARROLLADORA<br />
-            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Nom_Des_txtBox" runat="server"></asp:TextBox>
-            <br />
-            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_Des_txtBox" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            DISTRIBUIDORA<br />
-            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Nom_Dis_txtBox" runat="server"></asp:TextBox>
-            <br />
-            Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Cod_Dis_txtBox" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />
             JUEGO<br />
-            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Nom_J_txtBox" runat="server"></asp:TextBox>
+            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <asp:TextBox ID="Nom_J_txtBox" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="rfv_Nombre" runat="server" ControlToValidate="Nom_J_txtBox" ErrorMessage="Ingrese un nombre"></asp:RequiredFieldValidator>
             <br />
-            <!-- Codigo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Cod_J_txtBox" runat="server"></asp:TextBox> -->
+            Descripcion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <asp:TextBox ID="Des_J_txtBox" runat="server" Height="60px" MaxLength="400"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="rfv_Descripcion" runat="server" ControlToValidate="Des_J_txtBox" ErrorMessage="Ingrese una descripcion"></asp:RequiredFieldValidator>
             <br />
-            Descripcion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Des_J_txtBox" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Imagen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <asp:TextBox ID="Img_J_txtBox" runat="server"></asp:TextBox>
             <br />
-            Imagen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Img_J_txtBox" runat="server"></asp:TextBox>
-            <br />
-            Fecha Lanzamiento&nbsp;&nbsp;&nbsp;&nbsp;
+            Fecha Lanzamiento &nbsp;&nbsp;
             <asp:TextBox ID="FL_J_txtBox" runat="server" ></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="rfv_Fecha" runat="server" ControlToValidate="FL_J_txtBox" ErrorMessage="Ingrese una Fecha de Lanzamiento"></asp:RequiredFieldValidator>
             <br />
-            Descuento&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="Desc_J_txtBox" runat="server" ></asp:TextBox>
+            Descuento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="Desc_J_txtBox" runat="server" ></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="rfv_Descuento" runat="server" ControlToValidate="Desc_J_txtBox" ErrorMessage="Ingrese un Descuento"></asp:RequiredFieldValidator>
             <br />
-            Precio&nbsp;&nbsp;&nbsp;
+            Precio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
             <asp:TextBox ID="Pre_J_txtBox" runat="server" ></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="rfv_Precio" runat="server" ControlToValidate="Pre_J_txtBox" ErrorMessage="Ingrese un Precio"></asp:RequiredFieldValidator>
             <br />
             <br />
             Distribuidora&nbsp;&nbsp;&nbsp;
@@ -96,5 +87,7 @@
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Codigo_Des], [Nombre_Des] FROM [Desarrolladores]"></asp:SqlDataSource>
          </div>
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>

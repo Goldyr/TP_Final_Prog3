@@ -37,11 +37,11 @@ namespace WebApplication1
             _Juego.SetPrecio(Convert.ToSingle(Pre_J_txtBox.Text.Trim()));
             _Juego.SetImagen( Img_J_txtBox.Text.Trim());
             _Juego.SetFecha(FL_J_txtBox.Text.Trim());
-            _Juego.SetDescripcion(Des_J_txtBox.Text.Trim());
+            _Juego.SetDescripcion(Desc_J_txtBox.Text.Trim());
             _Juego.SetCodigoDis(ddl_Dis_J.SelectedValue);
             _Juego.SetCodigoDes(ddl_Des_J.SelectedValue);
             _Juego.SetDescuento(int.Parse(Desc_J_txtBox.Text.Trim()));
-
+            
 
             NegocioJuego NJ = new NegocioJuego();
 
@@ -67,12 +67,12 @@ namespace WebApplication1
 
             foreach (ListItem li in Cat_Cbl_J.Items)
             {
-                _Juego = NJ.NJ_ObtenerUltimoJuego();
+                _Juego = NJ.NJ_ObtenerUltimoJuego(); ///almacena el codigo del ultimo juego
 
                 if (li.Selected == true)
                 {
-                    categoriaxJuego.CodigoCat = li.Value;
-                    categoriaxJuego.CodigoJuego = _Juego.GetCodigo();
+                    categoriaxJuego.CodigoCat = li.Value;              ///al codigoCat de CatXJuegos le da el value del item seleccionado
+                    categoriaxJuego.CodigoJuego = _Juego.GetCodigo();  ///al codigoJuego de CatXJuegos le da el codigo del ultimo juego
 
                     if (NxJ.AgregarCategoriasxJuego(categoriaxJuego)) altaCorrecta = false;
                 }
