@@ -6,15 +6,15 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="Estilos.css" />
-    <link rel="stylesheet" type="text/css" href="P_Inicio.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/P_Inicio.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <!-- HEADER -->
         <header class="main-header">
             <div class="main-header__content">
-                <div class="main-header__content__log-in">
+                <div class="main-header__content__log-in" id="divLogin" runat="server">
                     <!-- USUARIO -->
                     <div class="main-header__content__div">
                         <asp:Label ID="header_lblUsuario" runat="server" Text="Usuario"/>
@@ -26,7 +26,7 @@
                         <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
                      </div>
                     <asp:Button  ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx"/>
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblMensajeLogIn" runat="server"></asp:Label>
                 </div>
                  <!-- SEARCH  -->
                 <div class="main-header__content__search">

@@ -24,42 +24,6 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Nom_Des_txtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nom_Des_txtBox;
-
-        /// <summary>
-        /// Cod_Des_txtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cod_Des_txtBox;
-
-        /// <summary>
-        /// Nom_Dis_txtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nom_Dis_txtBox;
-
-        /// <summary>
-        /// Cod_Dis_txtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cod_Dis_txtBox;
-
-        /// <summary>
         /// Nom_J_txtBox control.
         /// </summary>
         /// <remarks>
@@ -69,13 +33,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox Nom_J_txtBox;
 
         /// <summary>
-        /// Cod_J_txtBox control.
+        /// rfv_Nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cod_J_txtBox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Nombre;
 
         /// <summary>
         /// Des_J_txtBox control.
@@ -85,6 +49,15 @@ namespace WebApplication1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Des_J_txtBox;
+
+        /// <summary>
+        /// rfv_Descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Descripcion;
 
         /// <summary>
         /// Img_J_txtBox control.
@@ -105,6 +78,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox FL_J_txtBox;
 
         /// <summary>
+        /// rfv_Fecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Fecha;
+
+        /// <summary>
         /// Desc_J_txtBox control.
         /// </summary>
         /// <remarks>
@@ -114,6 +96,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox Desc_J_txtBox;
 
         /// <summary>
+        /// rfv_Descuento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Descuento;
+
+        /// <summary>
         /// Pre_J_txtBox control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace WebApplication1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Pre_J_txtBox;
+
+        /// <summary>
+        /// rfv_Precio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Precio;
 
         /// <summary>
         /// ddl_Dis_J control.

@@ -3,6 +3,15 @@
 
 /* ESTILOS EN GENERAL */
 
+.AgregarJuegos__div p {
+    margin: 0;
+}
+
+.AgregarJuegos__div {
+    margin: 20px 0px;
+}
+
+
 body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
@@ -28,8 +37,8 @@ a {
 
 .nav-menu {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
     background: black;
@@ -37,15 +46,14 @@ a {
     height: 40px;
     margin: 0;
 }
+.nav-menu li {
+   height: 0%;
+   width: 162px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
-    .nav-menu li {
-        height: 0%;
-        width: 162px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-menu a:hover {
+.nav-menu a:hover {
         font-weight: bold;
-    }
+ }

@@ -15,7 +15,7 @@ namespace Dao
 
         public DaoUsuario() {;}
 
-        public Usuario GetUsuario(Usuario user, string consulta)
+        public void GetUsuario(Usuario user, string consulta)
         {
          
             DataTable dt = ad.ObtenerTabla("Usuarios", consulta);
@@ -30,8 +30,6 @@ namespace Dao
             user.FechaNacimiento = dt.Rows[0][7].ToString();
             user.Admin = Boolean.Parse(dt.Rows[0][8].ToString());
             user.Estado  = Boolean.Parse(dt.Rows[0][9].ToString()); 
-
-            return user;
         }
 
         public bool ExisteUsuario(Usuario user, string consulta)

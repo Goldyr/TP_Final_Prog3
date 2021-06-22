@@ -13,7 +13,7 @@ namespace Dao
     {
         AccesoDatos ad = new AccesoDatos();
 
-        public bool ExisteCategoria(string Consulta)
+        public bool ExisteCategoriaXJuego(string Consulta)
         {
             return ad.existe(Consulta);
         }

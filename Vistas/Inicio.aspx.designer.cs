@@ -24,6 +24,15 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// divLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogin;
+
+        /// <summary>
         /// header_lblUsuario control.
         /// </summary>
         /// <remarks>
@@ -69,13 +78,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button header_btnLogIn;
 
         /// <summary>
-        /// Label1 control.
+        /// lblMensajeLogIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
 
         /// <summary>
         /// header_lblBusqueda control.

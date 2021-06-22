@@ -9,4 +9,8 @@
 *.swp
 *.orig
 *.config
+<<<<<<< HEAD
 /.vs/
+=======
+*.txt
+>>>>>>> iss1.1

@@ -13,7 +13,6 @@ namespace WebApplication1
     {
 
         NegocioUsuario negUser = new NegocioUsuario();
-
         Usuario user = new Usuario();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,44 +20,64 @@ namespace WebApplication1
 
             if (!IsPostBack)
             {
-                //Duda de implementacion de cookies
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
+                 
                     user.Id = this.Request.Cookies["IDUsuario"].Value;
-                    negUser.cargarUsuario(user);
+                    negUser.CargarUsuarioPorID(user);
                 }
+
+                if (user.User != null) IniciarSesion();
             }
-          
+
+        }
+
+        private void IniciarSesion()
+        {
+            esconderHeaderLogIn();
+            lblMensajeLogIn.Text = "Bienvenido " + user.User + "!";
+            if (user.Admin) pInicio__lbladmin.Visible = true;
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
-          
             user.Email = header_tbUsuario.Text;
             user.Password = header_tbContra.Text;
 
-            if(!negUser.cargarUsuario(user))
+            if (!negUser.cargarUsuario(user))
             {
-                Label1.Text = "Error";
+                lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
             }
             else
             {
-                header_tbUsuario.Visible = header_tbContra.Visible = 
-                header_lblUsuario.Visible = header_lblContra.Visible = 
-                header_btnLogIn.Visible = false;
-         
-                Label1.Text = "Bienvenido " + user.User + "!";
-
-                HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
-                HttpCookie ck2 = new HttpCookie("IDUsuario", user.Id);
-
-                ck2.Expires = ck.Expires = DateTime.Now.AddDays(15);
-                this.Response.Cookies.Add(ck);
-                this.Response.Cookies.Add(ck2);
-
+                IniciarSesion();
+                guardarUsuarioCookie(user);
+          
             }
 
-            if (user.Admin) pInicio__lbladmin.Visible = true;
+            limpiezaHeaderLogIn();
+        }
+        private void limpiezaHeaderLogIn()
+        {
+            header_tbUsuario.Text = header_tbContra.Text = "";
+        }
+
+        private void esconderHeaderLogIn()
+        {
+            divLogin.Style["height"] = "auto";
+            header_tbUsuario.Visible = header_tbContra.Visible =
+            header_lblUsuario.Visible = header_lblContra.Visible =
+            header_btnLogIn.Visible = false;
+        }
+
+        private void guardarUsuarioCookie(Usuario user)
+        {
+            //HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
+            HttpCookie ck2 = new HttpCookie("IDUsuario", user.Id);
+          
+            ck2.Expires = DateTime.Now.AddDays(15);
+            //this.Response.Cookies.Add(ck);
+            this.Response.Cookies.Add(ck2);
         }
     }
 }

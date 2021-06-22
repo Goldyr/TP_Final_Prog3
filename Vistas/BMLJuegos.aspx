@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -138,7 +138,6 @@
                 </asp:GridView>
             </div>
             <br />
-            <asp:TextBox ID="errormaybe" runat="server"></asp:TextBox>
             <br />
             <br />
         </div>

@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,27 +31,31 @@
                 </ul>
             </nav>
           </header>
-        <div>
-            INFORMACION DEL USUARIO<br />
-            Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button4" runat="server" Text="editar" />
-            <br />
-            Email<br />
-            Fecha de ingreso<br />
-            <br />
-            <br />
-            <br />
-            HISTORIAL DE COMPRAS<br />
-            Fecha de Compra-Monto-<asp:Button ID="Button1" runat="server" Text="Detalles" />
-            <br />
-            Fecha de Compra-Monto-<asp:Button ID="Button2" runat="server" Text="Detalles" />
-            <br />
-            Fecha de Compra-Monto-<asp:Button ID="Button3" runat="server" Text="Detalles" />
-            <br />
-            <br />
-            <br />
-            Va a ser un GridView<br />
-            Se accede a esta seccion desde &quot;Info.Usuario&quot; en Inicio</div>
+        <section class="pInfoUsuario">
+            <h1>INFORMACION DEL USUARIO</h1>
+            <h4>Se accede a esta seccion desde "Info.Usuario" en Inicio</h4>
+            <div class="pInfoUsuario__content">
+                <div class="pInfoUsuario__content__nombre">
+                    <p>Nombre</p>
+                    <asp:label runat="server" id="lblNombre_IU"></asp:label>
+                </div>
+                <div class="pInfoUsuario__content__email">
+                    <p>Email</p>
+                    <asp:label runat="server" id="lblEmail_IU"></asp:label>
+                </div>
+     
+                <div class="pInfoUsuario__content__fechaIngreso">
+                    <p>Nombre</p>
+                    <asp:label runat="server" id="lblFIngreso_IU"></asp:label>
+                </div>
+            </div>
+        </section>
+        <section class="pInfoUsuario__historial">
+            <h1>HISTORIAL DE COMPRAS</h1>
+            <div>
+               <h4>GridView</h4>
+            </div>
+        </section>
     </form>
 </body>
 </html>

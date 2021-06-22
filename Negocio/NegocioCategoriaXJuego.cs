@@ -19,7 +19,7 @@ namespace Negocio
             string consultaExiste = $"SELECT * FROM CategoriasXJuegos WHERE CodigoCat_CxJ = '{categoriaxJuego.CodigoCat}' " +
                                     $"AND CodigoJuego_CxJ = '{categoriaxJuego.CodigoJuego}'";
 
-            if (!dao.ExisteCategoria(consultaExiste))
+            if (!dao.ExisteCategoriaXJuego(consultaExiste)) ///sino existe la CategoriaxJuego, lo agrega
             {
                 return dao.AgregarCategoriaxJuego(categoriaxJuego);
             }

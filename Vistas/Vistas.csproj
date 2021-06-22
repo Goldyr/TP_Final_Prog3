@@ -74,9 +74,9 @@
     <Content Include="InfoUsuario.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="OpcionesAdmin.aspx" />
-    <Content Include="P_Inicio.css" />
+    <Content Include="css\P_Inicio.css" />
     <Content Include="Registrarse.aspx" />
-    <Content Include="Estilos.css" />
+    <Content Include="css\Estilos.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +177,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

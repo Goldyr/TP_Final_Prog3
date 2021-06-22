@@ -15,12 +15,12 @@ namespace Negocio
             DaoUsuario dao = new DaoUsuario();
 
             string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.Email}'" +
-                      $"AND Estado_U = 1";
+                      $"AND Estado_U = 1 AND Password_U = '{user.Password}'";
 
             if (!dao.ExisteUsuario(user, consulta)) return false;
- 
-            dao.GetUsuario(user, consulta);
 
+            dao.GetUsuario(user, consulta);
+          
             return true;
        
         }
@@ -28,11 +28,16 @@ namespace Negocio
         public bool CargarUsuarioPorID(Usuario user)
         {
             DaoUsuario dao = new DaoUsuario();
+        
+            string consulta = $"SELECT * FROM Usuarios WHERE ID_U = '{user.Id}'" +
+                       $"AND Estado_U = 1";
 
-            //dao.GetUsuarioPorID(user);
+            
+
+            dao.GetUsuario(user, consulta);
 
             return true;
-
+        
         }
     }
 }

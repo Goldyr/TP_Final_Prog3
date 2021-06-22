@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -59,7 +59,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_serialkey" ErrorMessage="RequiredFieldValidator" ValidationGroup="key">Debe ingresar una serial</asp:RequiredFieldValidator>
             <br />
             <br />
-            <asp:Label ID="lbl_key" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lbl_key" runat="server"></asp:Label>
             <br />
             <br />
             <br />
