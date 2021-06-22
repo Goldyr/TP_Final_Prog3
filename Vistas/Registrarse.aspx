@@ -73,8 +73,11 @@
                     <p>Repetir contraseña</p>
                      <asp:TextBox ID="txt_RepContraseña" runat="server" TextMode="Password"></asp:TextBox>
                      <asp:CompareValidator ID="cv_RepContraseña" runat="server" ControlToCompare="txt_Contraseña" ControlToValidate="txt_RepContraseña" ErrorMessage="Ingrese la misma contraseña"></asp:CompareValidator>
+                    <br />
+                    <br />
+                    <asp:Label ID="lbl_prueba" runat="server" Text="lbl"></asp:Label>
                 </div>
-             <asp:Button ID="Button1" runat="server" Text="Enviar" />
+             <asp:Button ID="Button1" runat="server" Text="Enviar" OnClick="btnRegistrar" />
 
             </div>
          </section>

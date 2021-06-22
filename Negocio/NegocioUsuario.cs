@@ -10,34 +10,42 @@ namespace Negocio
 {
     public class NegocioUsuario
     {
+        DaoUsuario dao = new DaoUsuario();
+
         public bool cargarUsuario(Usuario user)
         {
-            DaoUsuario dao = new DaoUsuario();
 
-            string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.Email}'" +
-                      $"AND Estado_U = 1 AND Password_U = '{user.Password}'";
+
+            string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}'" +
+                      $"AND Estado_U = 1";
 
             if (!dao.ExisteUsuario(user, consulta)) return false;
 
             dao.GetUsuario(user, consulta);
-          
+
             return true;
-       
         }
 
         public bool CargarUsuarioPorID(Usuario user)
         {
-            DaoUsuario dao = new DaoUsuario();
-        
-            string consulta = $"SELECT * FROM Usuarios WHERE ID_U = '{user.Id}'" +
-                       $"AND Estado_U = 1";
-
-            
-
-            dao.GetUsuario(user, consulta);
+            //dao.GetUsuarioPorID(user);
 
             return true;
-        
+        }
+
+        public bool NU_AgregarUsuario(Usuario user)
+        {
+            string consulta = $"SELECT * from Usuarios WHERE ID_U = '{user.GetId()}'";
+
+            if (!dao.ExisteUsuario(user, consulta))
+            {
+                dao.AgregarUsuario(user);
+                return true;
+            }
+
+            return false;
+
+
         }
     }
 }

@@ -10,33 +10,40 @@ namespace Entidades
     {
         //Parametros 
 
-        private string id;
-        private string user;
-        private string nombres;
-        private string apellidos;
-        private string email;
-        private string password;
-        private string telefono;
-        private string fechaNacimiento;
-        private bool admin;
-        private bool estado;
+        private string Id;
+        private string User;
+        private string Nombres;
+        private string Apellidos;
+        private string Email;
+        private string Password;
+        private string Telefono;
+        private string FechaNacimiento;
+        private bool Admin;
+        private bool Estado;
 
         //Constructores
-        public Usuario(){; }
+        public Usuario() {; }
 
-        public string Id { get => id; set => id = value; }
-        public string User { get => user; set => user = value; }
-        public string Nombres { get => nombres; set => nombres = value; }
-        public string Apellidos { get => apellidos; set => apellidos = value; }
-        public string Email { get => email; set => email = value; }
-        public string Password { get => password; set => password = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
-        public string FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
-        public bool Admin { get => admin; set => admin = value; }
-        public bool Estado { get => estado; set => estado = value; }
+        public void SetId(string _Id) { Id = _Id; }
+        public void SetUser(string _User) { User = _User; }
+        public void SetNombres(string _Nombres) { Nombres = _Nombres; }
+        public void SetApellidos(string _Apellidos) { Apellidos = _Apellidos; }
+        public void SetEmail(string _Email) { Email = _Email; }
+        public void SetPassword(string _Password) { Password = _Password; }
+        public void SetTelefono(string _Telefono) { Telefono = _Telefono; }
+        public void SetFechaNacimiento(string _FechaNacimiento) { FechaNacimiento = _FechaNacimiento; }
+        public void SetAdmin(bool _Admin) { Admin = _Admin; }
+        public void SetEstado(bool _Estado) { Estado = _Estado; }
 
-
-
-
+        public string GetId() { return Id; }
+        public string GetUser() { return User; }
+        public string GetNombres() { return Nombres; }
+        public string GetApellidos() { return Apellidos; }
+        public string GetEmail() { return Email; }
+        public string GetPassword() { return Password; }
+        public string GetTelefono() { return Telefono; }
+        public string GetFechaNacimiento() { return FechaNacimiento; }
+        public bool GetAdmin() { return Admin; }
+        public bool GetEstado() { return Estado; }
     }
 }

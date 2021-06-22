@@ -23,11 +23,11 @@ namespace WebApplication1
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
                  
-                    user.Id = this.Request.Cookies["IDUsuario"].Value;
+                    user.SetId( this.Request.Cookies["IDUsuario"].Value);
                     negUser.CargarUsuarioPorID(user);
                 }
 
-                if (user.User != null) IniciarSesion();
+                if (user.GetUser() != null) IniciarSesion();
             }
 
         }
@@ -35,14 +35,14 @@ namespace WebApplication1
         private void IniciarSesion()
         {
             esconderHeaderLogIn();
-            lblMensajeLogIn.Text = "Bienvenido " + user.User + "!";
-            if (user.Admin) pInicio__lbladmin.Visible = true;
+            lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
+            if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
-            user.Email = header_tbUsuario.Text;
-            user.Password = header_tbContra.Text;
+            user.SetEmail(header_tbUsuario.Text); 
+            user.SetPassword(header_tbContra.Text);
 
             if (!negUser.cargarUsuario(user))
             {
@@ -73,7 +73,7 @@ namespace WebApplication1
         private void guardarUsuarioCookie(Usuario user)
         {
             //HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
-            HttpCookie ck2 = new HttpCookie("IDUsuario", user.Id);
+            HttpCookie ck2 = new HttpCookie("IDUsuario", user.GetId());
           
             ck2.Expires = DateTime.Now.AddDays(15);
             //this.Response.Cookies.Add(ck);

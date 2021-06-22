@@ -3,3 +3,8 @@ C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Entidades\bin\Debug\Entidades
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Entidades\obj\Debug\Entidades.dll
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\bin\Debug\Entidades.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.pdb
