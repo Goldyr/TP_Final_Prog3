@@ -31,3 +31,14 @@ C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\obj\Debug\N
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Negocio.dll
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Dao.dll
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Entidades.dll
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Dao.pdb
+C:\Users\Maty\Desktop\final\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Maty\Desktop\final\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Maty\Desktop\final\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Maty\Desktop\final\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Maty\Desktop\final\Negocio\obj\Debug\Negocio.dll
+C:\Users\Maty\Desktop\final\Negocio\obj\Debug\Negocio.pdb

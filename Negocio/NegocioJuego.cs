@@ -13,6 +13,8 @@ namespace Negocio
     public class NegocioJuego
     {
         DaoJuego dao = new DaoJuego();
+        DaoKey dao_key = new DaoKey();
+
         public bool NJ_AgregarJuego(Juego _Juego)
         {
             bool Agrego = false;
@@ -69,7 +71,7 @@ namespace Negocio
                 _juego = dao.getJuego(_juego, consulta);
 
                 dr["Nombre"] = _juego.GetNombre();
-                dr["Cantidad"] = dao.Obtener_CantKey(codigo);
+                dr["Cantidad"] = dao_key.Obtener_CantKey(codigo);
                  
             }
             else  //sino manda esto valores a la tabla

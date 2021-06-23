@@ -4,7 +4,6 @@
 *.pdb
 *.dll
 *.cache
-*.config
 *.sqlite
 *.swp
 *.orig
@@ -12,4 +11,4 @@
 /.vs/
 =======
 *.txt
->>>>>>> iss1.1
+>>>>>>> Dev

@@ -38,12 +38,25 @@ namespace WebApplication1
             NegocioKey _NK = new NegocioKey();
 
             _key.SetCodJuego(txt_ID.Text.Trim());
-            _key.SetSerial(txt_serialkey.Text.Trim());
 
-            if (_NK.NK_AgregarKey(_key))
+            txt_serialkey.Text = txt_serialkey.Text.Replace(" ", "");  // remplazo todos los espacios por vacios
+            string texto_sinsaltos= txt_serialkey.Text.Replace("\r\n", "");  // remplazo los saltos de linea por vacios
+            int cant_letras= texto_sinsaltos.Length;    //  cantidas de letras en el string
+
+            for (int i = 0; i < cant_letras; i += 9)  // for para ir saltando de a 9 usandolos como parametros para skiper
             {
-                lbl_key.Text = "Key agregada correctamente";
-            } else lbl_key.Text = "No se pudo agregar la Key";
+
+                _key.SetSerial(texto_sinsaltos.Substring(i, 9));   // skipea 'i' espacios y agarra de a 9
+
+                if (_NK.NK_AgregarKey(_key))
+                {
+                    lbl_key.Text = "Key agregada correctamente";
+                }
+                else lbl_key.Text = "No se pudo agregar la Key";
+            }
+
+
+
         }
     }
 }

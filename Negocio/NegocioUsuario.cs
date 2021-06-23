@@ -35,7 +35,7 @@ namespace Negocio
 
         public bool NU_AgregarUsuario(Usuario user)
         {
-            string consulta = $"SELECT * from Usuarios WHERE ID_U = '{user.GetId()}'";
+            string consulta = $"SELECT * from Usuarios WHERE User_U = '{user.GetUser()}'";
 
             if (!dao.ExisteUsuario(user, consulta))
             {

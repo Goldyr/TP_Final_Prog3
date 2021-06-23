@@ -23,10 +23,11 @@ namespace Negocio
             if (dao_juego.ExisteJuego(consulta2) == true){   //pregunta si existe el juego mediante el codigo de juego q ingreso
                 
                 string consulta = $"Select * from keys where Serie_K = '{_key.GetSerial()}'";
-                if (!dao.existekey(consulta))   
+                if (!dao.existekey(consulta))
                 {
                     Agrego = dao.AgregarKey(_key);
                 }
+                
             }
             
             return Agrego;

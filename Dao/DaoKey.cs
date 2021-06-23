@@ -52,7 +52,14 @@ namespace Dao
             }
         }
 
+        public int Obtener_CantKey(string codigo)  //esta funcion va a buscar el juego y la cantidad de keys que tiene. Solo se ejecuta si es que ingresa un codigo de juego existente en la tabla keys
+        {
+            string consulta = $"select count(CodigoJuego_K) as Cantidad from Keys where CodigoJuego_K = '{codigo}' and Estado_K = 1";
+            DataTable t1 = datos.ObtenerTabla("Keys", consulta);
 
+            return Convert.ToInt32(t1.Rows[0][0].ToString());
+
+        }
 
 
 
