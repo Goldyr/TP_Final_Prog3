@@ -20,6 +20,7 @@ namespace WebApplication1
             }
         }
 
+        /*
         protected void grdBMLJuegos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string codJuego;
@@ -27,7 +28,7 @@ namespace WebApplication1
             ns_juego.NJ_EliminarJuego(codJuego);
             cargarGrid();
         }
-
+        */
         
         protected void grdBMLJuegos_RowEditing(object sender, GridViewEditEventArgs e)
         {

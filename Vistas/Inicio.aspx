@@ -162,8 +162,11 @@
             </asp:ListView>
             </div>
             <div class="pInicio__Categorias">
-                 <asp:CheckBoxList ID="CheckBoxList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat">
+                 <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat" ValidationGroup="cat">
                 </asp:CheckBoxList>
+                 <asp:Button ID="btn_Categoria" runat="server" OnClick="btn_Categoria_Click" Text="Busqueda" ValidationGroup="cat" />
+                 <asp:Label ID="lbl_error_Categorias" runat="server" Text="** Tilde alguna de las categorias para realizar esta busqueda" Visible="False"></asp:Label>
+                 <br />
             </div>
    
         <p>El ListView va a tener los juegos mas recientes</p>

@@ -79,5 +79,30 @@ namespace WebApplication1
             //this.Response.Cookies.Add(ck);
             this.Response.Cookies.Add(ck2);
         }
+
+        //Funcion local para verificar que el cbl tiene algo seleccionado
+        private bool CategoriasCheck()
+        {
+            CheckBoxList cbl = ((CheckBoxList)FindControl("cbl_Categorias"));
+            foreach (ListItem li in cbl.Items)
+            {
+                if (li.Selected)
+                {
+                    return true;
+                }
+            
+            }
+            lbl_error_Categorias.Visible = true;
+
+            return false;
+        }
+
+        protected void btn_Categoria_Click(object sender, EventArgs e)
+        {
+            if(CategoriasCheck() == true)
+            {
+                Server.Transfer("Catalogo.aspx");
+            }
+        }
     }
 }
