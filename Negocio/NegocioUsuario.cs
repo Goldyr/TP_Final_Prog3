@@ -14,12 +14,19 @@ namespace Negocio
 
         public bool cargarUsuario(Usuario user)
         {
-
-
             string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}'" +
                       $"AND Estado_U = 1";
 
-            if (!dao.ExisteUsuario(user, consulta)) return false;
+            string consulta2 = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}' AND Password_U = '{user.GetPassword()}'" +
+                      $"AND Estado_U = 1";
+
+            if (!dao.ExisteUsuario(user, consulta)) {
+                    return false;
+            } 
+            else if(!dao.ExisteUsuario(user, consulta2))
+            {
+                return false;
+            }
 
             dao.GetUsuario(user, consulta);
 
@@ -28,7 +35,11 @@ namespace Negocio
 
         public bool CargarUsuarioPorID(Usuario user)
         {
-            //dao.GetUsuarioPorID(user);
+
+            string consulta = $"SELECT * FROM Usuarios WHERE ID_U = '{user.GetId()}'" +
+              $"AND Estado_U = 1";
+
+            dao.GetUsuario(user, consulta);
 
             return true;
         }

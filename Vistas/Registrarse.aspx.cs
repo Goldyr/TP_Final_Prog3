@@ -32,7 +32,7 @@ namespace WebApplication1
             _User.SetFechaNacimiento(txt_FechaNacimiento.Text.Trim());
             _User.SetPassword(txt_RepContraseña.Text.Trim());
 
-            lbl_prueba.Text = (negUser.NU_AgregarUsuario(_User)) ? "correcto" : "incorrecto";
+            lbl_prueba.Text = (negUser.NU_AgregarUsuario(_User)) ? "El usuario se creo correctamente" : "No se pudo crear el usuario";
 
         }
     }

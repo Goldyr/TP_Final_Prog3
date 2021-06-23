@@ -27,6 +27,8 @@
                      </div>
                     <asp:Button  ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx"/>
                     <asp:Label ID="lblMensajeLogIn" runat="server"></asp:Label>
+                &nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="header_btn_LogOut" runat="server" OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" />
                 </div>
                  <!-- SEARCH  -->
                 <div class="main-header__content__search">
@@ -60,7 +62,7 @@
         <section class="pInicio">
              <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc"><asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]"/>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [Codigo_J], [PU_J], [Descuento_J] FROM [Juegos]"/>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT Nombre_J, Codigo_J, PU_J, Descuento_J FROM Juegos WHERE YEAR(Fecha_Lanzamiento_J)&gt;2019"/>
             <div class="pInicio__Juegos">
                  <asp:ListView ID="ListView1" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2">
             <AlternatingItemTemplate>

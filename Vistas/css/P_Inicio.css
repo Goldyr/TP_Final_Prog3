@@ -20,6 +20,10 @@
     width: 100px;
 }
 
+#header_btn_LogOut{
+    width: 100px;
+}
+
 .main-header__content__div {
     display: flex;
     justify-content: space-between;

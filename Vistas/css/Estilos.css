@@ -57,3 +57,11 @@ a {
 .nav-menu a:hover {
         font-weight: bold;
  }
+
+.section-div p{
+   margin-bottom: 0;
+}
+
+.section-div input{
+    margin-bottom: 15px;
+}

@@ -17,7 +17,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            header_btn_LogOut.Visible = false;
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
@@ -41,6 +41,8 @@ namespace WebApplication1
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
+            header_btn_LogOut.Visible = true;
+
             user.SetEmail(header_tbUsuario.Text); 
             user.SetPassword(header_tbContra.Text);
 
@@ -68,6 +70,14 @@ namespace WebApplication1
             header_tbUsuario.Visible = header_tbContra.Visible =
             header_lblUsuario.Visible = header_lblContra.Visible =
             header_btnLogIn.Visible = false;
+        }
+
+        private void MostrarHeaderLogIn()
+        {
+            divLogin.Style["height"] = "auto";
+            header_tbUsuario.Visible = header_tbContra.Visible =
+            header_lblUsuario.Visible = header_lblContra.Visible =
+            header_btnLogIn.Visible = true;
         }
 
         private void guardarUsuarioCookie(Usuario user)
@@ -103,6 +113,13 @@ namespace WebApplication1
             {
                 Server.Transfer("Catalogo.aspx");
             }
+        }
+
+        protected void header_btn_LogOut_Click(object sender, EventArgs e)
+        {
+            MostrarHeaderLogIn();
+            lblMensajeLogIn.Text = "";
+            pInicio__lbladmin.Visible = false;
         }
     }
 }
