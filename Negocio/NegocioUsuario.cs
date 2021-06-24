@@ -17,13 +17,10 @@ namespace Negocio
             string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}'" +
                       $"AND Estado_U = 1";
 
-            string consulta2 = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}' AND Password_U = '{user.GetPassword()}'" +
-                      $"AND Estado_U = 1";
-
             if (!dao.ExisteUsuario(user, consulta)) {
                     return false;
             } 
-            else if(!dao.ExisteUsuario(user, consulta2))
+            else if(!dao.ExisteContraseña(user))
             {
                 return false;
             }

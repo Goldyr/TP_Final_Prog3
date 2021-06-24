@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
 
+
 namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
@@ -17,12 +18,12 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            header_btn_LogOut.Visible = false;
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                 
+                    header_btn_LogOut.Visible = true;
+
                     user.SetId( this.Request.Cookies["IDUsuario"].Value);
                     negUser.CargarUsuarioPorID(user);
                 }
@@ -34,7 +35,7 @@ namespace WebApplication1
 
         private void IniciarSesion()
         {
-            esconderHeaderLogIn();
+            EsconderHeaderLogIn();
             lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
             if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
         }
@@ -48,23 +49,25 @@ namespace WebApplication1
 
             if (!negUser.cargarUsuario(user))
             {
+                header_tbContra.Text = "";            
+                header_btn_LogOut.Visible = false;
                 lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
             }
             else
             {
                 IniciarSesion();
-                guardarUsuarioCookie(user);
+                GuardarUsuarioCookie(user);
           
             }
 
-            limpiezaHeaderLogIn();
+            LimpiezaHeaderLogIn();
         }
-        private void limpiezaHeaderLogIn()
+        private void LimpiezaHeaderLogIn()
         {
             header_tbUsuario.Text = header_tbContra.Text = "";
         }
 
-        private void esconderHeaderLogIn()
+        private void EsconderHeaderLogIn()
         {
             divLogin.Style["height"] = "auto";
             header_tbUsuario.Visible = header_tbContra.Visible =
@@ -80,7 +83,7 @@ namespace WebApplication1
             header_btnLogIn.Visible = true;
         }
 
-        private void guardarUsuarioCookie(Usuario user)
+        private void GuardarUsuarioCookie(Usuario user)
         {
             //HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
             HttpCookie ck2 = new HttpCookie("IDUsuario", user.GetId());
@@ -117,6 +120,9 @@ namespace WebApplication1
 
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
+            //HttpCookie ck2 = new HttpCookie("IDUsuario", user.GetId());
+            //ck2.Expires = DateTime.Now.AddDays(15);
+            header_btn_LogOut.Visible = false;
             MostrarHeaderLogIn();
             lblMensajeLogIn.Text = "";
             pInicio__lbladmin.Visible = false;

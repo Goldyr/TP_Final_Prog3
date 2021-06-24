@@ -42,6 +42,14 @@ namespace Dao
             return ad.existe(consulta);
         }
 
+        public bool ExisteContraseña(Usuario user)
+        {
+            string consulta = $"SELECT * FROM Usuarios WHERE Email_U = '{user.GetEmail()}' AND Password_U = '{user.GetPassword()}'" +
+                      $"AND Estado_U = 1";
+
+            return ad.existe(consulta);
+        }
+
         public bool AgregarUsuario(Usuario user)
         {
             SqlCommand comando = new SqlCommand();
