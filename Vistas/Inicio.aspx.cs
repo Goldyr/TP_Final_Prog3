@@ -29,8 +29,11 @@ namespace WebApplication1
                 }
 
                 if (user.GetUser() != null) IniciarSesion();
+
+                
             }
 
+           
         }
 
         private void IniciarSesion()
@@ -126,6 +129,44 @@ namespace WebApplication1
             MostrarHeaderLogIn();
             lblMensajeLogIn.Text = "";
             pInicio__lbladmin.Visible = false;
+        }
+
+        protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            Label lblDescuento = (Label)e.Item.FindControl("Descuento");
+            Label lblPrecio = (Label)e.Item.FindControl("Precio");
+            Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
+
+            Label lblnuevoPrecio = new Label();
+       
+            int descuento;
+            float precio;
+
+
+            //Precio
+            precio = float.Parse(lblPrecio.Text);
+
+            // Descuento
+            if (lblDescuento.Text == "0") lblDescuento.Visible = false;
+            else
+            {
+                descuento = Int32.Parse(lblDescuento.Text);
+                
+                lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
+                divPrecio.Controls.Add(lblnuevoPrecio);
+                lblPrecio.CssClass += "precio_tachado";
+                
+            }
+
+            //Visual
+            lblPrecio.Text = $"$ {precio} USD";
+            lblDescuento.Text += " %";
+           
+        }
+
+        private float CalcularDescuento(int Descuento, float Precio)
+        {
+            return (float)Math.Round(Precio * Descuento / 100, 2);
         }
     }
 }
