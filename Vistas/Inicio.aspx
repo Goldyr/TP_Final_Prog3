@@ -8,59 +8,75 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
     <link rel="stylesheet" type="text/css" href="/css/P_Inicio.css" />
-
-    </head>
+    <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
+</head>
 <body>
     <form id="form1" runat="server">
-        <!-- HEADER -->
-        <header class="main-header">
-            <div class="main-header__content">
-                <div class="main-header__content__log-in" id="divLogin" runat="server">
-                    <!-- USUARIO -->
-                    <div class="main-header__content__div">
-                        <asp:Label ID="header_lblUsuario" runat="server" Text="Usuario" />
-                        <asp:TextBox ID="header_tbUsuario" runat="server"></asp:TextBox>
-                    </div>
-                    <!-- CONTRASEÑA-->
-                    <div class="main-header__content__div">
-                        <asp:Label ID="header_lblContra" runat="server" Text="Contraseña" />
-                        <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
-                    </div>
-                    <asp:Button ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx" />
-                    <asp:Label ID="lblMensajeLogIn" runat="server"></asp:Label>
-                    <asp:Button ID="header_btn_LogOut" runat="server" OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" />
-                </div>
-                <!-- SEARCH  -->
-                <div class="main-header__content__search">
-                    <asp:Label ID="header_lblBusqueda" runat="server" Text="Búsqueda" />
-                    <asp:TextBox ID="header_tbBusqueda" runat="server"></asp:TextBox>
-                    <asp:Button ID="header_btnbusqueda" runat="server" Text="Buscar" />
-                </div>
-            </div>
-            <!-- MENU DE NAVEGACION -->
-            <nav class="main-header__nav-menu">
-                <ul class="nav-menu">
-                    <li>
-                        <a href="Inicio.aspx">Inicio</a>
+        <!-- 
+            NUEVO HEADER: LA CLASE DE LA PAGINA INICIAL SOLO SE LLAMA MAIN-HEADER, LAS OTRAS PAGINAS
+            SE LLAMAN DEFAULT-HEADER 
+         -->
+        <header id="mainHeader" runat="server">
+            <!-- NAVIGATION MENU -->
+            <nav class="nav-menu">
+                <ul class="nav-menu__ul">
+                    <li id="li_infoUsuario" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="False">[infoUsuario_hl]</asp:HyperLink>
                     </li>
-                    <li>
-                        <a href="InfoUsuario.aspx">Info.Usuario</a>
+                    <li class="seleccionado">
+                        <a href="Inicio.aspx">Inicio</a>
                     </li>
                     <li>
                         <a href="Contacto.aspx">Contacto</a>
                     </li>
                     <li>
-                        <a href="Carrito.aspx">Carrito</a>
+                        <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Carrito</p>
+                        </a>
                     </li>
                     <li>
-                        <a href="Registrarse.aspx">Registrarse</a>
+                        <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
                     </li>
                 </ul>
             </nav>
+
+            <div runat="server" id="mainHeader__content">
+                <div class="main-header__content__log-in" id="divLogin" runat="server">
+                    <!-- USUARIO -->
+                    <div class="main-header__content__div">
+                        <asp:Label ID="header_lblUsuario" runat="server" Text="Email o Usuario" />
+                        <asp:TextBox ID="header_tbUsuario" runat="server"></asp:TextBox>
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="header_tbUsuario" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+
+                    </div>
+                    <!-- CONTRASEÑA-->
+                    <div class="main-header__content__div">
+                        <asp:Label ID="header_lblContra" runat="server" Text="Contraseña" />
+                        <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="header_tbContra" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
+                    </div>
+                    <div class="main-header__content__div header-botones">
+                        <asp:Button ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx" />
+                        <%--<asp:Button ID="header_btn_LogOut" runat="server" OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" Visible="False" />--%>
+                        <a href="Registrarse.aspx">¿No tenés cuenta?</a>
+                    </div>
+
+                    <asp:Label ID="lblMensajeLogIn" runat="server"></asp:Label>
+
+                </div>
+                <!-- SEARCH  -->
+                <%--              <div class="main-header__content__search">
+                    <asp:Label ID="header_lblBusqueda" runat="server" Text="Búsqueda" />
+                    <asp:TextBox ID="header_tbBusqueda" runat="server"></asp:TextBox>
+                    <asp:Button ID="header_btnbusqueda" runat="server" Text="Buscar" />
+                </div>--%>
+            </div>
         </header>
         <!-- Pagina inicial  -->
         <section class="pInicio">
-             <h1 id="pInicio-h1">JUEGOS DESTACADOS</h1>
+            <h1 id="pInicio-h1">JUEGOS DESTACADOS</h1>
             <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc">
                 <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />
@@ -72,17 +88,13 @@
             </asp:SqlDataSource>
 
             <div class="pInicio__JuegosDestacados">
-                <asp:ListView ID="lvJuegosDestacados" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2" OnItemDataBound="lvJuegosDestacados_ItemDataBound">
-                    <%--            <AlternatingItemTemplate>
-                      </AlternatingItemTemplate>--%>
-                    <EditItemTemplate />
+                <asp:ListView ID="lvJuegosDestacados" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2" OnItemDataBound="lvJuegosDestacados_ItemDataBound" OnPreRender="lvJuegosDestacados_PreRender" EnablePersistedSelection="True" ValidateRequestMode="Disabled">
                     <EmptyDataTemplate>
                         <span>No data was returned.</span>
                     </EmptyDataTemplate>
-                    <InsertItemTemplate />
                     <ItemTemplate>
                         <div class="lvJuegosDestacados-div">
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' />
+                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' />
                             <div class="lvJuegosDestacados-div__descto">
                                 <asp:Label ID="Descuento" runat="server" Text='<%# Eval("Descuento_J") %>'></asp:Label>
                             </div>
@@ -92,6 +104,7 @@
                                 </div>
                                 <asp:Panel class="lvJuegosDestacados-div__desc__precio" ID="panelPrecio" runat="server">
                                     <asp:Label ID="Precio" runat="server" Text='<%# Eval("PU_J")%>'></asp:Label>
+                                    <asp:Label ID="PrecioDesc" runat="server" Text=""></asp:Label>
                                 </asp:Panel>
                             </div>
                         </div>
@@ -102,11 +115,10 @@
 
                         </div>
                     </LayoutTemplate>
-                    <SelectedItemTemplate>
-                    </SelectedItemTemplate>
                 </asp:ListView>
 
             </div>
+
 
             <div class="pInicio__Categorias">
                 <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat" ValidationGroup="cat">
@@ -123,5 +135,4 @@
 
     </form>
 </body>
-
 </html>

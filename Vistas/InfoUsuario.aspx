@@ -7,27 +7,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+      <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header class="main-header">
-            <nav class="main-header__nav-menu">
-                <ul class="nav-menu">
+        <header class="default-header">
+            <nav class="nav-menu">
+                <ul class="nav-menu__ul">
+                   <li id="li_infoUsuario_iu" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl_iu" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="false">[infoUsuario_hl_iu]</asp:HyperLink>
+                    </li>
                    <li>
                        <a href="Inicio.aspx">Inicio</a>
                    </li>
-                   <li>
-                       <a href="InfoUsuario.aspx">Info.Usuario</a>
-                   </li>
+              
                    <li>
                        <a href="Contacto.aspx">Contacto</a>
                    </li>
                    <li>
-                       <a href="Carrito.aspx">Carrito</a>
+                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Carrito</p>
+                        </a>
                    </li>
-                   <li>
-                        <a href="Registrarse.aspx">Registrarse</a>
-                   </li>
+             
                 </ul>
             </nav>
           </header>

@@ -1,7 +1,25 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
 
-
 /* ESTILOS EN GENERAL */
+
+.default-header {
+    height: 150px;
+    width: 100%;
+    /* Le pongo un display flex para poder centrarlo verticalmente */
+    display: flex;
+    /* Al cambiar la direccion, ahora tengo que usar el justify-content para cambiar el eje vertical */
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* ESTILOS DE LA BARRA DE NAVEGACION */
+
+.nav-menu {
+    margin: 20px 0px;
+    width: 90%;
+    align-self: center;
+}
+
 
 .AgregarJuegos__div p {
     margin: 0;
@@ -10,7 +28,6 @@
 .AgregarJuegos__div {
     margin: 20px 0px;
 }
-
 
 body {
     margin: 0;
@@ -35,33 +52,57 @@ a {
     color: inherit;
 }
 
-.nav-menu {
-    display: flex;
+.nav-menu__ul__carrito {
+    width: 60%;
+}
+
+    .nav-menu__ul__carrito p {
+        display: inline-block;
+    }
+
+.nav-menu__ul {
+    border-radius: 100px;
+    box-shadow: 0px 0px 20px #8a8a8a;
     width: 100%;
+    height: 50px;
+    /* COLORES */
+    background: white;
+    color: #0f7294;
+    /* TEXTO */
+    font-weight: bolder;
+    text-transform: uppercase;
+    /* DISPLAY */
+    display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    background: black;
-    color: white;
-    height: 40px;
     margin: 0;
 }
-.nav-menu li {
-   height: 0%;
-   width: 162px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+
+    .nav-menu__ul li {
+        width: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu__ul a:hover {
+        text-decoration: underline;
+    }
+
+.section-div p {
+    margin-bottom: 0;
 }
 
-.nav-menu a:hover {
-        font-weight: bold;
- }
-
-.section-div p{
-   margin-bottom: 0;
-}
-
-.section-div input{
+.section-div input {
     margin-bottom: 15px;
+}
+
+.seleccionado {
+    background: #0f7294;
+    padding: 5px;
+    border-radius: 30px;
+    color: white;
+    border: #0f7294 4px solid;
+    box-shadow: inset 0px 0px 0px 3px #ffffff;
 }

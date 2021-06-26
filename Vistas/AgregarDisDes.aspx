@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+      <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">

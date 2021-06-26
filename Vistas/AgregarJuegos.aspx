@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+      <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,18 +17,20 @@
                    <li>
                        <a href="Inicio.aspx">Inicio</a>
                    </li>
-                   <li>
-                       <a href="InfoUsuario.aspx">Info.Usuario</a>
-                   </li>
+            
                    <li>
                        <a href="Contacto.aspx">Contacto</a>
                    </li>
                    <li>
-                       <a href="Carrito.aspx">Carrito</a>
+                          <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Carrito</p>
+                        </a>
                    </li>
-                   <li>
-                        <a href="Registrarse.aspx">Registrarse</a>
-                   </li>
+          
+                    <li>
+                        <asp:TextBox runat="server" ID="tbPrueba" Text="Buscar"></asp:TextBox>
+                    </li>
                 </ul>
             </nav>
           </header>

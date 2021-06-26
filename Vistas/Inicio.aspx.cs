@@ -22,48 +22,68 @@ namespace WebApplication1
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                    header_btn_LogOut.Visible = true;
+                    //header_btn_LogOut.Visible = true;
 
-                    user.SetId( this.Request.Cookies["IDUsuario"].Value);
+                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                    //li_infoUsuario.Visible = true;
                     negUser.CargarUsuarioPorID(user);
                 }
 
                 if (user.GetUser() != null) IniciarSesion();
 
-                
+                // ==================
+                // ESTILOS CSS 
+
+                // Este es el li del nav que tiene el nombre del usuario
+                // lo pongo en false al principio para que no se muestre hasta que tenga el nombre
+                //li_infoUsuario.Visible = false;
+
+                li_infoUsuario.Visible = infoUsuario_hl.Text != null ? true : false;
+
+                      mainHeader__content.Style["display"] = "flex";
+                mainHeader.Style["height"] = "240px";
             }
 
-           
+
         }
 
+       
         private void IniciarSesion()
         {
             EsconderHeaderLogIn();
-            lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
+
+            //lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
+
+            li_infoUsuario.Visible = true;
+            infoUsuario_hl.Visible = true;
+            infoUsuario_hl.Text = user.GetUser();
+            mainHeader__content.Style["display"] = "none";
+            mainHeader.Style["height"] = "150px";
+            //header_btn_LogOut.Visible = true;
+
             if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
-            header_btn_LogOut.Visible = true;
+           // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
+           user.SetEmail(header_tbUsuario.Text); 
+           user.SetPassword(header_tbContra.Text);
+           
+           if (!negUser.cargarUsuario(user))
+           {
+               header_tbContra.Text = "";            
+               lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
+           }
+           else
+           {
+               IniciarSesion();
+               GuardarCookie(user);
+           }
+           
+           LimpiezaHeaderLogIn();
+         
 
-            user.SetEmail(header_tbUsuario.Text); 
-            user.SetPassword(header_tbContra.Text);
-
-            if (!negUser.cargarUsuario(user))
-            {
-                header_tbContra.Text = "";            
-                header_btn_LogOut.Visible = false;
-                lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
-            }
-            else
-            {
-                IniciarSesion();
-                GuardarUsuarioCookie(user);
-          
-            }
-
-            LimpiezaHeaderLogIn();
         }
         private void LimpiezaHeaderLogIn()
         {
@@ -72,7 +92,7 @@ namespace WebApplication1
 
         private void EsconderHeaderLogIn()
         {
-            divLogin.Style["height"] = "auto";
+            //divLogin.Style["height"] = "auto";
             header_tbUsuario.Visible = header_tbContra.Visible =
             header_lblUsuario.Visible = header_lblContra.Visible =
             header_btnLogIn.Visible = false;
@@ -80,21 +100,32 @@ namespace WebApplication1
 
         private void MostrarHeaderLogIn()
         {
-            divLogin.Style["height"] = "auto";
+            //divLogin.Style["height"] = "auto";
             header_tbUsuario.Visible = header_tbContra.Visible =
             header_lblUsuario.Visible = header_lblContra.Visible =
             header_btnLogIn.Visible = true;
         }
 
-        private void GuardarUsuarioCookie(Usuario user)
+        // ==================================
+        // FUNCIONES COOKIES
+
+        private void GuardarCookie(Usuario user)
         {
-            //HttpCookie ck = new HttpCookie("NombreUsuario", user.User);
+
             HttpCookie ck2 = new HttpCookie("IDUsuario", user.GetId());
-          
+
             ck2.Expires = DateTime.Now.AddDays(15);
-            //this.Response.Cookies.Add(ck);
             this.Response.Cookies.Add(ck2);
         }
+
+        private void BorrarCookie()
+        {
+            HttpCookie ck_ID = new HttpCookie("IDUsuario");
+
+            ck_ID.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(ck_ID);
+        }
+
 
         //Funcion local para verificar que el cbl tiene algo seleccionado
         private bool CategoriasCheck()
@@ -106,7 +137,7 @@ namespace WebApplication1
                 {
                     return true;
                 }
-            
+
             }
             lbl_error_Categorias.Visible = true;
 
@@ -115,7 +146,7 @@ namespace WebApplication1
 
         protected void btn_Categoria_Click(object sender, EventArgs e)
         {
-            if(CategoriasCheck() == true)
+            if (CategoriasCheck() == true)
             {
                 Server.Transfer("Catalogo.aspx");
             }
@@ -123,50 +154,75 @@ namespace WebApplication1
 
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
-            //HttpCookie ck2 = new HttpCookie("IDUsuario", user.GetId());
-            //ck2.Expires = DateTime.Now.AddDays(15);
-            header_btn_LogOut.Visible = false;
+            BorrarCookie();
+
+            // Esconder el boton de cerrar sesion
+            //header_btn_LogOut.Visible = false;
+
+            // Esconder el boton de las opciones de admin
+            pInicio__lbladmin.Visible = false;
+
+            // Esconder el hyperlink de info usuario
+            li_infoUsuario.Visible = false;
+
             MostrarHeaderLogIn();
             lblMensajeLogIn.Text = "";
-            pInicio__lbladmin.Visible = false;
         }
+
+        // =======================
+        // FUNCIONES PARA LOS LISTVIEW CUANDO CARGAN, PARA CALCULAR EL PRECIO CON DESCUENTO 
+        // Y FUNCIONALIDADES CSS
 
         protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            Label lblDescuento = (Label)e.Item.FindControl("Descuento");
-            Label lblPrecio = (Label)e.Item.FindControl("Precio");
-            Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
+          
+                Label lblDescuento = (Label)e.Item.FindControl("Descuento");
+                Label lblPrecio = (Label)e.Item.FindControl("Precio");
+                Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
 
-            Label lblnuevoPrecio = new Label();
-       
-            int descuento;
-            float precio;
+                Label lblnuevoPrecio = (Label)e.Item.FindControl("PrecioDesc");
 
 
-            //Precio
-            precio = float.Parse(lblPrecio.Text);
+                int descuento;
+                float precio;
 
-            // Descuento
-            if (lblDescuento.Text == "0") lblDescuento.Visible = false;
-            else
-            {
-                descuento = Int32.Parse(lblDescuento.Text);
-                
-                lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
-                divPrecio.Controls.Add(lblnuevoPrecio);
-                lblPrecio.CssClass += "precio_tachado";
-                
-            }
 
-            //Visual
-            lblPrecio.Text = $"$ {precio} USD";
-            lblDescuento.Text += " %";
+                //Precio
+                precio = float.Parse(lblPrecio.Text);
+
+                // Descuento
+                if (lblDescuento.Text == "0")
+                {
+                    lblDescuento.Visible = false;
+                }
+                else
+                {
+                    descuento = Int32.Parse(lblDescuento.Text);
+
+                    lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
+                    divPrecio.Controls.Add(lblnuevoPrecio);
+                    lblPrecio.CssClass += "precio_tachado";
+
+                }
+
+                //Visual
+                lblPrecio.Text = $"$ {precio} USD";
+                lblDescuento.Text += " %";
            
+
         }
 
         private float CalcularDescuento(int Descuento, float Precio)
         {
             return (float)Math.Round(Precio * Descuento / 100, 2);
+        }
+
+        // ================
+        // ESTO ES PARA QUE EL DESCUENTO SE ACTUALICE SI EL LISTVIEW SE ACTUALIZA 
+
+        protected void lvJuegosDestacados_PreRender(object sender, EventArgs e)
+        {
+            lvJuegosDestacados.DataBind();
         }
     }
 }
