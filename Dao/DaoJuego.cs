@@ -73,12 +73,37 @@ namespace Dao
 
         }
 
-        //Devuelve una DataTable con todos los juegos
-        public DataTable ListarJuegos()
+        //Devuelve una DataTable con todos los juegos con estado verdadero// parametro por omision en false
+        public DataTable ListarJuegos(bool Estado = false)
         {
             DataTable dt = new DataTable();
-            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J FROM Juegos";
-            dt = datos.ObtenerTabla("prueba", consulta);
+
+            if (Estado == true) 
+            {
+                string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J, Imagen_J FROM Juegos WHERE Estado_J = 1";
+                dt = datos.ObtenerTabla("prueba", consulta);
+                return dt;
+            }
+            else {
+                string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J FROM Juegos";
+                dt = datos.ObtenerTabla("prueba", consulta);
+                return dt;
+            }
+            
+        }
+        //Devuelve Juegos donde Estado = 1 y el nombre tenga name
+        public DataTable ListarJuegosPorNombre(string name)
+        {
+            DataTable dt = new DataTable();
+            string consulta = $"SELECT [Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM [Juegos] WHERE [Estado_J] = 1 AND [Nombre_J] LIKE '%{name}%' ORDER BY [Nombre_J] ASC";
+            dt = datos.ObtenerTabla("listado_name", consulta);
+            return dt;
+        }
+
+        public DataTable ListarJuegosGeneral(string consulta)
+        {
+            DataTable dt = new DataTable();
+            dt = datos.ObtenerTabla("listado_name", consulta);
             return dt;
         }
 

@@ -38,42 +38,21 @@
             Busqueda
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
+            <asp:Label ID="lbl_pruebas" runat="server" Text="Label"></asp:Label>
             <br />
             <div>
-                <asp:DataList ID="dl_Categorias" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDS_Catalogo" GridLines="Horizontal">
+                <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False">
                     <FooterStyle BackColor="White" ForeColor="#333333" />
                     <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="White" ForeColor="#333333" />
+                    <ItemStyle BackColor="White" ForeColor="#333333" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
                     <ItemTemplate>
-                        Nombre_J:
-                        <asp:Label ID="Nombre_JLabel" runat="server" Text='<%# Eval("Nombre_J") %>' />
+                        <asp:Label ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
                         <br />
-                        PU_J:
-                        <asp:Label ID="PU_JLabel" runat="server" Text='<%# Eval("PU_J") %>' />
-                        <br />
-                        CodigoDes_J:
-                        <asp:Label ID="CodigoDes_JLabel" runat="server" Text='<%# Eval("CodigoDes_J") %>' />
-                        <br />
-                        CodigoDis_J:
-                        <asp:Label ID="CodigoDis_JLabel" runat="server" Text='<%# Eval("CodigoDis_J") %>' />
-                        <br />
-                        Descuento_J:
-                        <asp:Label ID="Descuento_JLabel" runat="server" Text='<%# Eval("Descuento_J") %>' />
-                        <br />
-                        Descripcion_J:
-                        <asp:Label ID="Descripcion_JLabel" runat="server" Text='<%# Eval("Descripcion_J") %>' />
-                        <br />
-                        Fecha_Lanzamiento_J:
-                        <asp:Label ID="Fecha_Lanzamiento_JLabel" runat="server" Text='<%# Eval("Fecha_Lanzamiento_J") %>' />
-                        <br />
-                        Imagen_J:
-                        <asp:Label ID="Imagen_JLabel" runat="server" Text='<%# Eval("Imagen_J") %>' />
-                        <br />
-                        <br />
+                        <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
-                <asp:SqlDataSource ID="SqlDS_Catalogo" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM [Juegos] WHERE [Estado_J] = 1"></asp:SqlDataSource>
+                <br />
                 <br />
             </div>
             <br />

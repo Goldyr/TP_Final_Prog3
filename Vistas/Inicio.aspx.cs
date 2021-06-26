@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 using Negocio;
 using Entidades;
 
@@ -12,9 +14,9 @@ namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-
         NegocioUsuario negUser = new NegocioUsuario();
         Usuario user = new Usuario();
+        NegocioJuego negjueg = new NegocioJuego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,11 +42,18 @@ namespace WebApplication1
 
                 li_infoUsuario.Visible = infoUsuario_hl.Text != null ? true : false;
 
-                      mainHeader__content.Style["display"] = "flex";
+                mainHeader__content.Style["display"] = "flex";
                 mainHeader.Style["height"] = "240px";
+
+                //Cargo el listado de juegos abajo.
+                dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
+                dl_ListadoCat.DataBind();
+                //Cargo el listado de checks
+                
+
             }
 
-
+            
         }
 
        
@@ -125,32 +134,7 @@ namespace WebApplication1
             ck_ID.Expires = DateTime.Now.AddDays(-1);
             Response.Cookies.Add(ck_ID);
         }
-
-
-        //Funcion local para verificar que el cbl tiene algo seleccionado
-        private bool CategoriasCheck()
-        {
-            CheckBoxList cbl = ((CheckBoxList)FindControl("cbl_Categorias"));
-            foreach (ListItem li in cbl.Items)
-            {
-                if (li.Selected)
-                {
-                    return true;
-                }
-
-            }
-            lbl_error_Categorias.Visible = true;
-
-            return false;
-        }
-
-        protected void btn_Categoria_Click(object sender, EventArgs e)
-        {
-            if (CategoriasCheck() == true)
-            {
-                Server.Transfer("Catalogo.aspx");
-            }
-        }
+     
 
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
@@ -223,6 +207,29 @@ namespace WebApplication1
         protected void lvJuegosDestacados_PreRender(object sender, EventArgs e)
         {
             lvJuegosDestacados.DataBind();
+        }
+
+        protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_pruebas_si.Text = cbl_Categorias.SelectedValue.ToString();
+            
+            string prueba = "";
+
+            for (int x = 0; x <= cbl_Categorias.Items.Count - 1; x++)
+            {
+                if(cbl_Categorias.Items[x].Selected == true)
+                {
+                    {
+                        prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
+                    }
+                }
+            }
+
+            lbl_pruebas_si.Text = prueba;
+
+
+            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
+            dl_ListadoCat.DataBind();
         }
     }
 }
