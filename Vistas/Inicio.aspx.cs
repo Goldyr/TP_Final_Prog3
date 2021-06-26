@@ -24,24 +24,25 @@ namespace WebApplication1
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                    //header_btn_LogOut.Visible = true;
-
                     user.SetId(this.Request.Cookies["IDUsuario"].Value);
-                    //li_infoUsuario.Visible = true;
                     negUser.CargarUsuarioPorID(user);
                 }
 
                 if (user.GetUser() != null) IniciarSesion();
 
-                // ==================
-                // ESTILOS CSS 
+                ActualizarCss();
+            }
+        }
 
-                // Este es el li del nav que tiene el nombre del usuario
-                // lo pongo en false al principio para que no se muestre hasta que tenga el nombre
-                //li_infoUsuario.Visible = false;
+        private void ActualizarCss()
+        {
+            // ACTUALIZAR CSS DEPENDIENDO SI SE INICIO SESION O NO
 
-                li_infoUsuario.Visible = infoUsuario_hl.Text != null ? true : false;
+            //==================================
+            //  HEADER
 
+            if(user.GetUser() == null)
+            {
                 mainHeader__content.Style["display"] = "flex";
                 mainHeader.Style["height"] = "240px";
 
@@ -52,46 +53,63 @@ namespace WebApplication1
                 
 
             }
+            else
+            {
+                mainHeader__content.Style["display"] = "none";
+                mainHeader.Style["height"] = "150px";
+
+            }
 
             
+             //=====================================
+             // DIV DE INICIAR SESION
+
+             if (user.GetUser() == null) MostrarHeaderLogIn();
+             else EsconderHeaderLogIn();
+
+             //=====================================
+             // LI DEL NAV MENU
+
+             if (user.GetUser() == null) li_infoUsuario.Style["display"] = "none";
+             else li_infoUsuario.Style["display"] = "flex";
+
+             //=====================================
+             // HYPERLINK DEL NAV MENU
+
+             if (user.GetUser() == null) infoUsuario_hl.Visible = false;
+             else infoUsuario_hl.Visible = true;
         }
 
-       
+
         private void IniciarSesion()
         {
             EsconderHeaderLogIn();
-
-            //lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
-
-            li_infoUsuario.Visible = true;
-            infoUsuario_hl.Visible = true;
             infoUsuario_hl.Text = user.GetUser();
-            mainHeader__content.Style["display"] = "none";
-            mainHeader.Style["height"] = "150px";
-            //header_btn_LogOut.Visible = true;
+
+            ActualizarCss();
 
             if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
-           // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
-           user.SetEmail(header_tbUsuario.Text); 
-           user.SetPassword(header_tbContra.Text);
-           
-           if (!negUser.cargarUsuario(user))
-           {
-               header_tbContra.Text = "";            
-               lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
-           }
-           else
-           {
-               IniciarSesion();
-               GuardarCookie(user);
-           }
-           
-           LimpiezaHeaderLogIn();
-         
+            // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
+            user.SetEmail(header_tbUsuario.Text);
+            user.SetPassword(header_tbContra.Text);
+
+            if (!negUser.cargarUsuario(user))
+            {
+                header_tbContra.Text = "";
+                lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
+            }
+            else
+            {
+                IniciarSesion();
+                GuardarCookie(user);
+            }
+
+            LimpiezaHeaderLogIn();
+
 
         }
         private void LimpiezaHeaderLogIn()
@@ -101,18 +119,14 @@ namespace WebApplication1
 
         private void EsconderHeaderLogIn()
         {
-            //divLogin.Style["height"] = "auto";
-            header_tbUsuario.Visible = header_tbContra.Visible =
-            header_lblUsuario.Visible = header_lblContra.Visible =
-            header_btnLogIn.Visible = false;
+            divLogin.Style["display"] = "none";
+          
         }
 
         private void MostrarHeaderLogIn()
         {
-            //divLogin.Style["height"] = "auto";
-            header_tbUsuario.Visible = header_tbContra.Visible =
-            header_lblUsuario.Visible = header_lblContra.Visible =
-            header_btnLogIn.Visible = true;
+
+            divLogin.Style["display"] = "flex";
         }
 
         // ==================================
@@ -140,16 +154,9 @@ namespace WebApplication1
         {
             BorrarCookie();
 
-            // Esconder el boton de cerrar sesion
-            //header_btn_LogOut.Visible = false;
-
-            // Esconder el boton de las opciones de admin
+         
             pInicio__lbladmin.Visible = false;
-
-            // Esconder el hyperlink de info usuario
-            li_infoUsuario.Visible = false;
-
-            MostrarHeaderLogIn();
+   
             lblMensajeLogIn.Text = "";
         }
 
@@ -159,40 +166,48 @@ namespace WebApplication1
 
         protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-          
-                Label lblDescuento = (Label)e.Item.FindControl("Descuento");
-                Label lblPrecio = (Label)e.Item.FindControl("Precio");
-                Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
 
-                Label lblnuevoPrecio = (Label)e.Item.FindControl("PrecioDesc");
-
-
-                int descuento;
-                float precio;
+            Label lblDescuento = (Label)e.Item.FindControl("Descuento");
+            Label lblPrecio = (Label)e.Item.FindControl("Precio");
+            Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
+            Label lblnuevoPrecio = (Label)e.Item.FindControl("PrecioDesc");
 
 
-                //Precio
-                precio = float.Parse(lblPrecio.Text);
+            int descuento;
+            float precio;
 
-                // Descuento
-                if (lblDescuento.Text == "0")
-                {
-                    lblDescuento.Visible = false;
-                }
-                else
-                {
-                    descuento = Int32.Parse(lblDescuento.Text);
+            // Strings
 
-                    lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
-                    divPrecio.Controls.Add(lblnuevoPrecio);
-                    lblPrecio.CssClass += "precio_tachado";
+            string stringPrecio = lblPrecio.Text.Trim();
+            string stringDescuento = lblDescuento.Text.TrimEnd();
 
-                }
+            // ====================
+            // Paso los strings a numeros
 
-                //Visual
-                lblPrecio.Text = $"$ {precio} USD";
-                lblDescuento.Text += " %";
-           
+            //System.Diagnostics.Debug.WriteLine(stringDescuento);
+
+            //1. Precio
+            precio = float.Parse(stringPrecio);
+
+            //2. Descuento 
+            descuento = Int32.Parse(stringDescuento);
+
+            // ====================
+
+            if (descuento != 0)
+            {
+                lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
+                divPrecio.Controls.Add(lblnuevoPrecio);
+                lblPrecio.CssClass += "precio_tachado";
+            }
+            else
+            {
+                lblDescuento.Visible = false;
+            }
+
+            lblPrecio.Text = $"$ {precio} USD";
+            lblDescuento.Text += " %";
+
 
         }
 

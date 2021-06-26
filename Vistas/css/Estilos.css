@@ -53,12 +53,11 @@ a {
 }
 
 .nav-menu__ul__carrito {
-    width: 60%;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 20px;
 }
-
-    .nav-menu__ul__carrito p {
-        display: inline-block;
-    }
 
 .nav-menu__ul {
     border-radius: 100px;
@@ -103,6 +102,6 @@ a {
     padding: 5px;
     border-radius: 30px;
     color: white;
-    border: #0f7294 4px solid;
-    box-shadow: inset 0px 0px 0px 3px #ffffff;
+    border: #0f7294 3px solid;
+    box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
