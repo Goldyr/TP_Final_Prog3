@@ -7,15 +7,6 @@ C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.Core
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CopyComplete
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.dll
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Dao\obj\Debug\Dao.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Dao.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Dao.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Entidades.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Entidades.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CopyComplete
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.pdb
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Dao\bin\Debug\Dao.dll
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Dao\bin\Debug\Dao.pdb
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Dao\bin\Debug\Entidades.dll
@@ -52,3 +43,12 @@ C:\Users\S\Desktop\prog\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
 C:\Users\S\Desktop\prog\Dao\obj\Debug\Dao.csproj.CopyComplete
 C:\Users\S\Desktop\prog\Dao\obj\Debug\Dao.dll
 C:\Users\S\Desktop\prog\Dao\obj\Debug\Dao.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Dao.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Dao.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Entidades.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\bin\Debug\Entidades.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Dao\obj\Debug\Dao.pdb

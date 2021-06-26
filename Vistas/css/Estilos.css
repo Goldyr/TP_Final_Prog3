@@ -32,6 +32,8 @@
 body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
+    background:url(/recursos/fondo2.jpg) center center fixed;
+    background-size:cover;
 }
 
 ul {
@@ -64,12 +66,13 @@ a {
     border-radius: 100px;
     box-shadow: 0px 0px 20px #8a8a8a;
     width: 100%;
-    height: 50px;
+    height: 51px;
     /* COLORES */
-    background: white;
     color: #0f7294;
     /* TEXTO */
+    font-size: 20px;
     font-weight: bolder;
+    text-align: center;
     text-transform: uppercase;
     /* DISPLAY */
     display: flex;
@@ -79,16 +82,152 @@ a {
     margin: 0;
 }
 
-    .nav-menu__ul li {
-        width: 160px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .nav-menu__ul a {
+        position: relative;
+        display: inline-block;
+        padding: 15px 15px;
+        color: aquamarine;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.1s;
     }
 
-    .nav-menu__ul a:hover {
-        text-decoration: underline;
+        .nav-menu__ul a:hover {
+            * background: #a945c7;
+            box-shadow: 0px 0px 10px #a945c7, 0px 0px 40px #a945c7,0px 0px 80px #a945c7;
+            text-decoration: none;
+            transition-delay: 0.9s;
+        }
+
+
+    .nav-menu__ul span {
+        position: absolute;
+        display: block;
     }
+
+#nav-menu__span1 {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#59afd0);
+}
+
+
+.nav-menu__ul a:hover #nav-menu__span1 {
+    left: 100%;
+    transition: 1s;
+    animation: slideright 1.60s ease forwards infinite;
+}
+
+#nav-menu__span3 {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#59afd0);
+}
+
+.nav-menu__ul a:hover #nav-menu__span3 {
+    right: 100%;
+    transition: 1s;
+    animation: slideleft 1.60s ease forwards infinite;
+}
+
+#nav-menu__span2 {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#59afd0);
+}
+
+.nav-menu__ul a:hover #nav-menu__span2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidebottom 1.60s ease forwards infinite;
+}
+
+#nav-menu__span4 {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#59afd0);
+}
+
+.nav-menu__ul a:hover #nav-menu__span4 {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidetop 1.60s ease forwards infinite;
+}
+
+@keyframes slideright {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(-100px)
+    }
+
+    50% {
+        transform: translateX(0px)
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(100px)
+    }
+
+    50% {
+        transform: translateX(0px)
+    }
+}
+
+@keyframes slidetop {
+    0% {
+        transform: translateY(10px);
+    }
+
+    25% {
+        transform: translateY(110px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+}
+
+@keyframes slidebottom {
+    0% {
+        transform: translateY(10px);
+    }
+
+    25% {
+        transform: translateY(-110px)
+    }
+
+    50% {
+        transform: translateY(0px)
+    }
+}
+
+.nav-menu__ul li {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .section-div p {
     margin-bottom: 0;

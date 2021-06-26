@@ -9,17 +9,6 @@ C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csp
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
 C:\Users\ser-a\Documents\Develop\C#\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Negocio.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Negocio.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Dao.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Entidades.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Dao.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Entidades.pdb
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
-C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\bin\Debug\Negocio.dll
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\bin\Debug\Negocio.pdb
 C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Negocio\bin\Debug\Dao.dll
@@ -64,3 +53,14 @@ C:\Users\S\Desktop\prog\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\S\Desktop\prog\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\S\Desktop\prog\Negocio\obj\Debug\Negocio.dll
 C:\Users\S\Desktop\prog\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Negocio.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Dao.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Entidades.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Dao.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.dll
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Negocio\obj\Debug\Negocio.pdb
