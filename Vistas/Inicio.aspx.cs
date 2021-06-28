@@ -20,18 +20,22 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
-                    negUser.CargarUsuarioPorID(user);
-                }
+                   user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                   negUser.CargarUsuarioPorID(user);
+               }
 
                 if (user.GetUser() != null) IniciarSesion();
 
                 ActualizarCss();
             }
+
+            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
+            dl_ListadoCat.DataBind();
         }
 
         private void ActualizarCss()

@@ -55,5 +55,36 @@ namespace Negocio
 
 
         }
+
+        public bool NU_ModificarUsuario(Usuario user, string user_Viejo)
+        {
+            Usuario user2 = new Usuario();
+            user2.SetEmail(user.GetEmail());
+            string consulta1 = $"SELECT * from Usuarios WHERE Email_U = '{user2.GetEmail()}'";
+
+            user2=dao.GetUsuario(user2, consulta1);
+
+            user2.SetNombres(user.GetNombres());
+            user2.SetApellidos(user.GetApellidos());
+            user2.SetUser(user.GetUser());
+            user2.SetTelefono(user.GetTelefono());
+
+            if(user.GetUser()== user_Viejo)
+            {
+                dao.ModificarUsuario(user2);
+                return true;
+            }
+            else {
+                string consulta = $"SELECT * from Usuarios WHERE User_U = '{user.GetUser()}'";
+
+                if (!dao.ExisteUsuario(user2, consulta))
+                {
+                    dao.ModificarUsuario(user2);
+                    return true;
+                }
+
+                return false;
+            }
+            }
     }
 }
