@@ -246,5 +246,10 @@ namespace WebApplication1
             dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
             dl_ListadoCat.DataBind();
         }
+
+        protected void txt_Prueba_TextChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+        }
     }
 }

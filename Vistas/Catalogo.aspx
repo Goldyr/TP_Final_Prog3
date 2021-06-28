@@ -36,12 +36,11 @@
             <br />
             <br />
             Busqueda
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txt_Busqueda_local" runat="server" AutoPostBack="True" OnTextChanged="txt_Busqueda_local_TextChanged"></asp:TextBox>
             <br />
-            <asp:Label ID="lbl_pruebas" runat="server" Text="Label"></asp:Label>
             <br />
             <div>
-                <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False">
+                <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" Width="1000px">
                     <FooterStyle BackColor="White" ForeColor="#333333" />
                     <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
                     <ItemStyle BackColor="White" ForeColor="#333333" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
@@ -49,14 +48,14 @@
                         <asp:Label ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
                         <br />
                         <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' Width="200px" />
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
                 <br />
                 <br />
             </div>
-            <br />
-            A este WebForm, se ingresa cuando se escribe el nombre de un juego en Inicio, o cuando selecciona una Categoria en el DataList de Inicio</div>
+            
     </form>
 </body>
 </html>

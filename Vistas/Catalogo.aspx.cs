@@ -20,18 +20,13 @@ namespace WebApplication1
         {
             if (!IsPostBack) 
             {
-                //(TextBox)PreviousPage.FindControl("txt_Prueba")).Text
-                //Request ["txtPrueba"].ToString()
                 if (Request["busqueda"] != null)
                 {
-                    //lbl_pruebas.Text = ((TextBox)PreviousPage.FindControl("txt_Prueba")).Text;
-                    //dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Nombre(((TextBox)PreviousPage.FindControl("txt_Prueba")).Text.ToString());
-                    lbl_pruebas.Text = (Request["busqueda"]);
                     dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Nombre(Request["busqueda"]);//Listara por la string en la txtbox
 
                     dl_Catalogo.DataBind();
                 }
-                else//else if categorias else esto
+                else//En caso de caer en esta pag desde otra direccion 
                 {
                     dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_True();
                     dl_Catalogo.DataBind();
@@ -39,6 +34,11 @@ namespace WebApplication1
                 }
             }
         }
-        
+
+        protected void txt_Busqueda_local_TextChanged(object sender, EventArgs e)
+        {
+            dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Nombre(txt_Busqueda_local.Text);//Listara por la string en la txtbox
+            dl_Catalogo.DataBind();
+        }
     }
 }
