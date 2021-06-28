@@ -3,7 +3,7 @@
 /* ESTILOS EN GENERAL */
 
 .default-header {
-    height: 150px;
+    height: 100px;
     width: 100%;
     /* Le pongo un display flex para poder centrarlo verticalmente */
     display: flex;
@@ -32,8 +32,8 @@
 body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    background:url(/recursos/fondo2.jpg) center center fixed;
-    background-size:cover;
+    background: url(/recursos/fondo2.jpg) center center fixed;
+    background-size: cover;
 }
 
 ul {
@@ -64,11 +64,12 @@ a {
 
 .nav-menu__ul {
     border-radius: 100px;
-    box-shadow: 0px 0px 20px #8a8a8a;
+    box-shadow: 0px 0px 10px #3b3240;
     width: 100%;
     height: 51px;
     /* COLORES */
-    color: #0f7294;
+    background: #484848;
+    color: #dec4ea;
     /* TEXTO */
     font-size: 20px;
     font-weight: bolder;
@@ -79,7 +80,7 @@ a {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0;
+    margin: 0px;
 }
 
 
@@ -87,15 +88,12 @@ a {
         position: relative;
         display: inline-block;
         padding: 15px 15px;
-        color: aquamarine;
         text-decoration: none;
         overflow: hidden;
         transition: 0.1s;
     }
 
         .nav-menu__ul a:hover {
-            * background: #a945c7;
-            box-shadow: 0px 0px 10px #a945c7, 0px 0px 40px #a945c7,0px 0px 80px #a945c7;
             text-decoration: none;
             transition-delay: 0.9s;
         }
@@ -115,7 +113,7 @@ a {
 }
 
 
-.nav-menu__ul a:hover #nav-menu__span1 {
+*.nav-menu__ul a:hover #nav-menu__span1 {
     left: 100%;
     transition: 1s;
     animation: slideright 1.60s ease forwards infinite;
@@ -129,7 +127,7 @@ a {
     background: linear-gradient(270deg,transparent,#59afd0);
 }
 
-.nav-menu__ul a:hover #nav-menu__span3 {
+*.nav-menu__ul a:hover #nav-menu__span3 {
     right: 100%;
     transition: 1s;
     animation: slideleft 1.60s ease forwards infinite;
@@ -143,7 +141,7 @@ a {
     background: linear-gradient(180deg,transparent,#59afd0);
 }
 
-.nav-menu__ul a:hover #nav-menu__span2 {
+*.nav-menu__ul a:hover #nav-menu__span2 {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -158,7 +156,7 @@ a {
     background: linear-gradient(360deg,transparent,#59afd0);
 }
 
-.nav-menu__ul a:hover #nav-menu__span4 {
+*.nav-menu__ul a:hover #nav-menu__span4 {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -228,14 +226,22 @@ a {
     align-items: center;
 }
 
-
-.section-div p {
-    margin-bottom: 0;
+.section-div {
+    position: relative;
+    left: 20%;
 }
 
-.section-div input {
-    margin-bottom: 15px;
-}
+    .section-div:nth-child(8) {
+        height: 120px;
+    }
+
+    .section-div p {
+        margin-bottom: 0;
+    }
+
+    .section-div input {
+        margin-bottom: 15px;
+    }
 
 .seleccionado {
     background: #0f7294;
@@ -245,3 +251,54 @@ a {
     border: #0f7294 4px solid;
     box-shadow: inset 0px 0px 0px 3px #ffffff;
 }
+
+#section-h1__registro {
+    display: inline-block;
+    position: relative;
+    left: 39%;
+    width: 30%;
+    color: #dec4ea;
+    margin-bottom: 9px;
+}
+
+.Cuadro_Registro {
+    padding: 30px;
+    margin: auto;
+    width: 350px;
+    height: 605px;
+    box-shadow: 0px 0px 20px #3b3240;
+    background: #3a3a3a87
+}
+
+.section-div input {
+    margin-bottom: 5px;
+}
+
+.section-div span {
+    display: block;
+    margin-bottom: 5px;
+    color: #bb5e5e;
+}
+
+
+.section-div p {
+    margin-bottom: 0px;
+    color: #dec4ea;
+}
+
+.Cuadro_Registro input[type="submit"] {
+    font-family: 'Rubik', sans-serif;
+    background: #1d1b1ba3;
+    padding: 5px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    color: #dec4ea;
+    width: 290px;
+    height: 35px;
+}
+
+    .Cuadro_Registro input[type="submit"]:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 20px #3b3240;
+        font-size: 15px
+    }
