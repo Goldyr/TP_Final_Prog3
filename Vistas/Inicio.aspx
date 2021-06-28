@@ -29,11 +29,9 @@
                     <li>
                         <a href="Contacto.aspx">Contacto</a>
                     </li>
-                    <li>
-                        <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                            <i class="fas fa-shopping-cart"></i>
-                            <p>Carrito</p>
-                        </a>
+                    <li class="nav-menu__li__carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                        <a href="Carrito.aspx">Compras</a>
                     </li>
                     <li>
                         <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
@@ -120,7 +118,8 @@
                 </asp:ListView>
 
             </div>
-
+            </section>
+            <aside class="pInicio__aside">
 
             <div class="pInicio_Listado_Categorias">
 
@@ -143,12 +142,7 @@
                 <br />
             </div>
 
-            <p>
-                &nbsp;</p>
-
-        </section>
-
-
+        </aside>
     </form>
 </body>
 </html>

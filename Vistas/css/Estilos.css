@@ -52,11 +52,37 @@ a {
     color: inherit;
 }
 
-.nav-menu__ul__carrito {
-    width: 70%;
-    display: flex;
-    justify-content: space-evenly;
-    height: 20px;
+.nav-menu__li__carrito i {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.nav-menu__li__carrito a {
+    color: #0f7294;
+    opacity: 0;
+    position: absolute;
+}
+
+    .nav-menu__li__carrito a:hover {
+        animation: slideright 3s ease forwards infinite;
+        animation-iteration-count: 1;
+    }
+
+@keyframes slideright {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(50px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(50px);
+        color: #0f7294;
+        opacity: 1;
+    }
 }
 
 .nav-menu__ul {
@@ -83,6 +109,7 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
     .nav-menu__ul a:hover {

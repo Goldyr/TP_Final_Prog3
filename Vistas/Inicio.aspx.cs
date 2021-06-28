@@ -149,7 +149,6 @@ namespace WebApplication1
             Response.Cookies.Add(ck_ID);
         }
      
-
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
             BorrarCookie();
@@ -207,6 +206,7 @@ namespace WebApplication1
 
             lblPrecio.Text = $"$ {precio} USD";
             lblDescuento.Text += " %";
+
 
 
         }
