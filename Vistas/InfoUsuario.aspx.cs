@@ -14,6 +14,8 @@ namespace WebApplication1
     {
         NegocioUsuario negUser = new NegocioUsuario();
         Usuario user = new Usuario();
+        NegocioVentas negVentas = new NegocioVentas();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +38,11 @@ namespace WebApplication1
                     lbl_user_IU.Text = user.GetUser();
                 }
             //}
+            if (!IsPostBack)
+            {
+                grd_ventas=negVentas.NV_CargarGridVentas(user.GetId());
+            }
+
 
         }
 
@@ -167,5 +174,17 @@ namespace WebApplication1
             btnConfirmacion.Visible = cvContraseña.Visible = false;
         }
 
+        protected void Btn_Detalle_Cmd(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "Ver_Detalle")
+            {
+                string ID_Venta = e.CommandArgument.ToString();
+                string Consulta = $"SELECT SerieKey_DV,CodJuego_DV, Precio_DV, ID_DV FROM DetalleVentas where ID_Venta_DV = '{ID_Venta}'";
+
+                sql_Detallesventas.SelectCommand = Consulta;
+                sql_Detallesventas.DataBind();
+                GridView1.Visible = true;
+            }
+        }
     }
 }

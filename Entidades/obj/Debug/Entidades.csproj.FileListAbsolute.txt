@@ -43,3 +43,4 @@ C:\Users\Maty\Desktop\fff\Entidades\obj\Debug\Entidades.csprojAssemblyReference.
 C:\Users\Maty\Desktop\fff\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Maty\Desktop\fff\Entidades\obj\Debug\Entidades.dll
 C:\Users\Maty\Desktop\fff\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
