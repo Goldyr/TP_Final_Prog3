@@ -49,6 +49,7 @@
     <Compile Include="NegocioJuego.cs" />
     <Compile Include="NegocioKey.cs" />
     <Compile Include="NegocioUsuario.cs" />
+    <Compile Include="NegocioVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

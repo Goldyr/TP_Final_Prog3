@@ -100,9 +100,33 @@
         <section class="pInfoUsuario__historial">
             <h1>HISTORIAL DE COMPRAS</h1>
             <div>
-               <h4>GridView</h4>
+               <h4>GridView<asp:GridView ID="grd_ventas" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID_V" DataSourceID="sql_ventas">
+                   <Columns>
+                       <asp:BoundField DataField="ID_V" HeaderText="N°Ventas" ReadOnly="True" SortExpression="ID_V" />
+                       <asp:BoundField DataField="ID_MetodoPago_V" HeaderText="Metodo De Pago" SortExpression="ID_MetodoPago_V" />
+                       <asp:BoundField DataField="Fecha_V" HeaderText="Fecha De Compra" SortExpression="Fecha_V" />
+                       <asp:BoundField DataField="PrecioTotal_V" HeaderText="Precio Total" SortExpression="PrecioTotal_V" />
+                       <asp:TemplateField HeaderText="Detalles">
+                           <ItemTemplate>
+                               <asp:Button ID="Btn_Detalle" runat="server" CommandArgument='<%# Eval("ID_V") %>' CommandName="Ver_Detalle" OnCommand="Btn_Detalle_Cmd" Text="Ver Detalles" />
+                           </ItemTemplate>
+                       </asp:TemplateField>
+                   </Columns>
+                   </asp:GridView>
+                   <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_DV" DataSourceID="sql_Detallesventas" Visible="False">
+                       <Columns>
+                           <asp:BoundField DataField="SerieKey_DV" HeaderText="SerieKey_DV" SortExpression="SerieKey_DV" />
+                           <asp:BoundField DataField="CodJuego_DV" HeaderText="CodJuego_DV" SortExpression="CodJuego_DV" />
+                           <asp:BoundField DataField="Precio_DV" HeaderText="Precio_DV" SortExpression="Precio_DV" />
+                           <asp:BoundField DataField="ID_DV" HeaderText="ID_DV" ReadOnly="True" SortExpression="ID_DV" />
+                       </Columns>
+                   </asp:GridView>
+                </h4>
             </div>
         </section>
+        <asp:SqlDataSource ID="sql_ventas" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Ventas]"></asp:SqlDataSource>
+        <br />
+        <asp:SqlDataSource ID="sql_Detallesventas" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [SerieKey_DV], [CodJuego_DV], [Precio_DV], [ID_DV] FROM [DetalleVentas]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

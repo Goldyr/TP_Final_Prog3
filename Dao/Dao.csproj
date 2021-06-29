@@ -49,6 +49,7 @@
     <Compile Include="DaoJuego.cs" />
     <Compile Include="DaoKey.cs" />
     <Compile Include="DaoUsuario.cs" />
+    <Compile Include="DaoVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -96,7 +96,7 @@
                     </EmptyDataTemplate>
                     <ItemTemplate>
                         <div class="lvJuegosDestacados-div">
-                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' />
+                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' CommandArgument="Codigo_J" />
                             <div class="lvJuegosDestacados-div__descto">
                                 <asp:Label ID="Descuento" runat="server" Text='<%# Eval("Descuento_J") %>'></asp:Label>
                             </div>
