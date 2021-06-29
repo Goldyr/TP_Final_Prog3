@@ -86,5 +86,14 @@ namespace Negocio
                 return false;
             }
             }
+
+        public bool ModificarPassword(Usuario user)
+        {
+            if (dao.ModificarContraseña(user))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

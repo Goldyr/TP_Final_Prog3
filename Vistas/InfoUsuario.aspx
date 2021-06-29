@@ -75,6 +75,28 @@
                 </div>
             </div>
         </section>
+        <section>
+        <h1>CAMBIAR CONTRASEÑA</h1>
+            <p>Ingrese su Contraseña actual
+                <asp:TextBox ID="txtContraseñaActual" runat="server" TextMode="Password"></asp:TextBox>
+            </p>
+            <p>&nbsp;<asp:Button ID="btnIngresar" runat="server" OnClick="btnIngresar_Click" Text="Enviar" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblConfirmacion" runat="server"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="lblContraseñaNueva" runat="server" Text="Ingrese su nueva Contraseña" Visible="False"></asp:Label>
+&nbsp;<asp:TextBox ID="txtContraseñaNueva" runat="server" TextMode="Password" Visible="False"></asp:TextBox>
+            </p>
+            <p>
+                <asp:Label ID="lblContraseñaNueva2" runat="server" Text="Repita su nueva Contraseña" Visible="False"></asp:Label>
+&nbsp;<asp:TextBox ID="txtContraseñaNueva2" runat="server" TextMode="Password" Visible="False"></asp:TextBox>
+&nbsp;<asp:CompareValidator ID="cvContraseña" runat="server" ControlToCompare="txtContraseñaNueva" ControlToValidate="txtContraseñaNueva2" ErrorMessage="CompareValidator" Visible="False">Las contraseñas no son iguales</asp:CompareValidator>
+            </p>
+            <p>
+                <asp:Button ID="btnConfirmacion" runat="server" OnClick="btnConfirmacion_Click" Text="Cambiar" Visible="False" />
+&nbsp;&nbsp;&nbsp; </p>
+        </section>
         <section class="pInfoUsuario__historial">
             <h1>HISTORIAL DE COMPRAS</h1>
             <div>

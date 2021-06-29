@@ -255,5 +255,6 @@ namespace WebApplication1
         {
             Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
+
     }
 }

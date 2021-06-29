@@ -70,3 +70,12 @@ C:\Users\Maty\Desktop\fff\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
 C:\Users\Maty\Desktop\fff\Dao\obj\Debug\Dao.csproj.CopyComplete
 C:\Users\Maty\Desktop\fff\Dao\obj\Debug\Dao.dll
 C:\Users\Maty\Desktop\fff\Dao\obj\Debug\Dao.pdb
+C:\Users\S\Desktop\TP_Prog\Dao\bin\Debug\Dao.dll
+C:\Users\S\Desktop\TP_Prog\Dao\bin\Debug\Dao.pdb
+C:\Users\S\Desktop\TP_Prog\Dao\bin\Debug\Entidades.dll
+C:\Users\S\Desktop\TP_Prog\Dao\bin\Debug\Entidades.pdb
+C:\Users\S\Desktop\TP_Prog\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\S\Desktop\TP_Prog\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\S\Desktop\TP_Prog\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\S\Desktop\TP_Prog\Dao\obj\Debug\Dao.dll
+C:\Users\S\Desktop\TP_Prog\Dao\obj\Debug\Dao.pdb
