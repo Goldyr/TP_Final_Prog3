@@ -75,7 +75,7 @@
         <!-- Pagina inicial  -->
         <section class="pInicio">
             <h1 id="pInicio-h1">JUEGOS DESTACADOS</h1>
-            <asp:TextBox ID="txt_Prueba" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txt_Prueba" runat="server" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
             <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc">
                 <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
             <asp:SqlDataSource ID="SqlDS_CheckboxCat" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />

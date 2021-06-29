@@ -36,20 +36,42 @@
           </header>
         <section class="pInfoUsuario">
             <h1>INFORMACION DEL USUARIO</h1>
-            <h4>Se accede a esta seccion desde "Info.Usuario" en Inicio</h4>
+            <p>Usuario :
+                <asp:Label ID="lbl_user_IU" runat="server"></asp:Label>
+                <asp:TextBox ID="txt_User_IU" runat="server" Visible="False"></asp:TextBox>
+            </p>
             <div class="pInfoUsuario__content">
                 <div class="pInfoUsuario__content__nombre">
-                    <p>Nombre</p>
+                    <p>Nombres :
                     <asp:label runat="server" id="lblNombre_IU"></asp:label>
+                        <asp:TextBox ID="txt_Nombre_IU" runat="server" MaxLength="40" Visible="False"></asp:TextBox>
+                    </p>
+                    <p>Apellidos :
+                        <asp:Label ID="lblApellido_IU" runat="server"></asp:Label>
+                        <asp:TextBox ID="txt_Apellidos_IU" runat="server" MaxLength="40" Visible="False"></asp:TextBox>
+                    </p>
                 </div>
                 <div class="pInfoUsuario__content__email">
-                    <p>Email</p>
-                    <asp:label runat="server" id="lblEmail_IU"></asp:label>
+                    <p>Email : <asp:label runat="server" id="lblEmail_IU"></asp:label>
+                    </p>
                 </div>
      
                 <div class="pInfoUsuario__content__fechaIngreso">
-                    <p>Nombre</p>
-                    <asp:label runat="server" id="lblFIngreso_IU"></asp:label>
+                    <p>Telefono :
+                        <asp:Label ID="lblTelefono_IU" runat="server"></asp:Label>
+                        <asp:TextBox ID="txt_telefono_IU" runat="server" MaxLength="30" Visible="False"></asp:TextBox>
+                    </p>
+                    <p>Fecha de Nacimiento :
+                        <asp:Label ID="lblFecha_IU" runat="server"></asp:Label>
+                    </p>
+                    <p>
+                        <asp:Button ID="btn_EditarPerfil" runat="server" OnClick="btn_EditarPerfil_Click" Text="Editar Datos" />
+&nbsp;<asp:Button ID="btn_cancelar_IU" runat="server" OnClick="btn_cancelar_IU_Click" Text="Cancelar" Visible="False" />
+&nbsp;<asp:Button ID="btn_guardar_IU" runat="server" OnClick="btn_guardar_IU_Click" Text="Guardar" Visible="False" />
+                    </p>
+                    <p>
+                        <asp:Label ID="lbl_msg_IU" runat="server"></asp:Label>
+                    </p>
                 </div>
             </div>
         </section>
