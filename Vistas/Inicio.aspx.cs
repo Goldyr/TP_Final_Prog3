@@ -255,5 +255,13 @@ namespace WebApplication1
         {
             Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
+
+        protected void red_Descripcion(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "redirectDescripcion")
+            {
+                Response.Redirect("DescripcionJuego.aspx?id=" + e.CommandArgument.ToString());
+            }
+        }
     }
 }
