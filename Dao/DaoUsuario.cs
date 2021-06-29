@@ -167,6 +167,32 @@ namespace Dao
                 where ID_U=@ID
                 go
           */
+
+        public bool ModificarContraseña(Usuario user)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosModificarContraseña(ref comando, user);
+            int filas = ad.EjecutarProcedimientoAlmacenado(comando, "spModificar_Contraseña");
+            if (filas == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void ArmarParametrosModificarContraseña(ref SqlCommand Comando, Usuario user)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+
+            //ID
+            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.Char, 10);
+            SqlParametros.Value = user.GetId();
+
+            //CONTRASEÑA
+            SqlParametros = Comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 30);
+            SqlParametros.Value = user.GetPassword();
+
+        }
     }
 
 }

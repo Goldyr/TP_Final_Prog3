@@ -17,12 +17,11 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+            //if (!IsPostBack)
+            //{
                 li_infoUsuario_iu.Visible = false;
                 if (this.Request.Cookies["IDUsuario"] != null)
                 { 
-
                     user.SetId(this.Request.Cookies["IDUsuario"].Value);
                     negUser.CargarUsuarioPorID(user);
                     infoUsuario_hl_iu.Text = user.GetUser();
@@ -31,14 +30,12 @@ namespace WebApplication1
 
                     lblNombre_IU.Text = user.GetNombres();
                     lblEmail_IU.Text = user.GetEmail();
-                    lblApellido_IU.Text = user.GetApellidos();
+                    lblApellido_IU.Text = user.GetPassword();
                     lblTelefono_IU.Text = user.GetTelefono();
                     lblFecha_IU.Text = user.GetFechaNacimiento().Substring(0,9);
                     lbl_user_IU.Text = user.GetUser();
                 }
-            }
-
-
+            //}
 
         }
 
@@ -122,5 +119,53 @@ namespace WebApplication1
             else lbl_msg_IU.Text = "El usuario ya existe intente otro";
 
         }
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+
+            //if (this.Request.Cookies["IDUsuario"] != null)
+            //{
+            //user.SetId(this.Request.Cookies["IDUsuario"].Value);
+            //negUser.CargarUsuarioPorID(user);
+
+               string Contraseña = user.GetPassword();
+
+                if (txtContraseñaActual.Text.Trim() != Contraseña)
+                {
+                    lblConfirmacion.Text = "Contraseña invalida";
+
+                }
+                else if (txtContraseñaActual.Text.Trim() == Contraseña)
+                {
+                    lblConfirmacion.Text = "Contraseña valida";
+                    lblContraseñaNueva.Visible = txtContraseñaNueva.Visible = lblContraseñaNueva2.Visible = txtContraseñaNueva2.Visible = true;
+                    btnConfirmacion.Visible = cvContraseña.Visible = true;
+                } 
+            //}
+
+
+        }
+
+        protected void btnConfirmacion_Click(object sender, EventArgs e)
+        {
+            user.SetPassword(txtContraseñaNueva2.Text);
+            if (negUser.ModificarPassword(user))
+            {
+                TaparNuevaContraseña();
+                lblConfirmacion.Text = "La contraseña se modifico correctamente";
+            }
+            else
+            {
+                TaparNuevaContraseña();
+                lblConfirmacion.Text = "No se pudo modificar la contraseña";
+            }
+        }
+
+        protected void TaparNuevaContraseña()
+        {
+            lblContraseñaNueva.Visible = txtContraseñaNueva.Visible = lblContraseñaNueva2.Visible = txtContraseñaNueva2.Visible = false;
+            btnConfirmacion.Visible = cvContraseña.Visible = false;
+        }
+
     }
 }

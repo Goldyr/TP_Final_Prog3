@@ -137,6 +137,7 @@
                         <asp:Label ID="lbl_PU_ListCat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
                         <br />
                         <asp:Image ID="Image2" runat="server" Height="100px" ImageAlign="Left" ImageUrl='<%# Bind("Imagen_J") %>' />
+                        <br />
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
                 </asp:DataList>
