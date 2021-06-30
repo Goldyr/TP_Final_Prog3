@@ -10,8 +10,10 @@ namespace WebApplication1
     public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
+        {          
+            string consulta = Session["Juego"].ToString();
+            sdsJuego.SelectCommand = consulta;
+            sdsJuego.DataBind();
         }
     }
 }
