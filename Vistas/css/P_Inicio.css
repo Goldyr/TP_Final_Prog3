@@ -1,13 +1,15 @@
 ﻿/* ESTILOS DEL MAIN HEADER */
 
 #mainHeader {
-    height: 240px;
+    height: 75px;
     width: 100%;
     /* Le pongo un display flex para poder centrarlo verticalmente */
     display: flex;
     /* Al cambiar la direccion, ahora tengo que usar el justify-content para cambiar el eje vertical */
     flex-direction: column;
     justify-content: space-around;
+    position: sticky;
+    top: 0px;
 }
 
 .pInicio__aside {
