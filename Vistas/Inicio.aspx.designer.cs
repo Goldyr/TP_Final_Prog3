@@ -150,16 +150,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
 
         /// <summary>
-        /// Control txt_Prueba.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Prueba;
-
-        /// <summary>
-        /// Control pInicio__lbladmin.
+        /// pInicio__lbladmin control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -168,34 +159,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label pInicio__lbladmin;
 
         /// <summary>
-        /// Control SqlDS_CheckboxCat.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDS_CheckboxCat;
-
-        /// <summary>
-        /// Control SqlDataSource2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-
-        /// <summary>
-        /// Control lbl_pruebas_si.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_pruebas_si;
-
-        /// <summary>
-        /// Control lvJuegosDestacados.
+        /// SqlDS_CheckboxCat control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -204,16 +168,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.ListView lvJuegosDestacados;
 
         /// <summary>
-        /// Control dl_ChecksCat.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_ChecksCat;
-
-        /// <summary>
-        /// Control cbl_Categorias.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -222,12 +177,31 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.CheckBoxList cbl_Categorias;
 
         /// <summary>
-        /// Control dl_ListadoCat.
+        /// lbl_pruebas_si control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_ListadoCat;
+        protected global::System.Web.UI.WebControls.ListView lvListCat;
+
+        /// <summary>
+        /// dl_ChecksCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dl_ChecksCat;
+
+ 
+        /// <summary>
+        /// dl_ListadoCat control.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }
