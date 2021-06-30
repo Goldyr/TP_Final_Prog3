@@ -97,3 +97,14 @@ C:\Users\S\Desktop\TP_Prog\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.ca
 C:\Users\S\Desktop\TP_Prog\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\S\Desktop\TP_Prog\Negocio\obj\Debug\Negocio.dll
 C:\Users\S\Desktop\TP_Prog\Negocio\obj\Debug\Negocio.pdb
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Negocio.dll
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Negocio.pdb
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Dao.dll
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Entidades.dll
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Dao.pdb
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\bin\Debug\Entidades.pdb
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\obj\Debug\Negocio.dll
+C:\Users\S\Desktop\TP_Prog_Dev\Negocio\obj\Debug\Negocio.pdb
