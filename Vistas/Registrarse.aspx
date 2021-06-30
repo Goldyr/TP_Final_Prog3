@@ -14,7 +14,10 @@
      <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
-                   <li>
+                   <li id="li_infoUsuario" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="False">[infoUsuario_hl]</asp:HyperLink>
+                    </li>
+                    <li>
                        <a href="Inicio.aspx">
                        <span id="nav-menu__span1"></span>
                        <span id="nav-menu__span2"></span>

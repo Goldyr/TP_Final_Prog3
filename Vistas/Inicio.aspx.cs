@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 using Negocio;
 using Entidades;
 
@@ -12,77 +14,106 @@ namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-
         NegocioUsuario negUser = new NegocioUsuario();
         Usuario user = new Usuario();
+        NegocioJuego negjueg = new NegocioJuego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                    //header_btn_LogOut.Visible = true;
-
-                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
-                    //li_infoUsuario.Visible = true;
-                    negUser.CargarUsuarioPorID(user);
-                }
+                   user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                   negUser.CargarUsuarioPorID(user);
+               }
 
                 if (user.GetUser() != null) IniciarSesion();
 
-                // ==================
-                // ESTILOS CSS 
-
-                // Este es el li del nav que tiene el nombre del usuario
-                // lo pongo en false al principio para que no se muestre hasta que tenga el nombre
-                //li_infoUsuario.Visible = false;
-
-                li_infoUsuario.Visible = infoUsuario_hl.Text != null ? true : false;
-
-                      mainHeader__content.Style["display"] = "flex";
-                mainHeader.Style["height"] = "240px";
+                ActualizarCss();
             }
 
-
+            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
+            dl_ListadoCat.DataBind();
         }
 
-       
+        private void ActualizarCss()
+        {
+            // ACTUALIZAR CSS DEPENDIENDO SI SE INICIO SESION O NO
+
+            //==================================
+            //  HEADER
+
+            if(user.GetUser() == null)
+            {
+                mainHeader__content.Style["display"] = "flex";
+                mainHeader.Style["height"] = "240px";
+
+                //Cargo el listado de juegos abajo.
+                dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
+                dl_ListadoCat.DataBind();
+                //Cargo el listado de checks
+                
+
+            }
+            else
+            {
+                mainHeader__content.Style["display"] = "none";
+                mainHeader.Style["height"] = "150px";
+
+            }
+
+            
+             //=====================================
+             // DIV DE INICIAR SESION
+
+             if (user.GetUser() == null) MostrarHeaderLogIn();
+             else EsconderHeaderLogIn();
+
+             //=====================================
+             // LI DEL NAV MENU
+
+             if (user.GetUser() == null) li_infoUsuario.Style["display"] = "none";
+             else li_infoUsuario.Style["display"] = "flex";
+
+             //=====================================
+             // HYPERLINK DEL NAV MENU
+
+             if (user.GetUser() == null) infoUsuario_hl.Visible = false;
+             else infoUsuario_hl.Visible = true;
+        }
+
+
         private void IniciarSesion()
         {
             EsconderHeaderLogIn();
-
-            //lblMensajeLogIn.Text = "Bienvenido " + user.GetUser() + "!";
-
-            li_infoUsuario.Visible = true;
-            infoUsuario_hl.Visible = true;
             infoUsuario_hl.Text = user.GetUser();
-            mainHeader__content.Style["display"] = "none";
-            mainHeader.Style["height"] = "150px";
-            //header_btn_LogOut.Visible = true;
+
+            ActualizarCss();
 
             if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
-           // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
-           user.SetEmail(header_tbUsuario.Text); 
-           user.SetPassword(header_tbContra.Text);
-           
-           if (!negUser.cargarUsuario(user))
-           {
-               header_tbContra.Text = "";            
-               lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
-           }
-           else
-           {
-               IniciarSesion();
-               GuardarCookie(user);
-           }
-           
-           LimpiezaHeaderLogIn();
-         
+            // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
+            user.SetEmail(header_tbUsuario.Text);
+            user.SetPassword(header_tbContra.Text);
+
+            if (!negUser.cargarUsuario(user))
+            {
+                header_tbContra.Text = "";
+                lblMensajeLogIn.Text = "El usuario no existe o las credenciales son incorrectas";
+            }
+            else
+            {
+                IniciarSesion();
+                GuardarCookie(user);
+            }
+
+            LimpiezaHeaderLogIn();
+
 
         }
         private void LimpiezaHeaderLogIn()
@@ -92,18 +123,14 @@ namespace WebApplication1
 
         private void EsconderHeaderLogIn()
         {
-            //divLogin.Style["height"] = "auto";
-            header_tbUsuario.Visible = header_tbContra.Visible =
-            header_lblUsuario.Visible = header_lblContra.Visible =
-            header_btnLogIn.Visible = false;
+            divLogin.Style["display"] = "none";
+          
         }
 
         private void MostrarHeaderLogIn()
         {
-            //divLogin.Style["height"] = "auto";
-            header_tbUsuario.Visible = header_tbContra.Visible =
-            header_lblUsuario.Visible = header_lblContra.Visible =
-            header_btnLogIn.Visible = true;
+
+            divLogin.Style["display"] = "flex";
         }
 
         // ==================================
@@ -125,47 +152,14 @@ namespace WebApplication1
             ck_ID.Expires = DateTime.Now.AddDays(-1);
             Response.Cookies.Add(ck_ID);
         }
-
-
-        //Funcion local para verificar que el cbl tiene algo seleccionado
-        private bool CategoriasCheck()
-        {
-            CheckBoxList cbl = ((CheckBoxList)FindControl("cbl_Categorias"));
-            foreach (ListItem li in cbl.Items)
-            {
-                if (li.Selected)
-                {
-                    return true;
-                }
-
-            }
-            lbl_error_Categorias.Visible = true;
-
-            return false;
-        }
-
-        protected void btn_Categoria_Click(object sender, EventArgs e)
-        {
-            if (CategoriasCheck() == true)
-            {
-                Server.Transfer("Catalogo.aspx");
-            }
-        }
-
+     
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
             BorrarCookie();
 
-            // Esconder el boton de cerrar sesion
-            //header_btn_LogOut.Visible = false;
-
-            // Esconder el boton de las opciones de admin
+         
             pInicio__lbladmin.Visible = false;
-
-            // Esconder el hyperlink de info usuario
-            li_infoUsuario.Visible = false;
-
-            MostrarHeaderLogIn();
+   
             lblMensajeLogIn.Text = "";
         }
 
@@ -175,40 +169,49 @@ namespace WebApplication1
 
         protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-          
-                Label lblDescuento = (Label)e.Item.FindControl("Descuento");
-                Label lblPrecio = (Label)e.Item.FindControl("Precio");
-                Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
 
-                Label lblnuevoPrecio = (Label)e.Item.FindControl("PrecioDesc");
-
-
-                int descuento;
-                float precio;
+            Label lblDescuento = (Label)e.Item.FindControl("Descuento");
+            Label lblPrecio = (Label)e.Item.FindControl("Precio");
+            Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
+            Label lblnuevoPrecio = (Label)e.Item.FindControl("PrecioDesc");
 
 
-                //Precio
-                precio = float.Parse(lblPrecio.Text);
+            int descuento;
+            float precio;
 
-                // Descuento
-                if (lblDescuento.Text == "0")
-                {
-                    lblDescuento.Visible = false;
-                }
-                else
-                {
-                    descuento = Int32.Parse(lblDescuento.Text);
+            // Strings
 
-                    lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
-                    divPrecio.Controls.Add(lblnuevoPrecio);
-                    lblPrecio.CssClass += "precio_tachado";
+            string stringPrecio = lblPrecio.Text.Trim();
+            string stringDescuento = lblDescuento.Text.TrimEnd();
 
-                }
+            // ====================
+            // Paso los strings a numeros
 
-                //Visual
-                lblPrecio.Text = $"$ {precio} USD";
-                lblDescuento.Text += " %";
-           
+            //System.Diagnostics.Debug.WriteLine(stringDescuento);
+
+            //1. Precio
+            precio = float.Parse(stringPrecio);
+
+            //2. Descuento 
+            descuento = Int32.Parse(stringDescuento);
+
+            // ====================
+
+            if (descuento != 0)
+            {
+                lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
+                divPrecio.Controls.Add(lblnuevoPrecio);
+                lblPrecio.CssClass += "precio_tachado";
+            }
+            else
+            {
+                lblDescuento.Visible = false;
+            }
+
+            lblPrecio.Text = $"$ {precio} USD";
+            lblDescuento.Text += " %";
+
+
 
         }
 
@@ -223,6 +226,42 @@ namespace WebApplication1
         protected void lvJuegosDestacados_PreRender(object sender, EventArgs e)
         {
             lvJuegosDestacados.DataBind();
+        }
+
+        protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_pruebas_si.Text = cbl_Categorias.SelectedValue.ToString();
+            
+            string prueba = "";
+
+            for (int x = 0; x <= cbl_Categorias.Items.Count - 1; x++)
+            {
+                if(cbl_Categorias.Items[x].Selected == true)
+                {
+                    {
+                        prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
+                    }
+                }
+            }
+
+            lbl_pruebas_si.Text = prueba;
+
+
+            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
+            dl_ListadoCat.DataBind();
+        }
+
+        protected void txt_Prueba_TextChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+        }
+
+        protected void red_Descripcion(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "redirectDescripcion")
+            {
+                Response.Redirect("DescripcionJuego.aspx?id=" + e.CommandArgument.ToString());
+            }
         }
     }
 }

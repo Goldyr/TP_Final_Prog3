@@ -23,18 +23,31 @@
                     <li id="li_infoUsuario" runat="server">
                         <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="False">[infoUsuario_hl]</asp:HyperLink>
                     </li>
-                    <li class="seleccionado">
-                        <a href="Inicio.aspx">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="Contacto.aspx">Contacto</a>
-                    </li>
-                    <li>
-                        <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                   <li  class="seleccionado" >
+                    <a href="Inicio.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                        Inicio</a>
+                   </li>
+           
+                   <li >
+                        <a href="Contacto.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>Contacto</a>
+                   </li>
+                   <li>
+                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                         
                             <i class="fas fa-shopping-cart"></i>
-                            <p>Carrito</p>
                         </a>
-                    </li>
                     <li>
                         <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
                     </li>
@@ -77,9 +90,10 @@
         <!-- Pagina inicial  -->
         <section class="pInicio">
             <h1 id="pInicio-h1">JUEGOS DESTACADOS</h1>
+            <asp:TextBox ID="txt_Prueba" runat="server" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
             <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc">
                 <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />
+            <asp:SqlDataSource ID="SqlDS_CheckboxCat" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [Imagen_J], [PU_J], [Codigo_J], [Descuento_J] FROM [Juegos] WHERE (([Estado_J] = @Estado_J) AND ([Fecha_Lanzamiento_J] &gt;= @Fecha_Lanzamiento_J))">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="TRUE" Name="Estado_J" Type="Boolean" />
@@ -88,13 +102,15 @@
             </asp:SqlDataSource>
 
             <div class="pInicio__JuegosDestacados">
+                <asp:Label ID="lbl_pruebas_si" runat="server" Text="Label"></asp:Label>
                 <asp:ListView ID="lvJuegosDestacados" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2" OnItemDataBound="lvJuegosDestacados_ItemDataBound" OnPreRender="lvJuegosDestacados_PreRender" EnablePersistedSelection="True" ValidateRequestMode="Disabled">
                     <EmptyDataTemplate>
                         <span>No data was returned.</span>
                     </EmptyDataTemplate>
                     <ItemTemplate>
                         <div class="lvJuegosDestacados-div">
-                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' />
+                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' onCommand="red_Descripcion" CausesValidation="False" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" />
+
                             <div class="lvJuegosDestacados-div__descto">
                                 <asp:Label ID="Descuento" runat="server" Text='<%# Eval("Descuento_J") %>'></asp:Label>
                             </div>
@@ -118,21 +134,32 @@
                 </asp:ListView>
 
             </div>
+            </section>
+            <aside class="pInicio__aside">
 
+            <div class="pInicio_Listado_Categorias">
 
-            <div class="pInicio__Categorias">
-                <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat" ValidationGroup="cat">
+                <asp:DataList ID="dl_ChecksCat" runat="server"></asp:DataList>
+                <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDS_CheckboxCat" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat" ValidationGroup="cat" AutoPostBack="True" OnSelectedIndexChanged="cbl_Categorias_SelectedIndexChanged">
                 </asp:CheckBoxList>
-                <asp:Button ID="btn_Categoria" runat="server" OnClick="btn_Categoria_Click" Text="Busqueda" ValidationGroup="cat" />
-                <asp:Label ID="lbl_error_Categorias" runat="server" Text="** Tilde alguna de las categorias para realizar esta busqueda" Visible="False"></asp:Label>
+                <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" GridLines="Both" RepeatColumns="4" RepeatDirection="Horizontal">
+                    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                    <ItemStyle BackColor="White" ForeColor="#330099" />
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_ListCat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                        <br />
+                        <asp:Label ID="lbl_PU_ListCat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                        <br />
+                        <asp:Image ID="Image2" runat="server" Height="100px" ImageAlign="Left" ImageUrl='<%# Bind("Imagen_J") %>' />
+                        <br />
+                    </ItemTemplate>
+                    <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                </asp:DataList>
                 <br />
             </div>
 
-            <p>El ListView va a tener los juegos mas recientesuevos y se va a acceder mediante una contraseña</p>
-
-        </section>
-
-
+        </aside>
     </form>
 </body>
 </html>

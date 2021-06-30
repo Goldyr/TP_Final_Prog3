@@ -103,6 +103,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="OpcionesAdmin.aspx" />
     <Content Include="css\P_Inicio.css" />
+    <Content Include="recursos\b9c8f893c9a782033a01f47e0c0b1d6e.png" />
     <Content Include="Registrarse.aspx" />
     <Content Include="css\Estilos.css" />
     <Content Include="Web.config" />

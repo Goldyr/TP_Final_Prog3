@@ -28,6 +28,9 @@
 .AgregarJuegos__div {
     margin: 20px 0px;
 }
+#li_infoUsuario {
+    color: #a282ab;
+}
 
 body {
     margin: 0;
@@ -54,13 +57,38 @@ a {
     color: inherit;
 }
 
-.nav-menu__ul__carrito {
-    width: 60%;
+.nav-menu__li__carrito i {
+    margin-right: 10px;
+    font-size: 25px;
 }
 
-    .nav-menu__ul__carrito p {
-        display: inline-block;
+.nav-menu__li__carrito a {
+    color: #0f7294;
+    opacity: 0;
+    position: absolute;
+}
+
+    .nav-menu__li__carrito a:hover {
+        animation: slideright 3s ease forwards infinite;
+        animation-iteration-count: 1;
     }
+
+@keyframes slideright {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(50px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(50px);
+        color: #0f7294;
+        opacity: 1;
+    }
+}
 
 .nav-menu__ul {
     border-radius: 100px;
@@ -127,7 +155,7 @@ a {
     background: linear-gradient(270deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span3 {
+.nav-menu__ul a:hover #nav-menu__span3 {
     right: 100%;
     transition: 1s;
     animation: slideleft 1.60s ease forwards infinite;
@@ -141,7 +169,7 @@ a {
     background: linear-gradient(180deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span2 {
+.nav-menu__ul a:hover #nav-menu__span2 {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -156,7 +184,7 @@ a {
     background: linear-gradient(360deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span4 {
+.nav-menu__ul a:hover #nav-menu__span4 {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -224,6 +252,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .section-div {
@@ -243,13 +272,31 @@ a {
         margin-bottom: 15px;
     }
 
-.seleccionado {
-    background: #0f7294;
-    padding: 5px;
-    border-radius: 30px;
-    color: white;
-    border: #0f7294 4px solid;
-    box-shadow: inset 0px 0px 0px 3px #ffffff;
+.seleccionado #nav-menu__span1 {
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slideright 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span3 {
+    right: 100%;
+    transition: 1s;
+    animation: slideleft 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidebottom 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span4 {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidetop 1.60s ease forwards infinite;
 }
 
 #section-h1__registro {
