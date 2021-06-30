@@ -70,6 +70,8 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="css\P_Contacto.css" />
+    <Content Include="css\P_OpcAdmin.css" />
     <Content Include="DescripcionJuego.aspx" />
     <Content Include="imagenes\IMG-00001.jpg" />
     <Content Include="imagenes\IMG-00002.jpg" />
@@ -206,9 +208,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="recursos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
