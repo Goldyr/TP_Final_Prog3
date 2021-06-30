@@ -7,7 +7,6 @@
     display: flex;
     /* Al cambiar la direccion, ahora tengo que usar el justify-content para cambiar el eje vertical */
     flex-direction: column;
-    justify-content: space-around;
 }
 
 .pInicio__aside {
@@ -47,7 +46,6 @@
     height: 130px;
     width: 100%;
     display: flex;
-    align-items: center;
 }
 
 #li_infoUsuario {
@@ -55,22 +53,27 @@
 }
 
 .main-header__content__log-in {
-    margin-left: 50px;
-    width: 450px;
-    height: 120px;
+    background: whitesmoke;
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: space-around;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+    border: 2px solid #5f5f5f;
+    margin-left: 15%;
 }
 
-#pInicio-h1 {
+.titulo-section {
     text-align: center;
-    font-size: 40px;
+    font-size: 25px;
     margin: 0;
     background: #1d1d1d;
-    color: #eccdf9;
+    color: #e0e0e0;
     padding: 20px;
 }
+
 
 .header-botones {
     width: 260px;
@@ -109,9 +112,12 @@
         height: 20px;
     }
 
-.pInicio {
+
+/* SECTION  --------------- */
+
+section {
     height: auto;
-    background: #3a3a3a87;
+    background: #2121217a;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -119,10 +125,22 @@
     margin: 0 auto;
 }
 
+
+/* MEDIA QUERY  --------------- */
+
+@media only screen and (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+}
+
 .pInicio__admin-opc {
-    margin: 0px 0px 20px 30px;
-    color: #af0707;
+    color: #e25a7c;
     font-weight: bold;
+    background: #1d1d1d;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
 }
 
     .pInicio__admin-opc:hover {
@@ -130,6 +148,7 @@
     }
 
 .JuegosDestacados__container {
+    margin: 50px 0px;
     display: flex;
     width: 100%;
     min-height: 1100px;
@@ -143,16 +162,37 @@ body {
     background-size: cover;
 }
 
+/* CADA TARJETA DE LOS JUEGOS DESTACADOS */
+
 .lvJuegosDestacados-div {
     margin: 5px 10px;
     color: white;
-    border-radius: 5px;
     position: relative;
     width: 460px;
     height: 215px;
     border-radius: 10px;
-    box-shadow: 11px 16px 13px 3px #131313;
+    box-shadow: 11px 16px 13px #131313;
 }
+
+
+    .lvJuegosDestacados-div input[type=image] {
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+    }
+
+
+@media only screen and (max-width: 768px) {
+    .lvJuegosDestacados-div {
+        width: 400px;
+        margin: 20px 10px;
+    }
+
+        .lvJuegosDestacados-div input[type=image] {
+            width: 400px;
+        }
+}
+
 
 .lvJuegosDestacados-div__desc {
     padding: 10px;
@@ -163,28 +203,27 @@ body {
     border-radius: inherit;
 }
 
+/*PRECIOS DE LOS JUEGOS DESTACADOS*/
+
+/*PRECIO POR DEFAULT*/
+
 .lvJuegosDestacados-div__desc__precio {
-    color: #90d293;
+    color: #91de95;
     display: flex;
     justify-content: space-between;
-    width: 45%
+    width: 50%
 }
 
+.precio_tachado {
+    text-decoration: line-through;
+    color: #d41414
+}
 
 .lvJuegosDestacados-div__desc h1, p {
     margin: 0;
 }
 
-.precio_tachado {
-    text-decoration: line-through;
-    color: #c18282ae;
-}
 
-.lvJuegosDestacados-div input[type=image] {
-    border-radius: inherit;
-    width: 100%;
-    height: 100%;
-}
 
 .lvJuegosDestacados-div__descto {
     background: #409a40;
@@ -196,12 +235,37 @@ body {
     text-align: center;
 }
 
+.lvListCat__div {
+    width: 300px;
+    height: 140px;
+    background: #000;
+    margin: 10px;
+    border-radius: 8px;
+}
 
-#tbPrueba {
+    .lvListCat__div:hover {
+        box-shadow: 0px 0px 10px #ffffff;
+        transition: all 0.2s ease-in-out;
+        width: 320px;
+        height: 160px;
+    }
+
+
+    .lvListCat__div input[type=image] {
+        width: 100%;
+        border-radius: inherit;
+    }
+
+.imgAnimated:hover {
+    background-color: #000;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+    height: 160px;
+}
+
+#lvListCat_lvListCatWrapper {
     width: 100%;
-    border-radius: 10px;
-    padding-left: 10px;
-    outline: none;
-    border: 2px solid #6c7598;
-    height: 22px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

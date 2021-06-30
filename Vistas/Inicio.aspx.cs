@@ -34,8 +34,8 @@ namespace WebApplication1
                 ActualizarCss();
             }
 
-            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
-            dl_ListadoCat.DataBind();
+            lvListCat.DataSource = negjueg.NJ_ListarJuegos_True();
+            lvListCat.DataBind();
         }
 
         private void ActualizarCss()
@@ -51,8 +51,8 @@ namespace WebApplication1
                 mainHeader.Style["height"] = "240px";
 
                 //Cargo el listado de juegos abajo.
-                dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegos_True();
-                dl_ListadoCat.DataBind();
+                lvListCat.DataSource = negjueg.NJ_ListarJuegos_True();
+                lvListCat.DataBind();
                 //Cargo el listado de checks
                 
 
@@ -230,7 +230,7 @@ namespace WebApplication1
 
         protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_pruebas_si.Text = cbl_Categorias.SelectedValue.ToString();
+            //lbl_pruebas_si.Text = cbl_Categorias.SelectedValue.ToString();
             
             string prueba = "";
 
@@ -244,16 +244,16 @@ namespace WebApplication1
                 }
             }
 
-            lbl_pruebas_si.Text = prueba;
+           // lbl_pruebas_si.Text = prueba;
 
 
-            dl_ListadoCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
-            dl_ListadoCat.DataBind();
+            lvListCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
+            lvListCat.DataBind();
         }
 
         protected void txt_Prueba_TextChanged(object sender, EventArgs e)
         {
-            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+            //Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
 
         protected void red_Descripcion(object sender, CommandEventArgs e)

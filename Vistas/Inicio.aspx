@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="WebApplication1.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Inicio.aspx.cs" Inherits="WebApplication1.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -55,46 +55,28 @@
                         <asp:TextBox ID="header_tbContra" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="header_tbContra" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
                     </div>
+
                     <div class="main-header__content__div header-botones">
                         <asp:Button ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx" />
-                        <%--<asp:Button ID="header_btn_LogOut" runat="server" OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" Visible="False" />--%>
                         <a href="Registrarse.aspx">¿No tenés cuenta?</a>
                     </div>
-
                     <asp:Label ID="lblMensajeLogIn" runat="server"></asp:Label>
-
                 </div>
-                <!-- SEARCH  -->
-                <%--              <div class="main-header__content__search">
-                    <asp:Label ID="header_lblBusqueda" runat="server" Text="Búsqueda" />
-                    <asp:TextBox ID="header_tbBusqueda" runat="server"></asp:TextBox>
-                    <asp:Button ID="header_btnbusqueda" runat="server" Text="Buscar" />
-                </div>--%>
             </div>
         </header>
         <!-- Pagina inicial  -->
         <section class="pInicio">
-            <h1 id="pInicio-h1">JUEGOS DESTACADOS</h1>
-            <asp:TextBox ID="txt_Prueba" runat="server" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
+            <div class="titulo-section">
+                <h1>JUEGOS DESTACADOS</h1>
+            </div>
             <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc">
-                <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False"></asp:Label></a>
-            <asp:SqlDataSource ID="SqlDS_CheckboxCat" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [Imagen_J], [PU_J], [Codigo_J], [Descuento_J] FROM [Juegos] WHERE (([Estado_J] = @Estado_J) AND ([Fecha_Lanzamiento_J] &gt;= @Fecha_Lanzamiento_J))">
-                <SelectParameters>
-                    <asp:Parameter DefaultValue="TRUE" Name="Estado_J" Type="Boolean" />
-                    <asp:Parameter DbType="Date" DefaultValue="01/01/2019" Name="Fecha_Lanzamiento_J" />
-                </SelectParameters>
-            </asp:SqlDataSource>
-
+                <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False" />
+            </a>
             <div class="pInicio__JuegosDestacados">
-                <asp:Label ID="lbl_pruebas_si" runat="server" Text="Label"></asp:Label>
                 <asp:ListView ID="lvJuegosDestacados" runat="server" DataKeyNames="Codigo_J" DataSourceID="SqlDataSource2" OnItemDataBound="lvJuegosDestacados_ItemDataBound" OnPreRender="lvJuegosDestacados_PreRender" EnablePersistedSelection="True" ValidateRequestMode="Disabled">
-                    <EmptyDataTemplate>
-                        <span>No data was returned.</span>
-                    </EmptyDataTemplate>
                     <ItemTemplate>
                         <div class="lvJuegosDestacados-div">
-                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' onCommand="red_Descripcion" CausesValidation="False" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" />
+                            <asp:ImageButton ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' OnCommand="red_Descripcion" CausesValidation="False" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" />
 
                             <div class="lvJuegosDestacados-div__descto">
                                 <asp:Label ID="Descuento" runat="server" Text='<%# Eval("Descuento_J") %>'></asp:Label>
@@ -113,37 +95,59 @@
                     <LayoutTemplate>
                         <div id="itemPlaceholderContainer" class="JuegosDestacados__container" runat="server" style="">
                             <span runat="server" id="itemPlaceholder" />
-
                         </div>
                     </LayoutTemplate>
                 </asp:ListView>
-
             </div>
-            </section>
-            <aside class="pInicio__aside">
+        </section>
 
-            <div class="pInicio_Listado_Categorias">
-
-                <asp:DataList ID="dl_ChecksCat" runat="server"></asp:DataList>
-                <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDS_CheckboxCat" DataTextField="Nombre_Cat" DataValueField="Codigo_Cat" ValidationGroup="cat" AutoPostBack="True" OnSelectedIndexChanged="cbl_Categorias_SelectedIndexChanged">
-                </asp:CheckBoxList>
-                <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" GridLines="Both" RepeatColumns="4" RepeatDirection="Horizontal">
-                    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                    <ItemStyle BackColor="White" ForeColor="#330099" />
-                    <ItemTemplate>
-                        <asp:Label ID="lbl_ListCat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                        <br />
-                        <asp:Label ID="lbl_PU_ListCat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
-                        <br />
-                        <asp:Image ID="Image2" runat="server" Height="100px" ImageAlign="Left" ImageUrl='<%# Bind("Imagen_J") %>' />
-                    </ItemTemplate>
-                    <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                </asp:DataList>
-                <br />
-            </div>
-
+        <aside class="pInicio__aside">
+            <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDS_CheckboxCat"
+                DataTextField="Nombre_Cat" DataValueField="Codigo_Cat"
+                ValidationGroup="cat" AutoPostBack="True"
+                OnSelectedIndexChanged="cbl_Categorias_SelectedIndexChanged" />
         </aside>
+
+        <section class="pListadoCategorias">
+            <div class="titulo-section">
+                <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
+            </div>
+ <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
+                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                <ItemStyle BackColor="White" ForeColor="#330099" />
+                <ItemTemplate>
+                    
+                </ItemTemplate>
+                <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+            </asp:DataList>--%>
+
+            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J">
+                <ItemTemplate>
+                    <div class="lvListCat__div">
+                      <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                    <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                    </div>
+             
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <div id="lvListCatWrapper" runat="server" style="">
+                        <span runat="server" id="itemPlaceholder" />
+                    </div>
+                    <div style="">
+                    </div>
+                </LayoutTemplate>
+        
+            </asp:ListView>
+        </section>
+
+        <asp:SqlDataSource ID="SqlDS_CheckboxCat" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [Nombre_J], [Imagen_J], [PU_J], [Codigo_J], [Descuento_J] FROM [Juegos] WHERE (([Estado_J] = @Estado_J) AND ([Fecha_Lanzamiento_J] &gt;= @Fecha_Lanzamiento_J))">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="TRUE" Name="Estado_J" Type="Boolean" />
+                <asp:Parameter DbType="Date" DefaultValue="01/01/2019" Name="Fecha_Lanzamiento_J" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>
