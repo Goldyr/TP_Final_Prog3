@@ -10,7 +10,7 @@ namespace Entidades
     {
         //Parametros
         private string Serial;
-        private string CodJuego;
+        private Juego CodJuego;
         private bool Estado;
 
         //Constructores
@@ -19,11 +19,11 @@ namespace Entidades
         //Set & Get
 
         public void SetSerial(string _Serial) { Serial = _Serial; }
-        public void SetCodJuego(string _CodJuego) { CodJuego = _CodJuego; }
+        public void SetCodJuego(string _CodJuego) { CodJuego.SetCodigo(_CodJuego); }
         public void SetEstado(bool _Estado) { Estado = _Estado; }
 
         public string GetSerial() { return this.Serial; }
-        public string GetCodJuego() { return this.CodJuego; }
+        public string GetCodJuego() { return this.GetCodJuego(); }
         public bool GetEstado() { return this.Estado; }
     }
 }

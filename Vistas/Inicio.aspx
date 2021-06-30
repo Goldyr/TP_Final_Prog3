@@ -126,7 +126,7 @@
                 <ItemTemplate>
                     <div class="lvListCat__div">
                       <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                    <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                    <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CausesValidation="False" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" />
                     </div>
              
                 </ItemTemplate>

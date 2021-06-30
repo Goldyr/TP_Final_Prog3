@@ -31,7 +31,11 @@ namespace Entidades
         public void SetEmail(string _Email) { Email = _Email; }
         public void SetPassword(string _Password) { Password = _Password; }
         public void SetTelefono(string _Telefono) { Telefono = _Telefono; }
-        public void SetFechaNacimiento(string _FechaNacimiento) { FechaNacimiento = _FechaNacimiento; }
+        public void SetFechaNacimiento(string _FechaNacimiento) {
+            _FechaNacimiento = _FechaNacimiento.Replace("00:00:00", "");
+            _FechaNacimiento = _FechaNacimiento.Replace("0:00:00", "");
+            FechaNacimiento = _FechaNacimiento; 
+        }
         public void SetAdmin(bool _Admin) { Admin = _Admin; }
         public void SetEstado(bool _Estado) { Estado = _Estado; }
 

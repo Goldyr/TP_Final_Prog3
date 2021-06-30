@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="AgregarDisDes.aspx" />
     <Content Include="AgregarJuegos.aspx" />
+    <Content Include="AgregarMetodosdePago.aspx" />
     <Content Include="BMLJuegos.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo.aspx" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="AgregarJuegos.aspx.designer.cs">
       <DependentUpon>AgregarJuegos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarMetodosdePago.aspx.cs">
+      <DependentUpon>AgregarMetodosdePago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarMetodosdePago.aspx.designer.cs">
+      <DependentUpon>AgregarMetodosdePago.aspx</DependentUpon>
     </Compile>
     <Compile Include="BMLJuegos.aspx.cs">
       <DependentUpon>BMLJuegos.aspx</DependentUpon>
@@ -206,9 +214,7 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="recursos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

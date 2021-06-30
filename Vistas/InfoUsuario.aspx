@@ -96,6 +96,8 @@
             <p>
                 <asp:Button ID="btnConfirmacion" runat="server" OnClick="btnConfirmacion_Click" Text="Cambiar" Visible="False" />
 &nbsp;&nbsp;&nbsp; </p>
+            <p>
+                &nbsp;</p>
         </section>
         <section class="pInfoUsuario__historial">
             <h1>HISTORIAL DE COMPRAS</h1>

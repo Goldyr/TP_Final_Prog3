@@ -8,10 +8,13 @@ namespace Entidades
 {
     public class CategoriaxJuego
     {
-        private string codigoCat;
-        private string codigoJuego;
 
-        public string CodigoCat { get => codigoCat; set => codigoCat = value; }
-        public string CodigoJuego { get => codigoJuego; set => codigoJuego = value; }
+        Categoria codigoCat;
+        Juego codigoJuego;
+
+
+        public string CodigoCat { get => codigoCat.Codigo; set => codigoCat.Codigo = value; }
+        public string CodigoJuego { get => codigoJuego.GetCodigo(); set => codigoJuego.SetCodigo(value); }
+
     }
 }

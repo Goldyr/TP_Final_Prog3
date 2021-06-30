@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace Vistas
 {
 
 
-    public partial class WebForm2
+    public partial class AgregarMetodosdePago
     {
 
         /// <summary>
@@ -24,183 +24,237 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control mainHeader.
+        /// Control li_infoUsuario_iu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mainHeader;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li_infoUsuario_iu;
 
         /// <summary>
-        /// Control li_infoUsuario.
+        /// Control infoUsuario_hl_iu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li_infoUsuario;
+        protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl_iu;
 
         /// <summary>
-        /// Control infoUsuario_hl.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// Control tbPrueba.
+        /// Control txt_Nro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPrueba;
+        protected global::System.Web.UI.WebControls.TextBox txt_Nro;
 
         /// <summary>
-        /// Control mainHeader__content.
+        /// Control rfv_Nro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mainHeader__content;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Nro;
 
         /// <summary>
-        /// Control divLogin.
+        /// Control txt_clave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogin;
+        protected global::System.Web.UI.WebControls.TextBox txt_clave;
 
         /// <summary>
-        /// Control header_lblUsuario.
+        /// Control rfv_clave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label header_lblUsuario;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_clave;
 
         /// <summary>
-        /// Control header_tbUsuario.
+        /// Control txt_FechaVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox header_tbUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txt_FechaVencimiento;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control rfv_FechaVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_FechaVencimiento;
 
         /// <summary>
-        /// Control header_lblContra.
+        /// Control txt_Nombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label header_lblContra;
+        protected global::System.Web.UI.WebControls.TextBox txt_Nombres;
 
         /// <summary>
-        /// Control header_tbContra.
+        /// Control rfv_Nombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox header_tbContra;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Nombres;
 
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control txt_Apellidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.TextBox txt_Apellidos;
 
         /// <summary>
-        /// Control header_btnLogIn.
+        /// Control rfv_Apellidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button header_btnLogIn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Apellidos;
 
         /// <summary>
-        /// Control lblMensajeLogIn.
+        /// Control txt_DNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
+        protected global::System.Web.UI.WebControls.TextBox txt_DNI;
 
         /// <summary>
-        /// Control pInicio__lbladmin.
+        /// Control rfv_DNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pInicio__lbladmin;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_DNI;
 
         /// <summary>
-        /// Control lvJuegosDestacados.
+        /// Control txt_Direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvJuegosDestacados;
+        protected global::System.Web.UI.WebControls.TextBox txt_Direccion;
 
         /// <summary>
-        /// Control cbl_Categorias.
+        /// Control rfv_Direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cbl_Categorias;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Direccion;
 
         /// <summary>
-        /// Control lvListCat.
+        /// Control txt_CodigoPostal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvListCat;
+        protected global::System.Web.UI.WebControls.TextBox txt_CodigoPostal;
 
         /// <summary>
-        /// Control SqlDS_CheckboxCat.
+        /// Control rfv_CodigoPostal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDS_CheckboxCat;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_CodigoPostal;
 
         /// <summary>
-        /// Control SqlDataSource2.
+        /// Control lbl_prueba.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Label lbl_prueba;
+
+        /// <summary>
+        /// Control txt_Email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Email;
+
+        /// <summary>
+        /// Control rfv_Email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Email;
+
+        /// <summary>
+        /// Control Txt_Telefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_Telefono;
+
+        /// <summary>
+        /// Control rfv_Telefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Telefono;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Control SqlDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
