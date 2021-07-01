@@ -34,7 +34,7 @@
                         <a href="Carrito.aspx">Compras</a>
                     </li>
                     <li>
-                        <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_Prueba" placeholder="Buscar" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
                     </li>
                 </ul>
             </nav>
@@ -112,15 +112,7 @@
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
- <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
-                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                <ItemStyle BackColor="White" ForeColor="#330099" />
-                <ItemTemplate>
-                    
-                </ItemTemplate>
-                <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            </asp:DataList>--%>
+            <%# Eval("Nombre_J") %>
 
             <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J">
                 <ItemTemplate>
