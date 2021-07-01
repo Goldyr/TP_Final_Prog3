@@ -9,15 +9,14 @@
     flex-direction: column;
 }
 
-.pInicio__aside {
-    display: inline-block;
+aside {
     position: absolute;
-    top: 420px;
-    left: 20px;
-    background: #3a3a3a87;
+    left: -21%;
+    background: #1d1d1d;
     width: 250px;
     color: #ffffff;
     text-align: center;
+    border-radius: 12px;
 }
 
 #cbl_Categorias {
@@ -26,19 +25,19 @@
     padding: 30px 0;
 }
 
-    #cbl_Categorias tr td {
-        display: flex;
-        justify-content: center;
-    }
+#cbl_Categorias tr td {
+    display: flex;
+    justify-content: center;
+}
 
-        #cbl_Categorias tr td input {
-            margin-right: 20px;
-        }
+#cbl_Categorias tr td input {
+    margin-right: 20px;
+}
 
-        #cbl_Categorias tr td label {
-            width: 162px;
-            text-align: left;
-        }
+#cbl_Categorias tr td label {
+    width: 162px;
+    text-align: left;
+}
 
 /* ESTILOS PARA EL WRAPPER DEL DIV DEL INICIO DE SESION */
 
@@ -79,19 +78,19 @@
     width: 260px;
 }
 
-    .header-botones a {
-        color: #7f7fd4;
-        text-decoration: underline
-    }
+.header-botones a {
+    color: #7f7fd4;
+    text-decoration: underline
+}
 
-    .header-botones input[type=submit] {
-        background: #2d418c;
-        border: none;
-        border-radius: 9px;
-        padding: 3px;
-        color: white;
-        cursor: pointer;
-    }
+.header-botones input[type=submit] {
+    background: #2d418c;
+    border: none;
+    border-radius: 9px;
+    padding: 3px;
+    color: white;
+    cursor: pointer;
+}
 
 
 #header_btnLogIn {
@@ -107,10 +106,10 @@
     justify-content: space-between;
 }
 
-    .main-header__content__div span {
-        width: 115px;
-        height: 20px;
-    }
+.main-header__content__div span {
+    width: 115px;
+    height: 20px;
+}
 
 
 /* SECTION  --------------- */
@@ -122,7 +121,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 20px auto;
+    position: relative;
 }
 
 
@@ -143,9 +143,9 @@ section {
     text-align: center;
 }
 
-    .pInicio__admin-opc:hover {
-        text-decoration: underline;
-    }
+.pInicio__admin-opc:hover {
+    text-decoration: underline;
+}
 
 .JuegosDestacados__container {
     margin: 50px 0px;
@@ -175,22 +175,22 @@ body {
 }
 
 
-    .lvJuegosDestacados-div input[type=image] {
-        border-radius: inherit;
-        width: 100%;
-        height: 100%;
-    }
+.lvJuegosDestacados-div input[type=image] {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
 
 
 @media only screen and (max-width: 768px) {
-    .lvJuegosDestacados-div {
-        width: 400px;
-        margin: 20px 10px;
-    }
+.lvJuegosDestacados-div {
+    width: 400px;
+    margin: 20px 10px;
+}
 
-        .lvJuegosDestacados-div input[type=image] {
-            width: 400px;
-        }
+.lvJuegosDestacados-div input[type=image] {
+    width: 400px;
+}
 }
 
 
@@ -235,37 +235,111 @@ body {
     text-align: center;
 }
 
-.lvListCat__div {
-    width: 300px;
-    height: 140px;
-    background: #000;
-    margin: 10px;
-    border-radius: 8px;
-}
-
-    .lvListCat__div:hover {
-        box-shadow: 0px 0px 10px #ffffff;
-        transition: all 0.2s ease-in-out;
-        width: 320px;
-        height: 160px;
-    }
-
-
-    .lvListCat__div input[type=image] {
-        width: 100%;
-        border-radius: inherit;
-    }
-
-.imgAnimated:hover {
-    background-color: #000;
-    opacity: 0.5;
-    transition: all 0.5s ease-in-out;
-    height: 160px;
-}
+/* LIST VIEW CATEGORIAS =====================*/
 
 #lvListCat_lvListCatWrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+
+.lvListCat__div {
+    width: 300px;
+    height: 140px;
+    background: #000;
+    margin: 10px;
+    border-radius: 8px;
+    position: relative;
+}
+
+
+.lvListCat__div .imgAnimated {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.lvListCat__div__info {
+    position: absolute;
+    *display: flex;
+    width: 100%;
+    display: none;
+    z-index: 1;
+}
+
+/* ESTILOS DE LOS LABEL INTERNOS DE LAS CARTAS */
+
+.infoNombre_lv {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.infoPrecio_lv {
+    background: green;
+    color: white;
+    padding: 6px;
+    border-radius: 15px;
+}
+
+/* EL SIGNO DE DOLAR PARA EL PRECIO */
+
+.infoPrecio_lv::before {
+    content: "$ ";
+}
+
+.infoPrecio_lv::after {
+    content: " USD";
+}
+
+/* ANIMACIONES CUANDO PASAS EL MOUSE POR LA CARTA */
+
+.lvListCat__div:hover {
+    box-shadow: 0px 0px 10px #ffffff;
+    width: 320px;
+    height: 160px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.lvListCat__div:hover .lvListCat__div__info {
+    display: flex;
+    top: 30%;
+    transition: all 0.2s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgAnimated:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lvListCat__div__info:hover + .imgAnimated {
+    opacity: 0.5;
+}
+
+footer {
+    background: #1f1f1f;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-div {
+    width: 300px;
+}
+
+.footer-div h4 {
+    color: #bbbbbb;
+    margin: 20px 0px 30px 0px;
+}
+
+.footer-div p, li {
+    color: grey;
 }
