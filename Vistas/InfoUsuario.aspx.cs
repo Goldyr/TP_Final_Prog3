@@ -32,7 +32,7 @@ namespace WebApplication1
 
                     lblNombre_IU.Text = user.GetNombres();
                     lblEmail_IU.Text = user.GetEmail();
-                    lblApellido_IU.Text = user.GetPassword();
+                    lblApellido_IU.Text = user.GetApellidos();
                     lblTelefono_IU.Text = user.GetTelefono();
                     lblFecha_IU.Text = user.GetFechaNacimiento().Substring(0,9);
                     lbl_user_IU.Text = user.GetUser();

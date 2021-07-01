@@ -71,6 +71,7 @@
     <Content Include="Catalogo.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\P_Contacto.css" />
+    <Content Include="css\P_InfoUsuario.css" />
     <Content Include="css\P_OpcAdmin.css" />
     <Content Include="DescripcionJuego.aspx" />
     <Content Include="imagenes\IMG-00001.jpg" />
@@ -101,6 +102,13 @@
     <Content Include="imagenes\IMG-00026.jpg" />
     <Content Include="imagenes\IMG-00027.jpg" />
     <Content Include="imagenes\IMG-00028.jpg" />
+    <Content Include="imagenes\IMG-00029.jpg" />
+    <Content Include="imagenes\IMG-00030.jpg" />
+    <Content Include="imagenes\IMG-00031.jpg" />
+    <Content Include="imagenes\IMG-00032.jpg" />
+    <Content Include="imagenes\IMG-00033.jpg" />
+    <Content Include="imagenes\IMG-00034.jpg" />
+    <Content Include="imagenes\IMG-00035.jpg" />
     <Content Include="InfoUsuario.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="OpcionesAdmin.aspx" />
