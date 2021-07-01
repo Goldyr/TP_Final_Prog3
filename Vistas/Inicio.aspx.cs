@@ -169,7 +169,7 @@ namespace WebApplication1
 
         protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-
+    
             Label lblDescuento = (Label)e.Item.FindControl("Descuento");
             Label lblPrecio = (Label)e.Item.FindControl("Precio");
             Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
@@ -199,7 +199,7 @@ namespace WebApplication1
 
             if (descuento != 0)
             {
-                lblnuevoPrecio.Text = $"$ {CalcularDescuento(100 - descuento, precio)} USD";
+                lblnuevoPrecio.Text = $"$ {CalcularDescuento(descuento, precio)} USD";
                 divPrecio.Controls.Add(lblnuevoPrecio);
                 lblPrecio.CssClass += "precio_tachado";
             }
@@ -211,13 +211,6 @@ namespace WebApplication1
             lblPrecio.Text = $"$ {precio} USD";
             lblDescuento.Text += " %";
 
-
-
-        }
-
-        private float CalcularDescuento(int Descuento, float Precio)
-        {
-            return (float)Math.Round(Precio * Descuento / 100, 2);
         }
 
         // ================
@@ -230,7 +223,6 @@ namespace WebApplication1
 
         protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //lbl_pruebas_si.Text = cbl_Categorias.SelectedValue.ToString();
             
             string prueba = "";
 
@@ -265,6 +257,29 @@ namespace WebApplication1
                 Response.Redirect("DescripcionJuego.aspx"); //?id=" + e.CommandArgument.ToString());
                 
             }
+        }
+
+        protected void lvListCat_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            Label descuento = (Label)e.Item.FindControl("lblDto");
+            Label precio = (Label)e.Item.FindControl("lblPrecio");
+
+            int valDescuento = Int32.Parse(descuento.Text);
+            float valPrecio = float.Parse(precio.Text);
+
+            if(valDescuento != 0)
+            {
+                valPrecio = CalcularDescuento(valDescuento, valPrecio);
+                precio.Text = valPrecio.ToString();
+            }
+        }
+
+        // FUNCIONES DE UTILIDAD
+
+        private float CalcularDescuento(int Descuento, float Precio)
+        {
+            Descuento = 100 - Descuento;
+            return (float)Math.Round(Precio * Descuento / 100, 2);
         }
     }
 }

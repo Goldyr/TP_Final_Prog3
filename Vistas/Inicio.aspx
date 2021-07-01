@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Inicio</title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
     <link rel="stylesheet" type="text/css" href="/css/P_Inicio.css" />
     <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
@@ -101,34 +101,29 @@
             </div>
         </section>
 
-        <aside class="pInicio__aside">
+    
+
+        <section class="pListadoCategorias">
+                <aside class="pInicio__aside">
             <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDS_CheckboxCat"
                 DataTextField="Nombre_Cat" DataValueField="Codigo_Cat"
                 ValidationGroup="cat" AutoPostBack="True"
                 OnSelectedIndexChanged="cbl_Categorias_SelectedIndexChanged" />
         </aside>
-
-        <section class="pListadoCategorias">
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
- <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
-                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                <ItemStyle BackColor="White" ForeColor="#330099" />
-                <ItemTemplate>
-                    
-                </ItemTemplate>
-                <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            </asp:DataList>--%>
-
-            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J">
+            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
                 <ItemTemplate>
                     <div class="lvListCat__div">
-                      <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                    <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                        <div class="lvListCat__div__info">
+                            <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
+                            <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                            <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                        </div>
+                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
                     </div>
-             
+
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div id="lvListCatWrapper" runat="server" style="">
@@ -137,7 +132,7 @@
                     <div style="">
                     </div>
                 </LayoutTemplate>
-        
+
             </asp:ListView>
         </section>
 
@@ -148,6 +143,23 @@
                 <asp:Parameter DbType="Date" DefaultValue="01/01/2019" Name="Fecha_Lanzamiento_J" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <footer>
+            <div class="footer-div">
+                <h4>Acerca</h4>
+                <p>
+                    Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+                </p>
+            </div>
+            <div class="footer-div">
+                <h4>Integrantes</h4>
+                <ul>
+                    <li>Facundo Rivas</li>
+                    <li>Enzo Bogado</li>
+                    <li>Matias Flori</li>
+                    <li>Sergio Flori</li>
+                </ul>
+            </div>
+        </footer>
     </form>
 </body>
 </html>
