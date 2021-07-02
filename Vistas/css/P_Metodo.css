@@ -1,0 +1,68 @@
+﻿body {
+
+}
+
+.Cuadro_Metodo {
+    padding: 30px;
+    margin: auto;
+    width: 350px;
+    height: 760px;
+    box-shadow: 0px 0px 20px #3b3240;
+    background: #3a3a3a87
+}
+
+
+    .Cuadro_Metodo input[type="submit"] {
+        background: #1d1b1ba3;
+        padding: 5px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        color: #dec4ea;
+        width: 290px;
+        height: 35px;
+    }
+
+.sectionMet-div {
+    position: relative;
+    left: 6%;
+    top: 0px;
+    height: 64px;
+}
+
+    .sectionMet-div:nth-child(11) {
+        height: 120px;
+    }
+
+    .sectionMet-div p {
+        margin-bottom: 0;
+    }
+
+    .sectionMet-div input {
+        margin-bottom: 15px;
+    }
+
+
+#section-h1__Metodo {
+    display: inline-block;
+    position: relative;
+    left: 42%;
+    width: 30%;
+    color: #dec4ea;
+    margin-bottom: 9px;
+}
+
+.sectionMet-div input {
+    margin-bottom: 5px;
+}
+
+.sectionMet-div span {
+    display: block;
+    margin-bottom: 5px;
+    color: #bb5e5e;
+}
+
+
+.sectionMet-div p {
+    margin-bottom: 0px;
+    color: #dec4ea;
+}
