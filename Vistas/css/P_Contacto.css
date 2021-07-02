@@ -1,0 +1,28 @@
+﻿.P_Contacto {
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.Cuadro_Contacto {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.Cuadro_Contacto table {
+    background: #3a3a3a87;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+
+    .Cuadro_Contacto td {
+        color: aquamarine;
+        padding: 10px;
+        text-align: center;
+        width: 30%;
+    }

@@ -4,10 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
-      <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/P_OpcAdmin.css" />
+
+    <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -43,25 +45,32 @@
            
                 </ul>
             </nav>
-          </header>
-        <a class="admin" href="BMLJuegos.aspx">Formulario para EDITAR/ELIMINAR JUEGOS*</a>
-        <br />
-        <br />
-        <a class="admin" href="AgregarJuegos.aspx">Formulario para AGREGAR JUEGOS**</a>
-        <br />
-        <br />
-        <a class="admin" href="AgregarDisDes.aspx">Formulario para AGREGAR DISTRIBUIDORA Y DESARROLLADORA***</a>
-        <br />
+        </header>
+        <section>
+            <div class="Cuadro_Opciones">
+            <a class="admin" href="BMLJuegos.aspx">EDITAR/ELIMINAR JUEGOS</a>
+           
+            <a class="admin" href="AgregarJuegos.aspx">AGREGAR JUEGOS</a>
+            
+            <a class="admin" href="AgregarDisDes.aspx">AGREGAR DISTRIBUIDORA Y DESARROLLADORA</a>
+            </div>
+            
+            
+            
+        </section>
+
         <br />
         AGREGAR KEYS<br />
         <div>
-            Ingrese ID de juego <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
+            Ingrese ID de juego
+            <asp:TextBox ID="txt_ID" runat="server"></asp:TextBox>
             <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_ID" ErrorMessage="RequiredFieldValidator" ValidationGroup="key">Debe ingresar el id de juego</asp:RequiredFieldValidator>
             <br />
             <br />
-            Juego: <asp:Label ID="lblJuego" runat="server"></asp:Label>
-&nbsp;&nbsp; Cantidad de Keys:
+            Juego:
+            <asp:Label ID="lblJuego" runat="server"></asp:Label>
+            &nbsp;&nbsp; Cantidad de Keys:
             <asp:Label ID="lblKeys" runat="server"></asp:Label>
             <br />
             <br />
@@ -75,24 +84,7 @@
             <asp:Label ID="lbl_key" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Usuarios Activos"></asp:Label>
-            <asp:Label ID="lbl_Stat1" runat="server" Text="Label"></asp:Label>
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Precio Promedio de juegos"></asp:Label>
-            <asp:Label ID="lbl_Stat2" runat="server" Text="Label"></asp:Label>
-            <br />
-            <asp:Label ID="Label5" runat="server" Text="Juego mas vendido: "></asp:Label>
-            <asp:Label ID="lbl_Stat3" runat="server" Text="Label"></asp:Label>
-            <br />
-            <asp:Label ID="Label7" runat="server" Text="Edad promedio de usuarios: "></asp:Label>
-            <asp:Label ID="lbl_Stat4" runat="server" Text="Label"></asp:Label>
-            <br />
-            Esta Seccion se accede desde OPCIONES DE ADMINISTRADOR en Inicio<br />
-            *Este HyperLink dirije a un formulario que permite editar,eliminar y agregar juegos<br />
-            **Este Hyperlink dirije a un formlario para agregar juego<br />
-            ***este Hyperlink dirije a un formulario para agregar desarrolladoras y distribuidoras<br />
-            <br />
-            Tambien se puede buscar un juego, que al encontrarlo te da la descripcion y la cantidad de Keys. Permite agregarle Keys</div>
+        </div>
     </form>
 </body>
 </html>
