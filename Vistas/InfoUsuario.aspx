@@ -156,7 +156,11 @@
                 </h4>
             </div>
         </section>
-        <asp:SqlDataSource ID="sql_ventas" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Ventas]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sql_ventas" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [ID_V], [ID_MetodoPago_V], [Fecha_V], [PrecioTotal_V] FROM [Ventas] WHERE ([ID_Usuario_V] = @ID_Usuario_V)">
+            <SelectParameters>
+                <asp:CookieParameter CookieName="IDUsuario" Name="ID_Usuario_V" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <br />
         <asp:SqlDataSource ID="sql_Detallesventas" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT [SerieKey_DV], [CodJuego_DV], [Precio_DV], [ID_DV] FROM [DetalleVentas]"></asp:SqlDataSource>
     </form>

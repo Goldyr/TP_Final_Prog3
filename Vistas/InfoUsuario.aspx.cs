@@ -185,7 +185,10 @@ namespace WebApplication1
             if(e.CommandName == "Ver_Detalle")
             {
                 string ID_Venta = e.CommandArgument.ToString();
-                string Consulta = $"SELECT SerieKey_DV,CodJuego_DV, Precio_DV, ID_DV FROM DetalleVentas where ID_Venta_DV = '{ID_Venta}'";
+                string Consulta = $"SELECT SerieKey_DV,CodJuego_DV, Precio_DV, ID_DV " +
+                "FROM DetalleVentas " +
+                "inner join Ventas on ID_Venta_DV = ID_V " +
+                $"where Ventas.ID_Usuario_V = '{user.GetId()}' AND ID_Venta_DV = '{ID_Venta}'";
 
                 sql_Detallesventas.SelectCommand = Consulta;
                 sql_Detallesventas.DataBind();
