@@ -12,23 +12,18 @@ namespace WebApplication1
 {
     public partial class WebForm8 : System.Web.UI.Page
     {
-        NegocioUsuario ns_user = new NegocioUsuario();
-        NegocioJuego ns_juego = new NegocioJuego();
+        NegocioUsuario negUser = new NegocioUsuario();
+        Usuario user = new Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (this.Request.Cookies["IDUsuario"] != null)
             {
-                //Si no tienen data en la base de datos comenten esto
-                //Busco la info de los usuarios activos
-                lbl_Stat1.Text = ns_user.UsuariosActivos().Rows[0][0].ToString();
-
-                lbl_Stat4.Text = ns_user.EdadPromedio().Rows[0][0].ToString();
-
-                lbl_Stat2.Text = " $ " + ns_juego.PrecioPromedio().Rows[0][0].ToString();
-
-                lbl_Stat3.Text = ns_juego.TopSeller().Rows[0][0].ToString();
-
-
+                user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                negUser.CargarUsuarioPorID(user);
+                infoUsuario_hl_iu.Text = user.GetUser();
+                li_infoUsuario_iu.Visible = true;
+                infoUsuario_hl_iu.Visible = true;
             }
         }
 
@@ -44,7 +39,7 @@ namespace WebApplication1
 
             lblJuego.Text = tabla.Rows[0][0].ToString();
             lblKeys.Text = tabla.Rows[0][1].ToString();
-            
+                    
         }
 
         protected void btn_agregarkey_Click(object sender, EventArgs e)

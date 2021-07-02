@@ -79,6 +79,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox tbPrueba;
 
         /// <summary>
+        /// Control btnBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
+
+        /// <summary>
         /// Control mainHeader__content.
         /// </summary>
         /// <remarks>
@@ -169,7 +178,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
 
         /// <summary>
-        /// pInicio__lbladmin control.
+        /// Control pInicio__lbladmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

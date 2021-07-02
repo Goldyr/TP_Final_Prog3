@@ -1,0 +1,137 @@
+﻿.pInfoUsuario {
+    display: flex;
+    height: 350px;
+}
+
+.pCuadro_Usuario {
+    background: #3a3a3a89;
+    border: 1px solid #3a3a3a89;
+    width: 450px;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+}
+
+    .pCuadro_Usuario h1 {
+        color: #cbd8d4;
+    }
+
+.Usuario_Descripcion p, span {
+    display: inline-block;
+}
+
+.Usuario_Descripcion span{
+    color:white;
+}
+
+.Usuario_Descripcion p {
+    color: aquamarine;
+}
+
+.Usuario_Descripcion input[type="submit"] {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #dec4ea;
+    background: #484848;
+    border-radius: 5px;
+    border: 1px;
+    width: 100px;
+    height: 25px;
+}
+
+    .Usuario_Descripcion input[type="submit"]:hover {
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0px 0px 10px black;
+        font-weight: bold;
+    }
+
+#btn_cancelar_IU {
+    margin: auto 160px;
+}
+
+#lbl_msg_IU {
+    margin-top: 25px;
+}
+
+
+/*SECCION CAMBIO DE CONTRASEÑA*/
+.pCambioContrasena {
+    display: flex;
+    height: 350px;
+}
+
+.pCuadro_Contrasena {
+    background: #3a3a3a89;
+    border: 1px solid #3a3a3a89;
+    width: 450px;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+}
+
+    .pCuadro_Contrasena p {
+        display: inline-block;
+        color: aquamarine;
+    }
+
+    .pCuadro_Contrasena h1 {
+        color: #cbd8d4;
+    }
+
+.Usuario_Contrasena input[type="submit"] {
+    color: #dec4ea;
+    background: #484848;
+    border-radius: 5px;
+    border: 1px;
+    width: 100px;
+    height: 25px;
+}
+
+    .Usuario_Contrasena input[type="submit"]:hover {
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0px 0px 10px black;
+        font-weight: bold;
+    }
+
+.Usuario_ContrasenaNueva {
+    /* color: red; */
+    /* background: red; */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+    .Usuario_ContrasenaNueva input[type="submit"] {
+        position: absolute;
+        bottom: 17px;
+        left: 25px;
+        color: #dec4ea;
+        background: #484848;
+        border-radius: 5px;
+        border: 1px;
+        width: 100px;
+        height: 25px;
+    }
+
+        .Usuario_ContrasenaNueva input[type="submit"]:hover {
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0px 0px 10px black;
+            font-weight: bold;
+        }
+
+#txtContraseñaNueva {
+    width: 175px;
+}
+
+#txtContraseñaNueva2 {
+    width: 175px;
+}

@@ -60,6 +60,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox txt_User_IU;
 
         /// <summary>
+        /// Control rfvUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUser;
+
+        /// <summary>
         /// Control lblNombre_IU.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox txt_Nombre_IU;
 
         /// <summary>
+        /// Control rfvNombres.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombres;
+
+        /// <summary>
         /// Control lblApellido_IU.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace WebApplication1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Apellidos_IU;
+
+        /// <summary>
+        /// Control rfvApellidos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellidos;
 
         /// <summary>
         /// Control lblEmail_IU.
@@ -213,6 +240,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox txtContraseñaNueva;
 
         /// <summary>
+        /// Control rfvContraseñaNueva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseñaNueva;
+
+        /// <summary>
         /// Control lblContraseñaNueva2.
         /// </summary>
         /// <remarks>
@@ -229,6 +265,15 @@ namespace WebApplication1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraseñaNueva2;
+
+        /// <summary>
+        /// Control rfvContraseñaNueva0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseñaNueva0;
 
         /// <summary>
         /// Control cvContraseña.

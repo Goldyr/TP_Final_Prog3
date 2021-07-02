@@ -59,7 +59,8 @@
                        </a>
                      </li>
                     <li>
-                        <asp:TextBox runat="server" ID="txt_Prueba" placeholder="Buscar" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" PostBackUrl="~/DescripcionJuego.aspx" />
                     </li>
                 </ul>
             </nav>
