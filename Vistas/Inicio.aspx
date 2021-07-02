@@ -35,6 +35,7 @@
                     </li>
                     <li>
                         <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" PostBackUrl="~/DescripcionJuego.aspx" />
                     </li>
                 </ul>
             </nav>
@@ -112,7 +113,7 @@
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
- <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
+            <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
                 <ItemStyle BackColor="White" ForeColor="#330099" />
@@ -125,10 +126,10 @@
             <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J">
                 <ItemTemplate>
                     <div class="lvListCat__div">
-                      <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                    <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                        <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
                     </div>
-             
+
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div id="lvListCatWrapper" runat="server" style="">
@@ -137,7 +138,7 @@
                     <div style="">
                     </div>
                 </LayoutTemplate>
-        
+
             </asp:ListView>
         </section>
 

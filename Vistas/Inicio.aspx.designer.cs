@@ -60,6 +60,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.TextBox tbPrueba;
 
         /// <summary>
+        /// Control btnBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
+
+        /// <summary>
         /// Control mainHeader__content.
         /// </summary>
         /// <remarks>
@@ -150,7 +159,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
 
         /// <summary>
-        /// pInicio__lbladmin control.
+        /// Control pInicio__lbladmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -159,7 +168,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label pInicio__lbladmin;
 
         /// <summary>
-        /// SqlDS_CheckboxCat control.
+        /// Control lvJuegosDestacados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -168,7 +177,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.ListView lvJuegosDestacados;
 
         /// <summary>
-        /// SqlDataSource2 control.
+        /// Control cbl_Categorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -177,7 +186,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.CheckBoxList cbl_Categorias;
 
         /// <summary>
-        /// lbl_pruebas_si control.
+        /// Control lvListCat.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -186,17 +195,16 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.ListView lvListCat;
 
         /// <summary>
-        /// dl_ChecksCat control.
+        /// Control SqlDS_CheckboxCat.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dl_ChecksCat;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDS_CheckboxCat;
 
- 
         /// <summary>
-        /// dl_ListadoCat control.
+        /// Control SqlDataSource2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

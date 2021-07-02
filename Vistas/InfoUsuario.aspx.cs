@@ -68,7 +68,8 @@ namespace WebApplication1
             txt_User_IU.Text = lbl_user_IU.Text;
             txt_Nombre_IU.Text = lblNombre_IU.Text;
             txt_telefono_IU.Text = lblTelefono_IU.Text;
-            
+            lbl_msg_IU.Text = "";
+
         }
 
         protected void btn_cancelar_IU_Click(object sender, EventArgs e)
@@ -86,6 +87,8 @@ namespace WebApplication1
             lblApellido_IU.Visible = true;
             lblTelefono_IU.Visible = true;
             lbl_user_IU.Visible = true;
+
+   
         }
 
         protected void btn_guardar_IU_Click(object sender, EventArgs e)
@@ -114,7 +117,7 @@ namespace WebApplication1
 
             if (negUser.NU_ModificarUsuario(user, lbl_user_IU.Text))
             {
-                lbl_msg_IU.Text = "Cambios agregados Correctamente";
+                lbl_msg_IU.Text = "Cambios agregados correctamente";
                 lblNombre_IU.Text = user.GetNombres();
                 lblEmail_IU.Text = user.GetEmail();
                 lblApellido_IU.Text = user.GetApellidos();
@@ -123,7 +126,7 @@ namespace WebApplication1
                 lbl_user_IU.Text = user.GetUser();
                 infoUsuario_hl_iu.Text = user.GetUser();
             }
-            else lbl_msg_IU.Text = "El usuario ya existe intente otro";
+            else lbl_msg_IU.Text = "El usuario ya existe, intente otro";
 
         }
 
@@ -149,8 +152,6 @@ namespace WebApplication1
                     btnConfirmacion.Visible = cvContraseña.Visible = true;
                 } 
             //}
-
-
         }
 
         protected void btnConfirmacion_Click(object sender, EventArgs e)
