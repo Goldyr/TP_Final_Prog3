@@ -192,5 +192,9 @@ namespace WebApplication1
             }
         }
 
+        protected void btn_metodo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarMetodosdePago.aspx");
+        }
     }
 }

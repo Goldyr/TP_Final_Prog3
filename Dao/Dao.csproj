@@ -48,6 +48,7 @@
     <Compile Include="DaoDis.cs" />
     <Compile Include="DaoJuego.cs" />
     <Compile Include="DaoKey.cs" />
+    <Compile Include="DaoMetodoXUsuario.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="DaoVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

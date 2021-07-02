@@ -97,7 +97,8 @@
                 <asp:Button ID="btnConfirmacion" runat="server" OnClick="btnConfirmacion_Click" Text="Cambiar" Visible="False" />
 &nbsp;&nbsp;&nbsp; </p>
             <p>
-                &nbsp;</p>
+                <asp:Button ID="btn_metodo" runat="server" OnClick="btn_metodo_Click" Text="Agregar Metodo de pago" />
+            </p>
         </section>
         <section class="pInfoUsuario__historial">
             <h1>HISTORIAL DE COMPRAS</h1>
