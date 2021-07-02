@@ -156,7 +156,8 @@
                     <li>Facundo Rivas</li>
                     <li>Enzo Bogado</li>
                     <li>Matias Flori</li>
-                    <li>Sergio Flori</li>
+                    <li>Sebastian Buelga</li>
+                    <li>Sergio Rivera</li>
                 </ul>
             </div>
         </footer>

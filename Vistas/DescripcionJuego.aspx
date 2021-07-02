@@ -50,7 +50,24 @@
                 <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
             </div>
         </section>
-
+        <footer>
+            <div class="footer-div">
+                <h4>Acerca</h4>
+                <p>
+                    Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+                </p>
+            </div>
+            <div class="footer-div">
+                <h4>Integrantes</h4>
+                <ul>
+                    <li>Facundo Rivas</li>
+                    <li>Enzo Bogado</li>
+                    <li>Matias Flori</li>
+                    <li>Sebastian Buelga</li>
+                    <li>Sergio Rivera</li>
+                </ul>
+            </div>
+        </footer>
 
 
     </form>

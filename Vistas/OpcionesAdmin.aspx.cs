@@ -54,9 +54,6 @@ namespace WebApplication1
                 }
                 else lbl_key.Text = "No se pudo agregar la Key";
             }
-
-
-
         }
     }
 }
