@@ -125,5 +125,23 @@ namespace Negocio
             dt = dao.ListarJuegosPorNombre(nombre);
             return dt;
         }
+
+        public Juego cargarJuego(string id)
+        {
+            Juego juego = new Juego();
+            string consulta = $"SELECT * FROM Juegos WHERE Codigo_J = '{id}'";
+            dao.getJuego(juego, consulta);
+
+            return juego;
+        }
+
+        public Juego cargarJuegoPorNombre(string nombre)
+        {
+            Juego juego = new Juego();
+            string consulta = $"SELECT * FROM Juegos WHERE Nombre_J = '{nombre}'";
+            dao.getJuego(juego, consulta);
+
+            return juego;
+        }
     }
 }
