@@ -143,5 +143,15 @@ namespace Negocio
 
             return juego;
         }
+
+        public DataTable PrecioPromedio()
+        {
+            return dao.PrecioPromedio();
+        }
+
+        public DataTable TopSeller()
+        {
+            return dao.TopSeller();
+        }
     }
 }

@@ -8,12 +8,6 @@ C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\bin\Debug\Entidades.pdb
 C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.dll
 C:\Users\Rivas\source\repos\TP_Final_Prog3\Entidades\obj\Debug\Entidades.pdb
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\bin\Debug\Entidades.dll
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.dll
-C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Maty\Desktop\final\Entidades\bin\Debug\Entidades.dll
 C:\Users\Maty\Desktop\final\Entidades\bin\Debug\Entidades.pdb
 C:\Users\Maty\Desktop\final\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
@@ -51,3 +45,8 @@ C:\Users\S\Desktop\TP_Prog_Dev\Entidades\obj\Debug\Entidades.csprojAssemblyRefer
 C:\Users\S\Desktop\TP_Prog_Dev\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\S\Desktop\TP_Prog_Dev\Entidades\obj\Debug\Entidades.dll
 C:\Users\S\Desktop\TP_Prog_Dev\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\bin\Debug\Entidades.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.dll
+C:\Users\Enzo\source\repos\PROYECTO FINAL\Dev\TP_Final_Prog3\Entidades\obj\Debug\Entidades.pdb

@@ -193,6 +193,20 @@ namespace Dao
             SqlParametros.Value = user.GetPassword();
 
         }
+        public DataTable UsuariosActivos()
+        {
+            SqlCommand comando = new SqlCommand();
+
+            return ad.EjecutarProcedimientoAlmacenado_DT(comando, "sp_Usuarios_Activos");
+        }
+
+
+        public DataTable EdadPromedio()
+        {
+            SqlCommand comando = new SqlCommand();
+
+            return ad.EjecutarProcedimientoAlmacenado_DT(comando, "sp_Edad_Promedio");
+        }
     }
 
 }

@@ -188,6 +188,19 @@ namespace Dao
 
 
         }
+        public DataTable PrecioPromedio()
+        {
+            SqlCommand comando = new SqlCommand();
+
+            return datos.EjecutarProcedimientoAlmacenado_DT(comando, "sp_Precio_Promedio");
+        }
+
+        public DataTable TopSeller()
+        {
+            SqlCommand comando = new SqlCommand();
+
+            return datos.EjecutarProcedimientoAlmacenado_DT(comando, "sp_Top_Seller");
+        }
 
     }
 }

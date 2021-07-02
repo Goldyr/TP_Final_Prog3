@@ -79,5 +79,21 @@ namespace Dao
             return estado;
         }
 
+        //Ejecuta un sp pero devuelve datos en vez de las filas cambiadas.
+        public DataTable EjecutarProcedimientoAlmacenado_DT(SqlCommand Comando, String NombreSP)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd = Comando;
+            cmd.Connection = Conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = NombreSP;
+            dt.Load(cmd.ExecuteReader());
+
+            Conexion.Close();
+            return dt;
+        }
+
     }
 }

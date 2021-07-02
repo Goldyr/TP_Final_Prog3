@@ -62,6 +62,17 @@
             <asp:Label ID="lbl_key" runat="server"></asp:Label>
             <br />
             <br />
+            <asp:Label ID="Label1" runat="server" Text="Usuarios Activos"></asp:Label>
+            <asp:Label ID="lbl_Stat1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Precio Promedio de juegos"></asp:Label>
+            <asp:Label ID="lbl_Stat2" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Juego mas vendido: "></asp:Label>
+            <asp:Label ID="lbl_Stat3" runat="server" Text="Label"></asp:Label>
+            <br />
+            <asp:Label ID="Label7" runat="server" Text="Edad promedio de usuarios: "></asp:Label>
+            <asp:Label ID="lbl_Stat4" runat="server" Text="Label"></asp:Label>
             <br />
             Esta Seccion se accede desde OPCIONES DE ADMINISTRADOR en Inicio<br />
             *Este HyperLink dirije a un formulario que permite editar,eliminar y agregar juegos<br />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Entidades;
 using Dao;
 
@@ -94,6 +95,14 @@ namespace Negocio
                 return true;
             }
             return false;
+        }
+        public DataTable UsuariosActivos()
+        {
+            return dao.UsuariosActivos();
+        }
+        public DataTable EdadPromedio()
+        {
+            return dao.EdadPromedio();
         }
     }
 }
