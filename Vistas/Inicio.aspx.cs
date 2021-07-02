@@ -124,13 +124,15 @@ namespace WebApplication1
         private void EsconderHeaderLogIn()
         {
             divLogin.Style["display"] = "none";
-          
+            lilogout.Style["display"]="inline-block";
+            
         }
 
         private void MostrarHeaderLogIn()
         {
 
             divLogin.Style["display"] = "flex";
+            lilogout.Style["display"] = "none";
         }
 
         // ==================================
@@ -150,6 +152,7 @@ namespace WebApplication1
             HttpCookie ck_ID = new HttpCookie("IDUsuario");
 
             ck_ID.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Clear();
             Response.Cookies.Add(ck_ID);
         }
      
@@ -157,10 +160,7 @@ namespace WebApplication1
         {
             BorrarCookie();
 
-         
-            pInicio__lbladmin.Visible = false;
-   
-            lblMensajeLogIn.Text = "";
+            ActualizarCss();                
         }
 
         // =======================

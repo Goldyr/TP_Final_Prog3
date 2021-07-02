@@ -11,23 +11,36 @@
 </head>
 <body>
     <form id="form1" runat="server">
-             <header class="default-header">
+            <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
                    <li>
-                       <a href="Inicio.aspx">Inicio</a>
+                      <a href="Inicio.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                        Inicio</a>
                    </li>
            
                    <li>
-                       <a href="Contacto.aspx">Contacto</a>
+                        <a href="Contacto.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>Contacto</a>
                    </li>
                    <li>
-                          <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                         
                             <i class="fas fa-shopping-cart"></i>
-                            <p>Carrito</p>
                         </a>
                    </li>
-       
+           
                 </ul>
             </nav>
           </header>

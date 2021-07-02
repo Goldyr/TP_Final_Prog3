@@ -54,14 +54,18 @@ a {
 }
 
 .nav-menu__li__carrito i {
-    margin-right: 10px;
+    margin-left: 25px;
     font-size: 25px;
+    position: relative;
+    left: 10px;
 }
 
 .nav-menu__li__carrito a {
-    color: #0f7294;
+    color: #dec4ea;
     opacity: 0;
+    padding: 0px;
     position: absolute;
+    right: 18px;
 }
 
     .nav-menu__li__carrito a:hover {
@@ -81,7 +85,7 @@ a {
 
     to {
         transform: translateX(50px);
-        color: #0f7294;
+        color: #eccdf9;
         opacity: 1;
     }
 }
@@ -105,14 +109,15 @@ a {
     margin: 0;
 }
 
-.nav-menu__ul li {
-    width: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: #bbbbbb;
-}
+    .nav-menu__ul a {
+        width: 150px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        padding: 15px 15px;
+        overflow: hidden;
+        transition: 0.1s;
+    }
 
 .nav-menu__ul a:hover {
     text-decoration: underline;
@@ -155,7 +160,7 @@ a {
     background: linear-gradient(270deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span3 {
+.nav-menu__ul a:hover #nav-menu__span3 {
     right: 100%;
     transition: 1s;
     animation: slideleft 1.60s ease forwards infinite;
@@ -169,7 +174,7 @@ a {
     background: linear-gradient(180deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span2 {
+.nav-menu__ul a:hover #nav-menu__span2 {
     top: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -184,7 +189,7 @@ a {
     background: linear-gradient(360deg,transparent,#59afd0);
 }
 
-*.nav-menu__ul a:hover #nav-menu__span4 {
+.nav-menu__ul a:hover #nav-menu__span4 {
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.25s;
@@ -273,6 +278,32 @@ a {
     margin-bottom: 15px;
 }
 
+.seleccionado #nav-menu__span1 {
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slideright 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span3 {
+    right: 100%;
+    transition: 1s;
+    animation: slideleft 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidebottom 1.60s ease forwards infinite;
+}
+
+.seleccionado #nav-menu__span4 {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+    animation: slidetop 1.60s ease forwards infinite;
+}
 
 #section-h1__registro {
     display: inline-block;

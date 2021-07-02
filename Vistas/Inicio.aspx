@@ -23,16 +23,41 @@
                     <li id="li_infoUsuario" runat="server">
                         <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="False">[infoUsuario_hl]</asp:HyperLink>
                     </li>
-                    <li class="seleccionado">
-                        <a href="Inicio.aspx">Inicio</a>
+                   <li  class="seleccionado" >
+                    <a href="Inicio.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                        Inicio</a>
+                   </li>
+           
+                   <li >
+                        <a href="Contacto.aspx">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>Contacto</a>
+                   </li>
+                   <li class="nav-menu__li__carrito">
+                       <i class="fas fa-shopping-cart"></i>
+                       <a href="Carrito.aspx" class="nav-menu__li__carrito">
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
+                              compras
+                        </a>
                     </li>
-                    <li>
-                        <a href="Contacto.aspx">Contacto</a>
-                    </li>
-                    <li class="nav-menu__li__carrito">
-                        <i class="fas fa-shopping-cart"></i>
-                        <a href="Carrito.aspx">Compras</a>
-                    </li>
+                     <li id="lilogout" runat="server">                     
+                       <a>
+                        <span id="nav-menu__span1"></span>
+                        <span id="nav-menu__span2"></span>
+                        <span id="nav-menu__span3"></span>
+                        <span id="nav-menu__span4"></span>
+                        <asp:Button ID="header_btn_LogOut" runat="server"  OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" Visible="True" CausesValidation="False" />
+                       </a>
+                     </li>
                     <li>
                         <asp:TextBox runat="server" ID="txt_Prueba" placeholder="Buscar" AutoPostBack="True" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
                     </li>
