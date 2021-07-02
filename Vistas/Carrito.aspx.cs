@@ -39,7 +39,7 @@ namespace WebApplication1
 
             bool ExistenCoincidencias = false;
 
-            foreach (GridViewRow row in GridView1.Rows)
+            foreach (GridViewRow row in gvDetallesCarrito.Rows)
             {
 
                 Label lbl = row.Cells[0].FindControl("lbl_Juego") as Label;
@@ -192,26 +192,26 @@ namespace WebApplication1
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            GridView1.EditIndex = e.NewEditIndex;
+            gvDetallesCarrito.EditIndex = e.NewEditIndex;
             cargarGrid();
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            GridView1.EditIndex = -1;
+            gvDetallesCarrito.EditIndex = -1;
             cargarGrid();
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            string nombre = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Juego")).Text;
-            string cantidad = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("tb_edit")).Text;
-            string prPagar = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Prpagar")).Text;
-            string prU = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Pu")).Text;
+            string nombre = ((Label)gvDetallesCarrito.Rows[e.RowIndex].FindControl("lbl_Juego")).Text;
+            string cantidad = ((TextBox)gvDetallesCarrito.Rows[e.RowIndex].FindControl("tb_edit")).Text;
+            string prPagar = ((Label)gvDetallesCarrito.Rows[e.RowIndex].FindControl("lbl_Prpagar")).Text;
+            string prU = ((Label)gvDetallesCarrito.Rows[e.RowIndex].FindControl("lbl_Pu")).Text;
 
             ActualizarTablaSessionGV(e, nombre, cantidad, prPagar, prU);
 
-            GridView1.EditIndex = -1;
+            gvDetallesCarrito.EditIndex = -1;
             cargarGrid();
         }
 
@@ -251,8 +251,8 @@ namespace WebApplication1
 
         private void cargarGrid()
         {
-            GridView1.DataSource = (DataTable)Session["carrito"];
-            GridView1.DataBind();
+            gvDetallesCarrito.DataSource = (DataTable)Session["carrito"];
+            gvDetallesCarrito.DataBind();
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

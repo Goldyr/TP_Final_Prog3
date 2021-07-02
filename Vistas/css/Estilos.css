@@ -3,6 +3,8 @@
 body {
     background: url(/recursos//b9c8f893c9a782033a01f47e0c0b1d6e.png) center center fixed no-repeat;
     background-size: cover;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
 }
 
 /* ESTILOS EN GENERAL */
@@ -25,19 +27,12 @@ body {
     align-self: center;
 }
 
-
-
 .AgregarJuegos__div p {
     margin: 0;
 }
 
 .AgregarJuegos__div {
     margin: 20px 0px;
-}
-
-body {
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
 }
 
 ul {
@@ -110,18 +105,18 @@ a {
     margin: 0;
 }
 
-    .nav-menu__ul li {
-        width: 160px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        color: #bbbbbb;
-    }
+.nav-menu__ul li {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #bbbbbb;
+}
 
-    .nav-menu__ul a:hover {
-        text-decoration: underline;
-    }
+.nav-menu__ul a:hover {
+    text-decoration: underline;
+}
 
 .section-div p {
     margin-bottom: 0;
@@ -266,28 +261,18 @@ a {
     top: 0px;
 }
 
-    .section-div:nth-child(8) {
-        height: 120px;
-    }
-
-    .section-div p {
-        margin-bottom: 0;
-    }
-
-    .section-div input {
-        margin-bottom: 15px;
-    }
-
-/*
-    .seleccionado {
-    background: #0f7294;
-    padding: 5px;
-    border-radius: 30px;
-    color: white;
-    border: #0f7294 3px solid;
-    box-shadow: inset 0px 0px 0px 2px #ffffff;
+.section-div:nth-child(8) {
+    height: 120px;
 }
-*/
+
+.section-div p {
+    margin-bottom: 0;
+}
+
+.section-div input {
+    margin-bottom: 15px;
+}
+
 
 #section-h1__registro {
     display: inline-block;
@@ -345,6 +330,7 @@ a {
 
 
 footer {
+    width: 100%;
     background: #1f1f1f;
     padding: 20px;
     display: flex;
