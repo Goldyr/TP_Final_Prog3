@@ -26,9 +26,9 @@ namespace Dao
         private void ArmarparametrosAgregarKey(ref SqlCommand Comando,  Key _key )
         {
             SqlParameter sqlparametros = new SqlParameter();
-            sqlparametros = Comando.Parameters.Add("@CodJuego", SqlDbType.Char);
+            sqlparametros = Comando.Parameters.Add("@CodJuego", SqlDbType.Char, 10);
             sqlparametros.Value = _key.GetCodJuego();
-            sqlparametros = Comando.Parameters.Add("@Serie", SqlDbType.Char);
+            sqlparametros = Comando.Parameters.Add("@Serie", SqlDbType.Char, 10);
             sqlparametros.Value = _key.GetSerial();
         }
 

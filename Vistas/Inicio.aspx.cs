@@ -252,10 +252,9 @@ namespace WebApplication1
         {
             if (e.CommandName == "redirectDescripcion")
             {
-                string codigo = e.CommandArgument.ToString();
-                Session["Juego"] = $"SELECT Nombre_J, Descripcion_J, Imagen_J, PU_J, Descuento_J FROM Juegos WHERE Codigo_J = '{codigo}'";
-                Response.Redirect("DescripcionJuego.aspx"); //?id=" + e.CommandArgument.ToString());
-                
+                Response.Redirect($"DescripcionJuego.aspx?id={e.CommandArgument}"); //?id=" + e.CommandArgument.ToString());
+               
+
             }
         }
 

@@ -121,7 +121,7 @@
                             <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
                             <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
                         </div>
-                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" CausesValidation="False" />
                     </div>
 
                 </ItemTemplate>
@@ -156,7 +156,8 @@
                     <li>Facundo Rivas</li>
                     <li>Enzo Bogado</li>
                     <li>Matias Flori</li>
-                    <li>Sergio Flori</li>
+                    <li>Sebastian Buelga</li>
+                    <li>Sergio Rivera</li>
                 </ul>
             </div>
         </footer>
