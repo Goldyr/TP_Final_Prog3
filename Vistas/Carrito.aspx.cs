@@ -144,11 +144,12 @@ namespace WebApplication1
                     {
                         int valorCantidadActual = int.Parse(row["Cantidad"].ToString());
                         float prPagar = float.Parse(row["Precio_a_Pagar"].ToString());
+                        float prUnitario = float.Parse(row["PrecioUnitario"].ToString());
 
                         if (valorCantidadActual + cantidadVecesRepetido <= cantidadKeysExistentes)
                         {
                             valorCantidadActual += cantidadVecesRepetido;
-                            prPagar *= valorCantidadActual;
+                            prPagar = prUnitario * valorCantidadActual;
 
                             row["Cantidad"] = valorCantidadActual.ToString();
                             row["Precio_a_Pagar"] = prPagar.ToString();
@@ -172,12 +173,6 @@ namespace WebApplication1
 
             if (keys != null) return Int32.Parse(keys);
             else return 0;
-        }
-
-
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-
         }
 
         protected void modificarCantidad(object sender, CommandEventArgs e)
@@ -212,36 +207,45 @@ namespace WebApplication1
             string nombre = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Juego")).Text;
             string cantidad = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("tb_edit")).Text;
             string prPagar = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Prpagar")).Text;
+            string prU = ((Label)GridView1.Rows[e.RowIndex].FindControl("lbl_Pu")).Text;
 
-            ActualizarTablaSessionGV(e, nombre, cantidad, prPagar);
+            ActualizarTablaSessionGV(e, nombre, cantidad, prPagar, prU);
 
             GridView1.EditIndex = -1;
             cargarGrid();
         }
 
         private void ActualizarTablaSessionGV(GridViewUpdateEventArgs e, string nombre, 
-                                              string cantidad, string prPagar)
+                                              string cantidad, string prPagar, string prU)
         {
             Juego _juego = new Juego();
             NegocioJuego _njuego = new NegocioJuego();
+            DataTable dtSession = (DataTable)Session["carrito"];
+
             int cantidadKeysExistentes;
+
+            float precioUnitario = float.Parse(prU);
+            float precioPagar = float.Parse(prPagar);
 
             _juego = _njuego.cargarJuegoPorNombre((nombre));
             cantidadKeysExistentes = consultarCantidadKeys(_juego);
 
-            DataTable dtSession = (DataTable)Session["carrito"];
-
             if (int.Parse(cantidad) <= cantidadKeysExistentes)
             {
                 dtSession.Rows[e.RowIndex][1] = cantidad;
+                precioPagar = precioUnitario * int.Parse(cantidad);
             }
             else
             {
                 dtSession.Rows[e.RowIndex][1] = cantidadKeysExistentes;
+                precioPagar = precioUnitario * cantidadKeysExistentes;
+
                 lbl_ErrorEditing.Visible = true;
                 lbl_ErrorEditing.Text = $"Error interno al editar la cantidad de keys de {nombre}. " +
                     $"Solo te podemos dar ({cantidadKeysExistentes}).";
             }
+
+            dtSession.Rows[e.RowIndex][3] = precioPagar.ToString();
 
         }
 
@@ -249,6 +253,17 @@ namespace WebApplication1
         {
             GridView1.DataSource = (DataTable)Session["carrito"];
             GridView1.DataBind();
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DataTable dtSession = Session["carrito"] as DataTable;
+
+            dtSession.Rows[e.RowIndex].Delete();
+
+            Session["carrito"] = dtSession;
+
+            cargarGrid();
         }
     }
 }
