@@ -39,15 +39,25 @@
                        <span id="nav-menu__span3"></span>
                        <span id="nav-menu__span4"></span>Contacto</a>
                    </li>
-                   <li>
-                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                   <li class="nav-menu__li__carrito">
+                       <i class="fas fa-shopping-cart"></i>
+                       <a href="Carrito.aspx" class="nav-menu__li__carrito">
                        <span id="nav-menu__span1"></span>
                        <span id="nav-menu__span2"></span>
                        <span id="nav-menu__span3"></span>
                        <span id="nav-menu__span4"></span>
-                         
-                            <i class="fas fa-shopping-cart"></i>
+                              compras
                         </a>
+                    </li>
+                     <li id="lilogout" runat="server">                     
+                       <a>
+                        <span id="nav-menu__span1"></span>
+                        <span id="nav-menu__span2"></span>
+                        <span id="nav-menu__span3"></span>
+                        <span id="nav-menu__span4"></span>
+                        <asp:Button ID="header_btn_LogOut" runat="server"  OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" Visible="True" CausesValidation="False" />
+                       </a>
+                     </li>
                     <li>
                         <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
                     </li>
@@ -71,8 +81,7 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="header_tbContra" ErrorMessage="RequiredFieldValidator">*</asp:RequiredFieldValidator>
                     </div>
                     <div class="main-header__content__div header-botones">
-                        <asp:Button ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx" />
-                        <%--<asp:Button ID="header_btn_LogOut" runat="server" OnClick="header_btn_LogOut_Click" PostBackUrl="~/Inicio.aspx" Text="Cerrar Sesion" Visible="False" />--%>
+                        <asp:Button ID="header_btnLogIn" runat="server" Text="Iniciar Sesión" OnClick="header_btnLogIn_Click" PostBackUrl="~/Inicio.aspx" />                      
                         <a href="Registrarse.aspx">¿No tenés cuenta?</a>
                     </div>
 
@@ -160,6 +169,23 @@
             </div>
 
         </aside>
+        <footer>
+            <div class="footer-div">
+                <h4>Acerca</h4>
+                <p>
+                    Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+                </p>
+            </div>
+            <div class="footer-div">
+                <h4>Integrantes</h4>
+                <ul>
+                    <li>Facundo Rivas</li>
+                    <li>Enzo Bogado</li>
+                    <li>Matias Flori</li>
+                    <li>Sergio Flori</li>
+                </ul>
+            </div>
+        </footer>
     </form>
 </body>
 </html>
