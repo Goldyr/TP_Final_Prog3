@@ -44,7 +44,7 @@ namespace WebApplication1
 
             lblJuego.Text = tabla.Rows[0][0].ToString();
             lblKeys.Text = tabla.Rows[0][1].ToString();
-            
+                    
         }
 
         protected void btn_agregarkey_Click(object sender, EventArgs e)

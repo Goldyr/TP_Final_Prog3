@@ -14,24 +14,28 @@
          <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
-                   <li>
-                      <a href="Inicio.aspx">
+                   <li id="li_infoUsuario_iu" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl_iu" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="false">[infoUsuario_hl_iu]</asp:HyperLink>
+                    </li>
+                    
+                    <li>
+                       <a href="Inicio.aspx">
                        <span id="nav-menu__span1"></span>
                        <span id="nav-menu__span2"></span>
                        <span id="nav-menu__span3"></span>
                        <span id="nav-menu__span4"></span>
                         Inicio</a>
                    </li>
-           
-                   <li >
-                        <a href="Contacto.aspx">
+
+                    <li>
+                       <a href="Contacto.aspx">
                        <span id="nav-menu__span1"></span>
                        <span id="nav-menu__span2"></span>
                        <span id="nav-menu__span3"></span>
                        <span id="nav-menu__span4"></span>Contacto</a>
                    </li>
                    <li>
-                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                       <a href="Carrito.aspx" class="nav-menu__ul__carrito">
                        <span id="nav-menu__span1"></span>
                        <span id="nav-menu__span2"></span>
                        <span id="nav-menu__span3"></span>
@@ -40,7 +44,6 @@
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                    </li>
-           
                 </ul>
             </nav>
           </header>

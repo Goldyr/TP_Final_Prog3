@@ -12,10 +12,21 @@ namespace WebApplication1
     public partial class WebForm9 : System.Web.UI.Page
     {
         NegocioJuego ns_juego = new NegocioJuego();
+        NegocioUsuario negUser = new NegocioUsuario();
+        Usuario user = new Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
+                if (this.Request.Cookies["IDUsuario"] != null)
+                {
+                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                    negUser.CargarUsuarioPorID(user);
+                    infoUsuario_hl_iu.Text = user.GetUser();
+                    li_infoUsuario_iu.Visible = true;
+                    infoUsuario_hl_iu.Visible = true;
+                }
                 cargarGrid();
             }
         }
