@@ -245,7 +245,7 @@ namespace WebApplication1
 
         protected void txt_Prueba_TextChanged(object sender, EventArgs e)
         {
-            //Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
 
         protected void red_Descripcion(object sender, CommandEventArgs e)
