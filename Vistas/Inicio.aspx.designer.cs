@@ -51,7 +51,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl;
 
         /// <summary>
-        /// tbPrueba control.
+        /// txt_Prueba control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -150,7 +150,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lblMensajeLogIn;
 
         /// <summary>
-        /// Control pInicio__lbladmin.
+        /// pInicio__lbladmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -189,8 +189,8 @@ namespace WebApplication1
         /// SqlDS_CheckboxCat control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDS_CheckboxCat;
 
