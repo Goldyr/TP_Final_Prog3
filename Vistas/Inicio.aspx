@@ -59,7 +59,7 @@
                        </a>
                      </li>
                     <li>
-                        <asp:TextBox runat="server" ID="tbPrueba" placeholder="Buscar"></asp:TextBox>
+                        <asp:TextBox  ID="txt_Prueba" runat="server" placeholder="Buscar"></asp:TextBox>
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" PostBackUrl="~/DescripcionJuego.aspx" />
                     </li>
                 </ul>
@@ -139,21 +139,15 @@
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
-            <%--           <asp:DataList ID="dl_ListadoCat" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" GridLines="Both" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False">
-                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                <ItemStyle BackColor="White" ForeColor="#330099" />
-                <ItemTemplate>
-                    
-                </ItemTemplate>
-                <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            </asp:DataList>--%>
-
-            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J">
+            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
                 <ItemTemplate>
                     <div class="lvListCat__div">
-                        <asp:Label ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' CausesValidation="False" />
+                        <div class="lvListCat__div__info">
+                            <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
+                            <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                            <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                        </div>
+                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" CausesValidation="False" />
                     </div>
 
                 </ItemTemplate>
