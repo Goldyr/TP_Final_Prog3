@@ -258,7 +258,8 @@ a {
 
 .section-div {
     position: relative;
-    left: 20%;
+    left: 6%;
+    top: 0px;
 }
 
     .section-div:nth-child(8) {
@@ -291,6 +292,8 @@ a {
     margin-bottom: 9px;
 }
 
+
+
 .Cuadro_Registro {
     padding: 30px;
     margin: auto;
@@ -299,6 +302,8 @@ a {
     box-shadow: 0px 0px 20px #3b3240;
     background: #3a3a3a87
 }
+
+
 
 .section-div input {
     margin-bottom: 5px;
@@ -332,3 +337,25 @@ a {
         box-shadow: 0px 0px 20px #3b3240;
         font-size: 15px
     }
+
+.Cuadro_Metodo {
+    padding: 30px;
+    margin: auto;
+    width: 350px;
+    height: 800px;
+    box-shadow: 0px 0px 20px #3b3240;
+    background: #3a3a3a87
+}
+
+
+.Cuadro_Metodo input[type="submit"] {
+    font-family: 'Rubik', sans-serif;
+    background: #1d1b1ba3;
+    padding: 5px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    color: #dec4ea;
+    width: 290px;
+    height: 35px;
+}
+

@@ -41,21 +41,21 @@
 &nbsp;&nbsp;</p>
             <section>
             <h1 id="section-h1__registro">Agregar Metodo de Pago</h1>
-            <div class="Cuadro_Registro">
+            <div class="Cuadro_Metodo">
                 <div class="section-div">
                     <p>Metodo de Pago</p>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_MP" DataValueField="ID_MP" Height="24px" Width="126px">
+                    <asp:DropDownList ID="ddl_MP" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre_MP" DataValueField="ID_MP" Height="24px" Width="126px">
                     </asp:DropDownList>
                     <br />
                 </div>
                  <div class="section-div">
                     <p>Numero de Tarjeta </p>
-                     <asp:TextBox ID="txt_Nro" runat="server"></asp:TextBox>
+                     <asp:TextBox ID="txt_Nro" runat="server" MaxLength="16"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Nro" runat="server" ControlToValidate="txt_Nro" ErrorMessage="Ingrese su Numero de tarjeta"></asp:RequiredFieldValidator>
               </div>
                 <div class="section-div">
                     <p>Clave de seguridad</p>
-                    <asp:TextBox ID="txt_clave" runat="server" TextMode="SingleLine"></asp:TextBox>
+                    <asp:TextBox ID="txt_clave" runat="server" TextMode="SingleLine" MaxLength="4"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_clave" runat="server" ControlToValidate="txt_clave" ErrorMessage="Ingrese la Clave de Seguridad"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
@@ -65,44 +65,44 @@
                 </div>
                 <div class="section-div">
                     <p>Nombres</p>
-                    <asp:TextBox ID="txt_Nombres" runat="server" TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="txt_Nombres" runat="server" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Nombres" runat="server" ControlToValidate="txt_Nombres" ErrorMessage="Ingrese los Nombres"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
                     <p>Apellidos</p>
-                    <asp:TextBox ID="txt_Apellidos" runat="server" TextMode="Phone"></asp:TextBox>
+                    <asp:TextBox ID="txt_Apellidos" runat="server" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Apellidos" runat="server" ControlToValidate="txt_Apellidos" ErrorMessage="Ingrese los Apellidos"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
                     <p>DNI</p>
                     <p>
-                    <asp:TextBox ID="txt_DNI" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_DNI" runat="server" MaxLength="8"></asp:TextBox>
                     </p>
                     <asp:RequiredFieldValidator ID="rfv_DNI" runat="server" ControlToValidate="txt_DNI" ErrorMessage="Ingrese el DNI"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
                     <p>Direccion de Facturación</p>
-                    <asp:TextBox ID="txt_Direccion" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txt_Direccion" runat="server" MaxLength="40"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Direccion" runat="server" ControlToValidate="txt_Direccion" ErrorMessage="Ingrese la Direccción"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
                     <p>Codigo Postal</p>
-                     <asp:TextBox ID="txt_CodigoPostal" runat="server" TextMode="Password"></asp:TextBox>
+                     <asp:TextBox ID="txt_CodigoPostal" runat="server" MaxLength="5"></asp:TextBox>
                      <asp:RequiredFieldValidator ID="rfv_CodigoPostal" runat="server"  ControlToValidate="txt_CodigoPostal" ErrorMessage="Ingrese el Codigo Postal"></asp:RequiredFieldValidator>
-                    <asp:Label ID="lbl_prueba" runat="server"></asp:Label>
                 </div>
                 <div class="section-div">
                     <p>Email</p>
-                    <asp:TextBox ID="txt_Email" runat="server" TextMode="SingleLine"></asp:TextBox>
+                    <asp:TextBox ID="txt_Email" runat="server" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Email" runat="server" ControlToValidate="txt_Email" ErrorMessage="Ingrese el Email"></asp:RequiredFieldValidator>
                 </div>
                 <div class="section-div">
                     <p>Telefono</p>
-                    <asp:TextBox ID="Txt_Telefono" runat="server" TextMode="SingleLine"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Telefono" runat="server" TextMode="Phone" MaxLength="30"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_Telefono" runat="server" ControlToValidate="txt_Telefono" ErrorMessage="Ingrese el Telefono"></asp:RequiredFieldValidator>
                 </div>
-             <asp:Button ID="Button1" runat="server" Text="Enviar" OnClick="btnRegistrar" />
-
+                
+             <asp:Button ID="btn_agregar" runat="server" Text="Agregar" OnClick="btn_agregar_Click" />
+                <asp:Label ID="lbl_verif" runat="server" Text=""></asp:Label>
             </div>
          </section>
         </section>

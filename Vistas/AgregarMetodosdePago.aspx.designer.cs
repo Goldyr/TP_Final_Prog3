@@ -42,13 +42,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl_iu;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddl_MP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_MP;
 
         /// <summary>
         /// Control txt_Nro.
@@ -195,15 +195,6 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_CodigoPostal;
 
         /// <summary>
-        /// Control lbl_prueba.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_prueba;
-
-        /// <summary>
         /// Control txt_Email.
         /// </summary>
         /// <remarks>
@@ -240,13 +231,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_Telefono;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btn_agregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btn_agregar;
+
+        /// <summary>
+        /// Control lbl_verif.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_verif;
 
         /// <summary>
         /// Control SqlDataSource1.

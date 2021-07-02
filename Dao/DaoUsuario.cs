@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using System.Data.SqlClient;
-using System.Data;
+
 
 namespace Dao
 {
