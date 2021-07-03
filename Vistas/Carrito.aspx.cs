@@ -21,8 +21,8 @@ namespace WebApplication1
 
                     cargarGrid();
                     organizarGrid();
-
                 }
+
                 cargarGrid();
             }
         }

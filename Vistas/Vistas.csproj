@@ -76,6 +76,7 @@
     <Content Include="css\P_Contacto.css" />
     <Content Include="css\P_InfoUsuario.css" />
     <Content Include="css\P_OpcAdmin.css" />
+    <Content Include="css\P_Registro.css" />
     <Content Include="DescripcionJuego.aspx" />
     <Content Include="imagenes\IMG-00001.jpg" />
     <Content Include="imagenes\IMG-00002.jpg" />

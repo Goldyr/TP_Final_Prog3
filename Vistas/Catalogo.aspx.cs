@@ -39,6 +39,11 @@ namespace WebApplication1
         {
             dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Nombre(txt_Busqueda_local.Text);//Listara por la string en la txtbox
             dl_Catalogo.DataBind();
+
+
+
         }
+
+      
     }
 }

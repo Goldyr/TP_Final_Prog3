@@ -66,7 +66,6 @@ namespace Dao
             SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
             SqlParametros.Value = _Juego.GetFecha();
             //IMAGEN
-            //TODO: Ver como hacemos esto
             // ==================================================
             //SqlParametros = Comando.Parameters.Add("@Imagen", SqlDbType.VarChar,70);
             //SqlParametros.Value = _Juego.GetImagen();
