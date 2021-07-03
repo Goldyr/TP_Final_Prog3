@@ -14,20 +14,22 @@ namespace WebApplication1
     {
         NegocioUsuario ns_user = new NegocioUsuario();
         NegocioJuego ns_juego = new NegocioJuego();
+        NegocioVentas ns_ventas = new NegocioVentas();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 //Si no tienen data en la base de datos comenten esto
                 //Busco la info de los usuarios activos
-               // lbl_Stat1.Text = ns_user.UsuariosActivos().Rows[0][0].ToString();
+                lbl_Stat1.Text = ns_user.UsuariosActivos().Rows[0][0].ToString();
 
-                //lbl_Stat4.Text = ns_user.EdadPromedio().Rows[0][0].ToString();
+                lbl_Stat4.Text = ns_user.EdadPromedio().Rows[0][0].ToString();
 
-                //lbl_Stat2.Text = " $ " + ns_juego.PrecioPromedio().Rows[0][0].ToString();
+                lbl_Stat2.Text = " $ " + ns_juego.PrecioPromedio().Rows[0][0].ToString();
 
-                //lbl_Stat3.Text = ns_juego.TopSeller().Rows[0][0].ToString();
+                lbl_Stat3.Text = ns_juego.TopSeller().Rows[0][0].ToString();
 
+                lbl_Stat5.Text = " $ " + ns_ventas.NV_TotalVentas().Rows[0][0].ToString();
 
             }
         }

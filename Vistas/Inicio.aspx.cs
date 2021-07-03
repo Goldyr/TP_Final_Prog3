@@ -245,7 +245,7 @@ namespace WebApplication1
 
         protected void txt_Prueba_TextChanged(object sender, EventArgs e)
         {
-            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+           // Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
 
         protected void red_Descripcion(object sender, CommandEventArgs e)
@@ -279,6 +279,11 @@ namespace WebApplication1
         {
             Descuento = 100 - Descuento;
             return (float)Math.Round(Precio * Descuento / 100, 2);
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
     }
 }

@@ -44,14 +44,21 @@
                 </ul>
             </nav>
           </header>
-        <div>
+        <div class ="prueba_div">
+            <asp:Label ID="lbl_busqueda" runat="server" Text="Busqueda"></asp:Label>
             <br />
-            <br />
-            <br />
-            Busqueda
             <asp:TextBox ID="txt_Busqueda_local" runat="server" AutoPostBack="True" OnTextChanged="txt_Busqueda_local_TextChanged"></asp:TextBox>
-            <br />
-            <br />
+            
+           &nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lbl_cb" runat="server" Text="Buscar por rango de precio"></asp:Label>
+            <asp:DropDownList ID="ddl_Precio" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_Precio_SelectedIndexChanged">
+                <asp:ListItem Value="0">Nada seleccionado</asp:ListItem>
+                <asp:ListItem Value="1">Precio menor a 10$</asp:ListItem>
+                <asp:ListItem Value="2">Entre 10$ y 20$</asp:ListItem>
+                <asp:ListItem Value="3">Entre 20$ y 50$</asp:ListItem>
+            </asp:DropDownList>
+            
+           </div>
             <div>
                 <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" Width="1000px">
                     <FooterStyle BackColor="White" ForeColor="#333333" />

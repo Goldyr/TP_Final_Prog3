@@ -91,7 +91,30 @@
                     <asp:Label ID="lbl_key" runat="server"></asp:Label>
 
                 </div>
+               
             </div>
+
+             <div class="Cuadro_Keys">
+                    <h1> ESTADISTICAS </h1>
+                    <asp:Label ID="Label1" runat="server" Text="Cantidad de usuarios activos: "></asp:Label>
+                    <asp:Label ID="lbl_Stat1" runat="server" Text="Label"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="Precio promedio de los juegos:  "></asp:Label>
+                    <asp:Label ID="lbl_Stat2" runat="server" Text="Label"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text="El juego mas vendido es "></asp:Label>
+                    <asp:Label ID="lbl_Stat3" runat="server" Text="Label"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="Label4" runat="server" Text="Edad promedio de los usuarios "></asp:Label>
+                    <asp:Label ID="lbl_Stat4" runat="server" Text="Label"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="Label5" runat="server" Text="Total hecho en ventas ="></asp:Label>
+                    <asp:Label ID="lbl_Stat5" runat="server" Text="Label"></asp:Label>
+                </div>
         </section>
 
     </form>

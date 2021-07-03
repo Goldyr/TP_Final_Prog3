@@ -28,5 +28,11 @@ namespace Dao
             return dt;
             
         }
+        public DataTable TotalVenta(string consulta)
+        {
+            DataTable dt = new DataTable();
+            dt = datos.ObtenerTabla("TOTAL", consulta);
+            return dt;
+        }
     }
 }

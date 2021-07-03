@@ -141,13 +141,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lbl_Stat1;
 
         /// <summary>
-        /// Control Label3.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// Control lbl_Stat2.
@@ -159,13 +159,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lbl_Stat2;
 
         /// <summary>
-        /// Control Label5.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// Control lbl_Stat3.
@@ -177,13 +177,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label lbl_Stat3;
 
         /// <summary>
-        /// Control Label7.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// Control lbl_Stat4.
@@ -193,5 +193,23 @@ namespace WebApplication1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Stat4;
+
+        /// <summary>
+        /// Control Label5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// Control lbl_Stat5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Stat5;
     }
 }

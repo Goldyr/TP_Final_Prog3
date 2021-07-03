@@ -24,5 +24,10 @@ namespace Negocio
             return grd;
         }
 
+        public DataTable NV_TotalVentas()
+        {
+            string consulta = $"SELECT sum(PrecioTotal_V) FROM Ventas";
+            return Dao.TotalVenta(consulta);
+        }
     }
 }

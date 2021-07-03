@@ -126,6 +126,26 @@ namespace Negocio
             return dt;
         }
 
+        public DataTable NJ_ListarJuegos_Precio(int num)
+        {
+            string consulta = null;
+            switch (num)
+            {
+                case 1:
+                    consulta = $"SELECT [Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM [Juegos] WHERE[Estado_J] = 1 AND[PU_J] <= 10 ORDER BY [PU_J] ASC";
+                    break;
+                case 2:
+                    consulta = $"SELECT[Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM[Juegos] WHERE[Estado_J] = 1 AND[PU_J] >= 10 AND[PU_J] <= 20 ORDER BY [PU_J] ASC";
+                    break;
+                case 3:
+                    consulta = $"SELECT[Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM[Juegos] WHERE[Estado_J] = 1 AND[PU_J] >= 20 AND[PU_J] <= 50 ORDER BY [PU_J] ASC";
+                    break;
+                case 0:
+                    break;
+            }
+            return dao.ListarJuegosGeneral(consulta);
+        }
+
         public Juego cargarJuego(string id)
         {
             Juego juego = new Juego();

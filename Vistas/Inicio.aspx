@@ -59,8 +59,8 @@
                        </a>
                      </li>
                     <li>
-                        <asp:TextBox  ID="txt_Prueba" runat="server" placeholder="Buscar"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" PostBackUrl="~/DescripcionJuego.aspx" />
+                        <asp:TextBox ID="txt_Prueba" runat="server" placeholder="Buscar" OnTextChanged="txt_Prueba_TextChanged"></asp:TextBox>
+                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CausesValidation="False" OnClick="btnBuscar_Click" />
                     </li>
                 </ul>
             </nav>
