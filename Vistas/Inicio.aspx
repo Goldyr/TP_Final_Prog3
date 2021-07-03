@@ -129,6 +129,8 @@
 
     
 
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+           </asp:ScriptManager>
         <section class="pListadoCategorias">
                 <aside class="pInicio__aside">
             <asp:CheckBoxList ID="cbl_Categorias" runat="server" DataSourceID="SqlDS_CheckboxCat"
@@ -139,6 +141,8 @@
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
+             <asp:UpdatePanel ID="upSetSession" runat="server">
+            <ContentTemplate>
             <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
                 <ItemTemplate>
                     <div class="lvListCat__div">
@@ -157,9 +161,16 @@
                     </div>
                     <div style="">
                     </div>
+
                 </LayoutTemplate>
 
             </asp:ListView>
+              </ContentTemplate>
+                 <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="cbl_Categorias"
+                EventName="SelectedIndexChanged" />
+        </Triggers>
+                 </asp:UpdatePanel>
         </section>
 
         <asp:SqlDataSource ID="SqlDS_CheckboxCat" runat="server" ConnectionString="<%$ ConnectionStrings:BDJuegosConnectionString %>" SelectCommand="SELECT * FROM [Categorias]" />

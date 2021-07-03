@@ -32,7 +32,7 @@ namespace Negocio
 
         public DataTable NJ_ListarJuegoXcategoria(string consulta_comp)
         {
-            string consulta = $"SELECT Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J, Imagen_J FROM Juegos INNER JOIN CategoriasxJuegos ON Codigo_J = CodigoJuego_CxJ WHERE Estado_J = 1 ";
+            string consulta = $"SELECT distinct Nombre_J, Codigo_J, PU_J, CodigoDes_J, CodigoDis_J, Descuento_J, Fecha_Lanzamiento_J, Estado_J, Descripcion_J, Imagen_J FROM Juegos INNER JOIN CategoriasxJuegos ON Codigo_J = CodigoJuego_CxJ WHERE Estado_J = 1 ";
             consulta += consulta_comp;
             DataTable dt = new DataTable();
             dt = dao.ListarJuegosGeneral(consulta);
