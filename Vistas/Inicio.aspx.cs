@@ -28,7 +28,7 @@ namespace WebApplication1
                 {
                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
                    negUser.CargarUsuarioPorID(user);
-               }
+                }
 
                 if (user.GetUser() != null) IniciarSesion();
 
@@ -38,6 +38,8 @@ namespace WebApplication1
             lvListCat.DataSource = negjueg.NJ_ListarJuegos_True();
             lvListCat.DataBind();
         }
+
+
 
         private void ActualizarCss()
         {

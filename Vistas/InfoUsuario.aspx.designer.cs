@@ -24,22 +24,22 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// li_infoUsuario_iu control.
+        /// li_infoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li_infoUsuario_iu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li_infoUsuario;
 
         /// <summary>
-        /// infoUsuario_hl_iu control.
+        /// infoUsuario_hl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl_iu;
+        protected global::System.Web.UI.WebControls.HyperLink infoUsuario_hl;
 
         /// <summary>
         /// lbl_user_IU control.
@@ -303,6 +303,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.GridView grd_ventas;
 
         /// <summary>
+        /// lblMostrarDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMostrarDetalle;
+
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -310,15 +319,6 @@ namespace WebApplication1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// sql_ventas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sql_ventas;
 
         /// <summary>
         /// sql_Detallesventas control.

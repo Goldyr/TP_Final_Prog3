@@ -25,19 +25,19 @@ aside {
     padding: 30px 0;
 }
 
-    #cbl_Categorias tr td {
-        display: flex;
-        justify-content: center;
-    }
+#cbl_Categorias tr td {
+    display: flex;
+    justify-content: center;
+}
 
-        #cbl_Categorias tr td input {
-            margin-right: 20px;
-        }
+#cbl_Categorias tr td input {
+    margin-right: 20px;
+}
 
-        #cbl_Categorias tr td label {
-            width: 162px;
-            text-align: left;
-        }
+#cbl_Categorias tr td label {
+    width: 162px;
+    text-align: left;
+}
 
 /* ESTILOS PARA EL WRAPPER DEL DIV DEL INICIO DE SESION */
 
@@ -45,10 +45,6 @@ aside {
     height: 130px;
     width: 100%;
     display: flex;
-}
-
-#li_infoUsuario {
-    color: #768dff;
 }
 
 .main-header__content__log-in {
@@ -78,19 +74,19 @@ aside {
     width: 260px;
 }
 
-    .header-botones a {
-        color: #7f7fd4;
-        text-decoration: underline
-    }
+.header-botones a {
+    color: #7f7fd4;
+    text-decoration: underline
+}
 
-    .header-botones input[type=submit] {
-        background: #2d418c;
-        border: none;
-        border-radius: 9px;
-        padding: 3px;
-        color: white;
-        cursor: pointer;
-    }
+.header-botones input[type=submit], #header_btn_LogOut, #btnBuscar {
+    background: #2d418c;
+    border: none;
+    border-radius: 9px;
+    padding: 3px;
+    color: white;
+    cursor: pointer;
+}
 
 
 #header_btnLogIn {
@@ -170,11 +166,11 @@ section {
 }
 
 
-    .lvJuegosDestacados-div input[type=image] {
-        border-radius: inherit;
-        width: 100%;
-        height: 100%;
-    }
+.lvJuegosDestacados-div input[type=image] {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -183,9 +179,9 @@ section {
         margin: 20px 10px;
     }
 
-        .lvJuegosDestacados-div input[type=image] {
-            width: 400px;
-        }
+    .lvJuegosDestacados-div input[type=image] {
+        width: 400px;
+    }
 }
 
 
@@ -218,8 +214,6 @@ section {
     margin: 0;
 }
 
-
-
 .lvJuegosDestacados-div__descto {
     background: #409a40;
     position: absolute;
@@ -250,11 +244,11 @@ section {
 }
 
 
-    .lvListCat__div .imgAnimated {
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-    }
+.lvListCat__div .imgAnimated {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
 
 .lvListCat__div__info {
     position: absolute;
@@ -282,15 +276,15 @@ section {
     border-radius: 15px;
 }
 
-    /* EL SIGNO DE DOLAR PARA EL PRECIO */
+/* EL SIGNO DE DOLAR PARA EL PRECIO */
 
-    .infoPrecio_lv::before {
-        content: "$ ";
-    }
+.infoPrecio_lv::before {
+    content: "$ ";
+}
 
-    .infoPrecio_lv::after {
-        content: " USD";
-    }
+.infoPrecio_lv::after {
+    content: " USD";
+}
 
 /* ANIMACIONES CUANDO PASAS EL MOUSE POR LA CARTA */
 
@@ -302,13 +296,13 @@ section {
 }
 
 
-    .lvListCat__div:hover .lvListCat__div__info {
-        display: flex;
-        top: 30%;
-        transition: all 0.2s ease-in-out;
-        flex-direction: column;
-        align-items: center;
-    }
+.lvListCat__div:hover .lvListCat__div__info {
+    display: flex;
+    top: 30%;
+    transition: all 0.2s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+}
 
 .imgAnimated:hover {
     opacity: 0.5;

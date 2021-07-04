@@ -15,28 +15,31 @@
         <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
+                    <li id="li_infoUsuario" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="False">[infoUsuario_hl]</asp:HyperLink>
+                    </li>
                     <li>
                         <a href="Inicio.aspx">
-                            <span id="nav-menu__span1"></span>
-                            <span id="nav-menu__span2"></span>
-                            <span id="nav-menu__span3"></span>
-                            <span id="nav-menu__span4"></span>
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>
                             Inicio</a>
                     </li>
 
                     <li>
                         <a href="Contacto.aspx">
-                            <span id="nav-menu__span1"></span>
-                            <span id="nav-menu__span2"></span>
-                            <span id="nav-menu__span3"></span>
-                            <span id="nav-menu__span4"></span>Contacto</a>
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>Contacto</a>
                     </li>
                     <li class="seleccionado">
                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                            <span id="nav-menu__span1"></span>
-                            <span id="nav-menu__span2"></span>
-                            <span id="nav-menu__span3"></span>
-                            <span id="nav-menu__span4"></span>
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>
 
                             <i class="fas fa-shopping-cart"></i>
                         </a>
@@ -50,63 +53,76 @@
                 <h1>COMPRA</h1>
             </div>
             <div class="wrapper__compra">
-                <div class="wrapper-div">
+                <div class="wrapper-div-content">
                     <asp:DropDownList ID="ddl_MetxUsuario" runat="server">
                     </asp:DropDownList>
                 </div>
+                <div id="wrapperDiv" runat="server">
+                    <div class="wrapper-div compra-datos-tarjeta">
+                        <div class="wrapper-div-content">
+                            <p>Metodo de pago</p>
+                            <asp:Label ID="lbl_tipo" runat="server"></asp:Label>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Numero de tarjeta</p>
+                            <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Fecha de caducidad</p>
+                            <asp:TextBox ID="txt_fecha" runat="server" TextMode="Month"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Codigo de seguridad</p>
+                            <asp:TextBox ID="txt_clave" runat="server" MaxLength="4"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="wrapper-div compra-datos-personales">
+                        <div class="wrapper-div-content">
+                            <p>Nombres</p>
+                            <asp:TextBox ID="txt_Nombres" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Apellidos</p>
+                            <asp:TextBox ID="txt_apellidos" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Dni</p>
+                            <asp:TextBox ID="txt_dni" runat="server" MaxLength="8"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Email</p>
+                            <asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="wrapper-div compra-datos-contacto">
+                        <div class="wrapper-div-content">
+                            <p>Direccion de facturacion</p>
+                            <asp:TextBox ID="txt_direccion" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Codigo postal</p>
+                            <asp:TextBox ID="txt_CP" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="wrapper-div-content">
+                            <p>Telefono</p>
+                            <asp:TextBox ID="txt_telefono" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
 
 
-                <div class="wrapper-div">
-                    <p>Metodo de pago</p>
-                    <asp:Label ID="lbl_tipo" runat="server"></asp:Label>
+                <div class="wrapper-div compra-crear-venta">
+                    <div class="wrapper-div-content">
+                        <p>Monto A Pagar</p>
+                        <asp:Label ID="lblMonto" runat="server"></asp:Label>
+                    </div>
+                    <div class="wrapper-div-content">
+                        <asp:Button ID="Btn_comprar" runat="server" Text="Comprar" OnClick="Btn_comprar_Click" />
+                    </div>
                 </div>
-                <div class="wrapper-div">
-                    <p>Numero de tarjeta</p>
-                    <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Fecha de caducidad</p>
-                    <asp:TextBox ID="txt_fecha" runat="server" TextMode="Month"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Codigo de seguridad</p>
-                    <asp:TextBox ID="txt_clave" runat="server" MaxLength="4"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Nombres</p>
-                    <asp:TextBox ID="txt_Nombres" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Apellidos</p>
-                    <asp:TextBox ID="txt_apellidos" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Dni</p>
-                    <asp:TextBox ID="txt_dni" runat="server" MaxLength="8"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Email</p>
-                    <asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Direccion de facturacion</p>
-                    <asp:TextBox ID="txt_direccion" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Codigo postal</p>
-                    <asp:TextBox ID="txt_CP" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Telefono</p>
-                    <asp:TextBox ID="txt_telefono" runat="server"></asp:TextBox>
-                </div>
-                <div class="wrapper-div">
-                    <p>Monto A Pagar</p>
-                    <asp:Label ID="lblMonto" runat="server"></asp:Label>
-                </div>
-                <div class="wrapper-div">
-                    <asp:Button ID="Btn_comprar" runat="server" Text="Comprar" OnClick="Btn_comprar_Click" />
-                </div>
+
             </div>
         </section>
         <section id="sectionCarrito" runat="server">
@@ -149,6 +165,7 @@
                 <h4>Acerca</h4>
                 <p>
                     Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+               
                 </p>
             </div>
             <div class="footer-div">

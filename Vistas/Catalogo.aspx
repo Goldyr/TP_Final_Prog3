@@ -16,26 +16,26 @@
                 <ul class="nav-menu__ul">
                    <li>
                       <a href="Inicio.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
+                       <span class="nav-menu__span1"></span>
+                       <span class="nav-menu__span2"></span>
+                       <span class="nav-menu__span3"></span>
+                       <span class="nav-menu__span4"></span>
                         Inicio</a>
                    </li>
            
                    <li>
                         <a href="Contacto.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>Contacto</a>
+                       <span class="nav-menu__span1"></span>
+                       <span class="nav-menu__span2"></span>
+                       <span class="nav-menu__span3"></span>
+                       <span class="nav-menu__span4"></span>Contacto</a>
                    </li>
                    <li>
                          <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
+                       <span class="nav-menu__span1"></span>
+                       <span class="nav-menu__span2"></span>
+                       <span class="nav-menu__span3"></span>
+                       <span class="nav-menu__span4"></span>
                          
                             <i class="fas fa-shopping-cart"></i>
                         </a>

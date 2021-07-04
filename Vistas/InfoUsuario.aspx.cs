@@ -19,33 +19,30 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-                li_infoUsuario_iu.Visible = false;
-                if (this.Request.Cookies["IDUsuario"] != null)
-                { 
-                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
-                    negUser.CargarUsuarioPorID(user);
-                    infoUsuario_hl_iu.Text = user.GetUser();
-                    li_infoUsuario_iu.Visible = true;
-                    infoUsuario_hl_iu.Visible = true;
 
-                    lblNombre_IU.Text = user.GetNombres();
-                    lblEmail_IU.Text = user.GetEmail();
-                    lblApellido_IU.Text = user.GetApellidos();
-                    lblTelefono_IU.Text = user.GetTelefono();
-
-                  lblFecha_IU.Text = user.GetFechaNacimiento();
-
-
-
-
-                lbl_user_IU.Text = user.GetUser();
-                }
-            //}
-            if (!IsPostBack)
+            li_infoUsuario.Visible = false;
+            if (this.Request.Cookies["IDUsuario"] != null)
             {
-                grd_ventas=negVentas.NV_CargarGridVentas(user.GetId());
+                user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                negUser.CargarUsuarioPorID(user);
+                infoUsuario_hl.Text = user.GetUser();
+                li_infoUsuario.Visible = true;
+                infoUsuario_hl.Visible = true;
+
+                lblNombre_IU.Text = user.GetNombres();
+                lblEmail_IU.Text = user.GetEmail();
+                lblApellido_IU.Text = user.GetApellidos();
+                lblTelefono_IU.Text = user.GetTelefono();
+
+                lblFecha_IU.Text = user.GetFechaNacimiento();
+                lbl_user_IU.Text = user.GetUser();
+            }
+
+            if (!IsPostBack)
+
+            {
+                grd_ventas.DataSource = negVentas.NV_CargarGridVentas(user.GetId());
+                grd_ventas.DataBind();
             }
 
 
@@ -93,7 +90,7 @@ namespace WebApplication1
             lblTelefono_IU.Visible = true;
             lbl_user_IU.Visible = true;
 
-   
+
         }
 
         protected void btn_guardar_IU_Click(object sender, EventArgs e)
@@ -127,9 +124,9 @@ namespace WebApplication1
                 lblEmail_IU.Text = user.GetEmail();
                 lblApellido_IU.Text = user.GetApellidos();
                 lblTelefono_IU.Text = user.GetTelefono();
-       
+
                 lbl_user_IU.Text = user.GetUser();
-                infoUsuario_hl_iu.Text = user.GetUser();
+                infoUsuario_hl.Text = user.GetUser();
             }
             else lbl_msg_IU.Text = "El usuario ya existe, intente otro";
 
@@ -143,19 +140,19 @@ namespace WebApplication1
             //user.SetId(this.Request.Cookies["IDUsuario"].Value);
             //negUser.CargarUsuarioPorID(user);
 
-               string Contraseña = user.GetPassword();
+            string Contraseña = user.GetPassword();
 
-                if (txtContraseñaActual.Text.Trim() != Contraseña)
-                {
-                    lblConfirmacion.Text = "Contraseña invalida";
+            if (txtContraseñaActual.Text.Trim() != Contraseña)
+            {
+                lblConfirmacion.Text = "Contraseña invalida";
 
-                }
-                else if (txtContraseñaActual.Text.Trim() == Contraseña)
-                {
-                    lblConfirmacion.Text = "Contraseña valida";
-                    lblContraseñaNueva.Visible = txtContraseñaNueva.Visible = lblContraseñaNueva2.Visible = txtContraseñaNueva2.Visible = true;
-                    btnConfirmacion.Visible = cvContraseña.Visible = true;
-                } 
+            }
+            else if (txtContraseñaActual.Text.Trim() == Contraseña)
+            {
+                lblConfirmacion.Text = "Contraseña valida";
+                lblContraseñaNueva.Visible = txtContraseñaNueva.Visible = lblContraseñaNueva2.Visible = txtContraseñaNueva2.Visible = true;
+                btnConfirmacion.Visible = cvContraseña.Visible = true;
+            }
             //}
         }
 
@@ -182,7 +179,7 @@ namespace WebApplication1
 
         protected void Btn_Detalle_Cmd(object sender, CommandEventArgs e)
         {
-            if(e.CommandName == "Ver_Detalle")
+            if (e.CommandName == "Ver_Detalle")
             {
                 string ID_Venta = e.CommandArgument.ToString();
                 string Consulta = $"SELECT SerieKey_DV,CodJuego_DV, Precio_DV, ID_DV " +
@@ -193,6 +190,9 @@ namespace WebApplication1
                 sql_Detallesventas.SelectCommand = Consulta;
                 sql_Detallesventas.DataBind();
                 GridView1.Visible = true;
+
+                lblMostrarDetalle.Text = $"Mostrando detalle de la venta con ID '{ID_Venta}'";
+                lblMostrarDetalle.Visible = true;
             }
         }
 

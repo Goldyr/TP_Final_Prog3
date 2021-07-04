@@ -1,4 +1,9 @@
-﻿.pInfoUsuario {
+﻿h1 {
+    margin-top: 0;
+}
+
+
+.pInfoUsuario {
     display: flex;
     height: 350px;
 }
@@ -7,33 +12,36 @@
     background: #3a3a3a89;
     border: 1px solid #3a3a3a89;
     width: 450px;
-    height: 300px;
+    min-height: 300px;
     margin: auto;
     border-radius: 10px;
-    position: relative;
     padding: 10px;
 }
 
     .pCuadro_Usuario h1 {
-        color: #cbd8d4;
+        color: #c7c7c7;
     }
 
 .Usuario_Descripcion p, span {
     display: inline-block;
 }
 
-.Usuario_Descripcion span{
-    color:white;
+.Usuario_Descripcion span {
+    color: white;
 }
 
-.Usuario_Descripcion p {
-    color: aquamarine;
+p {
+    color: #6bdece;
 }
 
-.Usuario_Descripcion input[type="submit"] {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
+
+.Usuario_botones {
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+}
+
+.btnInfoUser {
     color: #dec4ea;
     background: #484848;
     border-radius: 5px;
@@ -42,16 +50,13 @@
     height: 25px;
 }
 
-    .Usuario_Descripcion input[type="submit"]:hover {
+    .btnInfoUser:hover {
         cursor: pointer;
         font-size: 14px;
         box-shadow: 0px 0px 10px black;
         font-weight: bold;
     }
 
-#btn_cancelar_IU {
-    margin: auto 160px;
-}
 
 #lbl_msg_IU {
     margin-top: 25px;
@@ -77,28 +82,12 @@
 
     .pCuadro_Contrasena p {
         display: inline-block;
-        color: aquamarine;
     }
 
     .pCuadro_Contrasena h1 {
         color: #cbd8d4;
     }
 
-.Usuario_Contrasena input[type="submit"] {
-    color: #dec4ea;
-    background: #484848;
-    border-radius: 5px;
-    border: 1px;
-    width: 100px;
-    height: 25px;
-}
-
-    .Usuario_Contrasena input[type="submit"]:hover {
-        cursor: pointer;
-        font-size: 14px;
-        box-shadow: 0px 0px 10px black;
-        font-weight: bold;
-    }
 
 .Usuario_ContrasenaNueva {
     /* color: red; */
@@ -109,29 +98,70 @@
     width: 250px;
 }
 
-    .Usuario_ContrasenaNueva input[type="submit"] {
-        position: absolute;
-        bottom: 17px;
-        left: 25px;
-        color: #dec4ea;
-        background: #484848;
-        border-radius: 5px;
-        border: 1px;
-        width: 100px;
-        height: 25px;
-    }
-
-        .Usuario_ContrasenaNueva input[type="submit"]:hover {
-            cursor: pointer;
-            font-size: 14px;
-            box-shadow: 0px 0px 10px black;
-            font-weight: bold;
-        }
-
 #txtContraseñaNueva {
     width: 175px;
 }
 
 #txtContraseñaNueva2 {
     width: 175px;
+}
+
+.Usuario_Contrasena_Ingreso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+    .Usuario_Contrasena_Ingreso p {
+        margin: 0;
+    }
+
+.pInfoUsuario__historial {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+}
+
+    .pInfoUsuario__historial h1 {
+        margin: 0;
+    }
+
+.section-titulo {
+    color: #ffffff;
+    padding: 20px;
+    background: #1d1d1d;
+    width: 100%;
+    text-align: center;
+}
+
+.historial_wrapper {
+    background: #3a3a3a89;
+    min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-around;
+    padding: 50px;
+}
+
+    .historial_wrapper table th, td {
+        background: white;
+        padding: 10px;
+    }
+
+    .historial_wrapper table th {
+        background: #d6d6d6;
+    }
+
+    .historial_wrapper td {
+        text-align: center;
+    }
+
+#lblMostrarDetalle {
+    margin: 20px;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
 }

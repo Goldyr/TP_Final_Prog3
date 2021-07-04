@@ -33,7 +33,6 @@ namespace Negocio
 
         public bool CargarUsuarioPorID(Usuario user)
         {
-
             string consulta = $"SELECT * FROM Usuarios WHERE ID_U = '{user.GetId()}'" +
               $"AND Estado_U = 1";
 
@@ -42,17 +41,26 @@ namespace Negocio
             return true;
         }
 
-        public bool NU_AgregarUsuario(Usuario user)
+        public int NU_AgregarUsuario(Usuario user)
         {
-            string consulta = $"SELECT * from Usuarios WHERE User_U = '{user.GetUser()}'";
+            string consulta = $"SELECT * from Usuarios WHERE User_U = '{user.GetUser()}' OR Email_U = '{user.GetEmail()}'";
 
             if (!dao.ExisteUsuario(user, consulta))
             {
                 dao.AgregarUsuario(user);
-                return true;
+                return 1;
+            }
+            else
+            {
+                consulta = $"SELECT * from Usuarios WHERE User_U = '{user.GetUser()}'";
+                if (dao.ExisteUsuario(user, consulta)) return -1;
+
+                consulta = $"SELECT * from Usuarios WHERE Email_U = '{user.GetEmail()}'";
+                if (dao.ExisteUsuario(user, consulta)) return -2;
+
             }
 
-            return false;
+            return 0;
 
 
         }
