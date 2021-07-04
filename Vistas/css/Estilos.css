@@ -57,7 +57,7 @@ a {
     margin-left: 25px;
     font-size: 25px;
     position: relative;
-    left: 10px;
+    left: 40px;
 }
 
 .nav-menu__li__carrito a {
@@ -120,9 +120,9 @@ a {
         transition: 0.1s;
     }
 
-.nav-menu__ul a:hover {
-    text-decoration: underline;
-}
+        .nav-menu__ul a:hover {
+            text-decoration: underline;
+        }
 
 .section-div p {
     margin-bottom: 0;
@@ -267,17 +267,17 @@ a {
     top: 0px;
 }
 
-.section-div:nth-child(8) {
-    height: 120px;
-}
+    .section-div:nth-child(8) {
+        height: 120px;
+    }
 
-.section-div p {
-    margin-bottom: 0;
-}
+    .section-div p {
+        margin-bottom: 0;
+    }
 
-.section-div input {
-    margin-bottom: 15px;
-}
+    .section-div input {
+        margin-bottom: 15px;
+    }
 
 .seleccionado #nav-menu__span1 {
     left: 100%;
@@ -354,11 +354,11 @@ a {
     height: 35px;
 }
 
-.Cuadro_Registro input[type="submit"]:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 20px #3b3240;
-    font-size: 15px
-}
+    .Cuadro_Registro input[type="submit"]:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 20px #3b3240;
+        font-size: 15px
+    }
 
 
 footer {
@@ -373,11 +373,11 @@ footer {
     width: 300px;
 }
 
-.footer-div h4 {
-    color: #bbbbbb;
-    margin: 20px 0px 30px 0px;
-}
+    .footer-div h4 {
+        color: #bbbbbb;
+        margin: 20px 0px 30px 0px;
+    }
 
-.footer-div p, li {
-    color: #7b7b7b;
-}
+    .footer-div p, li {
+        color: #7b7b7b;
+    }

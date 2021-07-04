@@ -1,0 +1,25 @@
+﻿.sectionBML {
+    width: 100%;
+}
+
+.sectionBML_container {
+    display: flex;
+    height: 1000px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sectionBML_wrapper table td {
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.sectionBML_wrapper {
+    color: white
+}
+
+.sectionBML_wrapper table {
+    background: #5b0fa685
+}

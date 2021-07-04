@@ -95,7 +95,7 @@ namespace Dao
         public DataTable ListarJuegosPorNombre(string name)
         {
             DataTable dt = new DataTable();
-            string consulta = $"SELECT [Nombre_J], [PU_J], [CodigoDes_J], [CodigoDis_J], [Descuento_J], [Descripcion_J], [Fecha_Lanzamiento_J], [Imagen_J] FROM [Juegos] WHERE [Estado_J] = 1 AND [Nombre_J] LIKE '%{name}%' ORDER BY [Nombre_J] ASC";
+            string consulta = $"SELECT * FROM [Juegos] WHERE [Estado_J] = 1 AND [Nombre_J] LIKE '%{name}%' ORDER BY [Nombre_J] ASC";
             dt = datos.ObtenerTabla("listado_name", consulta);
             return dt;
         }
