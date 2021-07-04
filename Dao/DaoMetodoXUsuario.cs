@@ -53,19 +53,19 @@ namespace Dao
             SqlParametros = Comando.Parameters.Add("@id_usuario", SqlDbType.Char, 10);
             SqlParametros.Value = _metodo.GetIdUsuario();
 
-            //Nro
+            //Nro tarjeta
             SqlParametros = Comando.Parameters.Add("@nro", SqlDbType.VarChar, 16);
             SqlParametros.Value = _metodo.GetnroTarjeta();
 
-            //mail
+            //mail 
             SqlParametros = Comando.Parameters.Add("@mail", SqlDbType.VarChar, 30);
             SqlParametros.Value = _metodo.GetEmail();
 
-            //clave
+            //clave de seguridad
             SqlParametros = Comando.Parameters.Add("@clave_seg", SqlDbType.VarChar, 4);
             SqlParametros.Value = _metodo.GetClave();
 
-            //fecha
+            //fecha de caducidad
             SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
             SqlParametros.Value = _metodo.GetFecha();
 

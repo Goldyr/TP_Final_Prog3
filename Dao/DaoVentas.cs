@@ -12,8 +12,7 @@ namespace Dao
     public class DaoVentas
     {
         AccesoDatos datos = new AccesoDatos();
-
-        public DataTable ListarVentas(string _Codigo)
+            public DataTable ListarVentas(string _Codigo)
         {
             DataTable dt = new DataTable();
             
@@ -28,5 +27,44 @@ namespace Dao
             return dt;
             
         }
+
+        public bool AgregarVenta(Ventas _Ventas)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            ArmarParametrosAgregarVentas(ref Comando, _Ventas);
+            int filas = datos.EjecutarProcedimientoAlmacenado(Comando, "sp_Agregar_Ventas");
+            if (filas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //SE ARMA PARA AGREGAR EL JUEGO 
+        private void ArmarParametrosAgregarVentas(ref SqlCommand Comando, Ventas _Ventas)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            //id usuario
+            SqlParametros = Comando.Parameters.Add("@id_usuario", SqlDbType.VarChar, 10);
+            SqlParametros.Value = _Ventas.GetIDUsuario();
+            //id metodo
+            SqlParametros = Comando.Parameters.Add("@id_metodo", SqlDbType.VarChar, 10);
+            SqlParametros.Value = _Ventas.GetIDMetodoPago();
+            
+            //fecha
+            
+            SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
+            SqlParametros.Value = _Ventas.GetFechaVenta();
+        }
+
+
+
+
+
+
+
     }
 }

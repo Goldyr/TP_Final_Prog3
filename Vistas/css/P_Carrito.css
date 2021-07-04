@@ -42,21 +42,20 @@ section h1 {
     }
 
 .wrapper__compra {
-    width: 80%;
+    width: 100%;
     display: flex;
     margin: 0 auto;
     height: 200px;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .wrapper-div {
     width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 5px;
+    */ display: flex;
+    position: relative;
 }
 
     .wrapper-div p {

@@ -23,6 +23,16 @@ namespace Negocio
             grd.DataBind();
             return grd;
         }
+        public bool NV_GuardarVentas(Ventas _ventas)
+        { 
+            if (Dao.AgregarVenta(_ventas))
+            {
+                return true;            
+            }
+            
+            return false;
+        
+        }
 
     }
 }

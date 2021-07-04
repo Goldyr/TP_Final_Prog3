@@ -21,7 +21,7 @@ namespace WebApplication1
 
                     cargarGrid();
                     organizarGrid();
-
+                    MontoTotal();
                 }
                 cargarGrid();
             }
@@ -226,7 +226,7 @@ namespace WebApplication1
 
             float precioUnitario = float.Parse(prU);
             float precioPagar = float.Parse(prPagar);
-
+            
             _juego = _njuego.cargarJuegoPorNombre((nombre));
             cantidadKeysExistentes = consultarCantidadKeys(_juego);
 
@@ -234,6 +234,7 @@ namespace WebApplication1
             {
                 dtSession.Rows[e.RowIndex][1] = cantidad;
                 precioPagar = precioUnitario * int.Parse(cantidad);
+                
             }
             else
             {
@@ -244,15 +245,28 @@ namespace WebApplication1
                 lbl_ErrorEditing.Text = $"Error interno al editar la cantidad de keys de {nombre}. " +
                     $"Solo te podemos dar ({cantidadKeysExistentes}).";
             }
-
+     
             dtSession.Rows[e.RowIndex][3] = precioPagar.ToString();
 
         }
 
+        private void MontoTotal()
+        {
+            float suma = 0;
+            foreach (GridViewRow row in gvDetallesCarrito.Rows)
+            {
+
+                Label PrTotal = row.Cells[3].FindControl("lbl_Prpagar") as Label;
+                float prpagar = float.Parse(PrTotal.Text);
+                suma += prpagar;
+            }
+            lblMonto.Text = suma.ToString();
+        }
         private void cargarGrid()
         {
             gvDetallesCarrito.DataSource = (DataTable)Session["carrito"];
             gvDetallesCarrito.DataBind();
+            MontoTotal();
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -264,6 +278,71 @@ namespace WebApplication1
             Session["carrito"] = dtSession;
 
             cargarGrid();
+        }
+
+        protected void Btn_comprar_Click(object sender, EventArgs e)
+        {
+            NegocioMetodoXUsuario NMXU = new NegocioMetodoXUsuario();
+            NegocioVentas NV = new NegocioVentas(); 
+            MetodoXUsuario MXU = new MetodoXUsuario();
+            Ventas vta = new Ventas(); 
+
+            if (Request.Cookies["IDUsuario"] != null && Session["carrito"] != null)
+            {
+
+                MXU.SetApellidos(txt_apellidos.Text.Trim());
+                MXU.SetNombres(txt_Nombres.Text.Trim());
+                MXU.SetEmail(txt_email.Text.Trim());
+                MXU.SetTelefono(txt_telefono.Text.Trim());
+                MXU.SetnroTarjeta(txt_tarjeta.Text.Trim());
+                MXU.SetDni(txt_dni.Text.Trim());
+                MXU.SetDireccion(txt_direccion.Text.Trim());
+                MXU.SetCodigoPostal(txt_CP.Text.Trim());
+                MXU.SetClave(txt_clave.Text.Trim());
+                MXU.SetFecha(txt_fecha.Text.Trim());
+                MXU.SetIdUsuario(Request.Cookies["IDUsuario"].Value);
+
+
+                //AVERIGUO  
+               
+                if (txt_tarjeta.Text.StartsWith("4"))
+                {
+                    MXU.SetIdMP("MET1");
+                    vta.SetIDMetodoPago("MET1");
+                }
+                else if (txt_tarjeta.Text.StartsWith("5"))
+                {
+                    MXU.SetIdMP("MET2");
+                    vta.SetIDMetodoPago("MET2");
+                }
+                //logica
+                //si se agrega
+
+                //VENTAS
+                vta.SetIDVentas(Request.Cookies["IDUsuario"].Value);
+                vta.SetFechaVenta(DateTime.Now.ToString());
+
+                NV.NV_GuardarVentas(vta);
+
+            }
+            else
+            {
+                //si no se agrega
+            }
+            
+        }
+
+       protected void txt_tarjeta_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txt_tarjeta.Text.StartsWith("4"))
+            {
+                lbl_tipo.Text = "Visa";
+            }
+            else if (txt_tarjeta.Text.StartsWith("5"))
+            {
+                lbl_tipo.Text = "MasterCard";
+            }
         }
     }
 }

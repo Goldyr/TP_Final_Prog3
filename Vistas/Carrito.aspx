@@ -51,15 +51,55 @@
             </div>
             <div class="wrapper__compra">
                 <div class="wrapper-div">
-                    <p>Ingrese numero tarjeta</p>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <p>Metodo de pago</p>
+                    <asp:Label ID="lbl_tipo" runat="server"></asp:Label>
                 </div>
                 <div class="wrapper-div">
-                    <p>Monto a pagar</p>
+                    <p>Numero de tarjeta</p>
+                    <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged" ></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Fecha de caducidad</p>
+                    <asp:TextBox ID="txt_fecha" runat="server" TextMode="Month"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Codigo de seguridad</p>
+                    <asp:TextBox ID="txt_clave" runat="server" MaxLength="4"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Nombres</p>
+                    <asp:TextBox ID="txt_Nombres" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Apellidos</p>
+                    <asp:TextBox ID="txt_apellidos" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Dni</p>
+                    <asp:TextBox ID="txt_dni" runat="server" MaxLength="8"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Email</p>
+                    <asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Direccion de facturacion</p>
+                    <asp:TextBox ID="txt_direccion" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Codigo postal</p>
+                    <asp:TextBox ID="txt_CP" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Telefono</p>
+                    <asp:TextBox ID="txt_telefono" runat="server"></asp:TextBox>
+                </div>
+                <div class="wrapper-div">
+                    <p>Monto A Pagar</p>
                     <asp:Label ID="lblMonto" runat="server"></asp:Label>
                 </div>
                 <div class="wrapper-div">
-                    <asp:Button ID="Button1" runat="server" Text="Comprar" />
+                    <asp:Button ID="Btn_comprar" runat="server" Text="Comprar" OnClick="Btn_comprar_Click" />
                 </div>
             </div>
         </section>
