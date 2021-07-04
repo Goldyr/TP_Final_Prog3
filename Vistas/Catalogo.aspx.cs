@@ -44,6 +44,13 @@ namespace WebApplication1
 
         }
 
-      
+        protected void ddl_Precio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ddl_Precio.SelectedValue) != 0)
+            {
+                dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Precio(Convert.ToInt32(ddl_Precio.SelectedValue));
+                dl_Catalogo.DataBind();
+            }
+        }
     }
 }

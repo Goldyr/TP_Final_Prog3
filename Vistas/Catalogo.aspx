@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/P_Catalogo.css" />
       <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,26 +17,26 @@
                 <ul class="nav-menu__ul">
                    <li>
                       <a href="Inicio.aspx">
-                       <span class="nav-menu__span1"></span>
-                       <span class="nav-menu__span2"></span>
-                       <span class="nav-menu__span3"></span>
-                       <span class="nav-menu__span4"></span>
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
                         Inicio</a>
                    </li>
            
                    <li>
                         <a href="Contacto.aspx">
-                       <span class="nav-menu__span1"></span>
-                       <span class="nav-menu__span2"></span>
-                       <span class="nav-menu__span3"></span>
-                       <span class="nav-menu__span4"></span>Contacto</a>
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>Contacto</a>
                    </li>
                    <li>
                          <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                       <span class="nav-menu__span1"></span>
-                       <span class="nav-menu__span2"></span>
-                       <span class="nav-menu__span3"></span>
-                       <span class="nav-menu__span4"></span>
+                       <span id="nav-menu__span1"></span>
+                       <span id="nav-menu__span2"></span>
+                       <span id="nav-menu__span3"></span>
+                       <span id="nav-menu__span4"></span>
                          
                             <i class="fas fa-shopping-cart"></i>
                         </a>
@@ -44,30 +45,42 @@
                 </ul>
             </nav>
           </header>
-        <div>
+        <div class ="prueba_div">
+            <asp:Label ID="lbl_busqueda" runat="server" Text="Busqueda"></asp:Label>
             <br />
-            <br />
-            <br />
-            Busqueda
             <asp:TextBox ID="txt_Busqueda_local" runat="server" AutoPostBack="True" OnTextChanged="txt_Busqueda_local_TextChanged"></asp:TextBox>
-            <br />
-            <br />
-            <div>
-                <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" Width="1000px">
-                    <FooterStyle BackColor="White" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="White" ForeColor="#333333" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+            
+           &nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lbl_cb" runat="server" Text="Buscar por rango de precio"></asp:Label>
+            <asp:DropDownList ID="ddl_Precio" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_Precio_SelectedIndexChanged">
+                <asp:ListItem Value="0">Nada seleccionado</asp:ListItem>
+                <asp:ListItem Value="1">Precio menor a 10$</asp:ListItem>
+                <asp:ListItem Value="2">Entre 10$ y 20$</asp:ListItem>
+                <asp:ListItem Value="3">Entre 20$ y 50$</asp:ListItem>
+            </asp:DropDownList>
+            
+           </div>
+            
+            <section class="Section_Catalogo">
+                <asp:DataList ID="dl_Catalogo" runat="server" GridLines="Horizontal" Font-Bold="False" Font-Names="Rubik" HorizontalAlign="Center" Width="350px" >
+                    <FooterStyle />
+                    <HeaderStyle />                    
+                    <ItemStyle BackColor="#1d1d1d" ForeColor="white" BorderStyle="Solid" BorderWidth="3px" BorderColor="#6a3db2" Font-Names="Rubik" Height="250px"/>
+                    
                     <ItemTemplate>
-                        <asp:Label ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                        <br />
+                        <div class="DataList_div">
+                            <div class="Div_Nombre_Precio">
+                        <asp:Label class="_Titulo" ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>                      
                         <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
-                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' Width="200px" />
+                            </div>
+                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' />
+                        </div>
+
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
-                <br />
-                <br />
-            </div>
+                
+            </section>
             
     </form>
 </body>
