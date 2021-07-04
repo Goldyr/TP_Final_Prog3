@@ -231,7 +231,10 @@ namespace WebApplication1
                 if(cbl_Categorias.Items[x].Selected == true)
                 {
                     {
-                        prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
+
+                           prueba += $" and Codigo_J in (select CodigoJuego_CxJ from CategoriasXJuegos where CodigoCat_CxJ = '{cbl_Categorias.Items[x].Value}') ";
+
+                         //prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
                     }
                 }
             }
