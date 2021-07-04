@@ -84,7 +84,29 @@
                 <div class="Usuario_Descripcion">
                     <p>Telefono :</p>
                     <asp:Label ID="lblTelefono_IU" runat="server"></asp:Label>
-                    <asp:TextBox ID="txt_telefono_IU" runat="server" MaxLength="30" Visible="False" ValidationGroup="ValidationUsuario"></asp:TextBox>
+                    <!--  script para solo numeros  -->
+                    <script>
+                        function solonumeros(e) {
+
+                            var key;
+
+                            if (window.event) // IE
+                            {
+                                key = e.keyCode;
+                            }
+                            else if (e.which) // Netscape/Firefox/Opera
+                            {
+                                key = e.which;
+                            }
+
+                            if (key < 48 || key > 57) {
+                                return false;
+                            }
+
+                            return true;
+                        }
+                    </script>
+                    <asp:TextBox ID="txt_telefono_IU" runat="server" MaxLength="30" Visible="False" ValidationGroup="ValidationUsuario" onkeypress="javascript:return solonumeros(event)" TextMode="Phone"></asp:TextBox>
                 </div>
                 <div class="Usuario_Descripcion">
                     <p>Fecha de Nacimiento :</p>

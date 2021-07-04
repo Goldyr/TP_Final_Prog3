@@ -49,34 +49,34 @@
           </header>
         <div>
             <h1>AGREGAR JUEGOS</h1>
-              <h4>Esta seccion se accede desde el HyperLink AGREGAR JUEGOS ubicado en OPCIONES DE ADMINISTRADOR</h4>
+              <h4>&nbsp;</h4>
             <div class="AgregarJuegos__div">
                 <p>Nombre</p>
-                 <asp:TextBox ID="Nom_J_txtBox" runat="server"></asp:TextBox>
+                 <asp:TextBox ID="Nom_J_txtBox" runat="server" MaxLength="50"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfv_Nombre" runat="server" ControlToValidate="Nom_J_txtBox" ErrorMessage="Ingrese un nombre"></asp:RequiredFieldValidator>
             </div>
             <div class="AgregarJuegos__div">
                 <p>Descripcion</p>
-                  <asp:TextBox ID="Des_J_txtBox" runat="server" Height="43px" MaxLength="400"></asp:TextBox>
+                  <asp:TextBox ID="Des_J_txtBox" runat="server" Height="43px" MaxLength="300"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfv_Descripcion" runat="server" ControlToValidate="Des_J_txtBox" ErrorMessage="Ingrese una descripcion"></asp:RequiredFieldValidator>
             </div>
             <div class="AgregarJuegos__div">
                 <p>Imagen</p>
-                <asp:TextBox ID="Img_J_txtBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Img_J_txtBox" runat="server" MaxLength="70"></asp:TextBox>
             </div>
             <div class="AgregarJuegos__div">
                 <p>Fecha Lanzamiento</p>
-                 <asp:TextBox ID="FL_J_txtBox" runat="server" ></asp:TextBox>
+                 <asp:TextBox ID="FL_J_txtBox" runat="server" TextMode="Date" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfv_Fecha" runat="server" ControlToValidate="FL_J_txtBox" ErrorMessage="Ingrese una Fecha de Lanzamiento"></asp:RequiredFieldValidator>
             </div >
             <div class="AgregarJuegos__div">
                 <p>Descuento</p>
-                <asp:TextBox ID="Desc_J_txtBox" runat="server" ></asp:TextBox>
+                <asp:TextBox ID="Desc_J_txtBox" runat="server" TextMode="Number" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfv_Descuento" runat="server" ControlToValidate="Desc_J_txtBox" ErrorMessage="Ingrese un Descuento"></asp:RequiredFieldValidator>
             </div>
             <div class="AgregarJuegos__div">
                 <p>Precio</p>
-                <asp:TextBox ID="Pre_J_txtBox" runat="server" ></asp:TextBox>
+                <asp:TextBox ID="Pre_J_txtBox" runat="server" TextMode="Number" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfv_Precio" runat="server" ControlToValidate="Pre_J_txtBox" ErrorMessage="Ingrese un Precio"></asp:RequiredFieldValidator>
             </div>
             <div class="AgregarJuegos__div">

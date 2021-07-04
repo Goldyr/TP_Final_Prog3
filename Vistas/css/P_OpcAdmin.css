@@ -79,3 +79,11 @@
         background: #311027;
         border-radius: 5px;
     }
+
+#lbl_key{
+    color:#311027;
+}
+
+#RequiredFieldValidator1 {
+    color: #311027;
+}
