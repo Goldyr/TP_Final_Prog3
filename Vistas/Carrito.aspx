@@ -15,29 +15,29 @@
         <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
-                   <li>
+                    <li>
                         <a href="Inicio.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
-                        Inicio</a>
-                   </li>
-          
-                   <li>
-                       <a href="Contacto.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>Contacto</a>
-                   </li>
-                   <li class="seleccionado">
-                         <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
-                         
+                            <span id="nav-menu__span1"></span>
+                            <span id="nav-menu__span2"></span>
+                            <span id="nav-menu__span3"></span>
+                            <span id="nav-menu__span4"></span>
+                            Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="Contacto.aspx">
+                            <span id="nav-menu__span1"></span>
+                            <span id="nav-menu__span2"></span>
+                            <span id="nav-menu__span3"></span>
+                            <span id="nav-menu__span4"></span>Contacto</a>
+                    </li>
+                    <li class="seleccionado">
+                        <a href="Carrito.aspx" class="nav-menu__ul__carrito">
+                            <span id="nav-menu__span1"></span>
+                            <span id="nav-menu__span2"></span>
+                            <span id="nav-menu__span3"></span>
+                            <span id="nav-menu__span4"></span>
+
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
@@ -51,12 +51,18 @@
             </div>
             <div class="wrapper__compra">
                 <div class="wrapper-div">
+                    <asp:DropDownList ID="ddl_MetxUsuario" runat="server">
+                    </asp:DropDownList>
+                </div>
+
+
+                <div class="wrapper-div">
                     <p>Metodo de pago</p>
                     <asp:Label ID="lbl_tipo" runat="server"></asp:Label>
                 </div>
                 <div class="wrapper-div">
                     <p>Numero de tarjeta</p>
-                    <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged" ></asp:TextBox>
+                    <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged"></asp:TextBox>
                 </div>
                 <div class="wrapper-div">
                     <p>Fecha de caducidad</p>

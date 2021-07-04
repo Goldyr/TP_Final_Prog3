@@ -13,14 +13,15 @@ using Entidades;
 namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
-    {
-        NegocioUsuario negUser = new NegocioUsuario();
+    { 
         Usuario user = new Usuario();
-        NegocioJuego negjueg = new NegocioJuego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            NegocioJuego negjueg = new NegocioJuego();
+            NegocioUsuario negUser = new NegocioUsuario();
+
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
@@ -40,12 +41,14 @@ namespace WebApplication1
 
         private void ActualizarCss()
         {
+            NegocioJuego negjueg = new NegocioJuego();
+
             // ACTUALIZAR CSS DEPENDIENDO SI SE INICIO SESION O NO
 
             //==================================
             //  HEADER
 
-            if(user.GetUser() == null)
+            if (user.GetUser() == null)
             {
                 mainHeader__content.Style["display"] = "flex";
                 mainHeader.Style["height"] = "240px";
@@ -54,7 +57,6 @@ namespace WebApplication1
                 lvListCat.DataSource = negjueg.NJ_ListarJuegos_True();
                 lvListCat.DataBind();
                 //Cargo el listado de checks
-                
 
             }
             else
@@ -64,7 +66,6 @@ namespace WebApplication1
 
             }
 
-            
              //=====================================
              // DIV DE INICIAR SESION
 
@@ -97,6 +98,8 @@ namespace WebApplication1
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
+            NegocioUsuario negUser = new NegocioUsuario();
+
             // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
             user.SetEmail(header_tbUsuario.Text);
             user.SetPassword(header_tbContra.Text);
@@ -223,7 +226,8 @@ namespace WebApplication1
 
         protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            NegocioJuego negjueg = new NegocioJuego();
+
             string prueba = "";
 
             for (int x = 0; x <= cbl_Categorias.Items.Count - 1; x++)

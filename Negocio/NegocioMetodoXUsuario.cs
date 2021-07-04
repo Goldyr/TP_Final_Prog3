@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Dao;
+using System.Data;
+using System.Web.UI.WebControls;
 
 namespace Negocio
 {
@@ -23,6 +25,25 @@ namespace Negocio
             return false;
 
         }
+
+        public void NU_CargarddlMetodosUsuarios(Usuario user, DropDownList ddl)
+        {
+   
+            DataTable dt = new DataTable();
+
+            string consulta = $"SELECT Nro_Tarjeta_MxU, MP.Nombre_MP FROM MetodosxUsuarios " +
+                $"INNER JOIN Metodos_Pago AS MP ON MP.ID_MP = MetodosxUsuarios.ID_MP_MxU " +
+                $"WHERE MetodosxUsuarios.ID_Usuario_MxU = '{user.GetId()}' AND MetodosxUsuarios.Estado_MxU = 1";
+
+            dt = dao.ListarMetodos(consulta);
+
+            ddl.DataSource = dt;
+            ddl.DataTextField = "Nombre_MP";
+            ddl.DataValueField = "Nro_Tarjeta_MxU";
+            ddl.DataBind();
+
+        }
+
 
     }
 }

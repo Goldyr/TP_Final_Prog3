@@ -44,9 +44,11 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaxJuego.cs" />
     <Compile Include="Desarrolladora.cs" />
+    <Compile Include="DetalleVenta.cs" />
     <Compile Include="Distribuidora.cs" />
     <Compile Include="Juego.cs" />
     <Compile Include="Key.cs" />
+    <Compile Include="MetodoPago.cs" />
     <Compile Include="MetodoXUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />

@@ -43,28 +43,23 @@ namespace Dao
                 return false;
             }
         }
-        //SE ARMA PARA AGREGAR EL JUEGO 
+
+
         private void ArmarParametrosAgregarVentas(ref SqlCommand Comando, Ventas _Ventas)
         {
             SqlParameter SqlParametros = new SqlParameter();
+
             //id usuario
-            SqlParametros = Comando.Parameters.Add("@id_usuario", SqlDbType.VarChar, 10);
+            SqlParametros = Comando.Parameters.Add("@id_usuario", SqlDbType.Char, 10);
             SqlParametros.Value = _Ventas.GetIDUsuario();
             //id metodo
-            SqlParametros = Comando.Parameters.Add("@id_metodo", SqlDbType.VarChar, 10);
-            SqlParametros.Value = _Ventas.GetIDMetodoPago();
+            SqlParametros = Comando.Parameters.Add("@nro_tarjeta", SqlDbType.VarChar, 16);
+            SqlParametros.Value = _Ventas.GetNroTarjeta();
             
             //fecha
-            
             SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
-            SqlParametros.Value = _Ventas.GetFechaVenta();
+            SqlParametros.Value = _Ventas.GetNroTarjeta();
         }
-
-
-
-
-
-
 
     }
 }

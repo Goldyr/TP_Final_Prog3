@@ -8,8 +8,8 @@ namespace Entidades
 {
     public class MetodoXUsuario
     {
-        private string ID_MP;
-        private Usuario ID_Usuario = new Usuario();
+        private MetodoPago metodoPago = new MetodoPago();
+        private Usuario usuario = new Usuario();
         private string Nro_Tarjeta;
         private string Email;
         private string Clave_Seguridad;
@@ -23,8 +23,8 @@ namespace Entidades
         private bool Estado;
 
         //sets
-        public void SetIdMP(string _Id) { ID_MP = _Id; }
-        public void SetIdUsuario(string _Id) { ID_Usuario.SetId(_Id); }
+        public void SetIdMP(MetodoPago MetodoPago) { metodoPago.Id = MetodoPago.Id; }
+        public void SetIdUsuario(Usuario Usuario) { usuario.SetId(Usuario.GetId()); }
         public void SetnroTarjeta(string _nro) { Nro_Tarjeta = _nro; }
         public void SetEmail(string _Email) { Email = _Email; }
         public void SetClave(string _Clave) { Clave_Seguridad = _Clave; }
@@ -42,8 +42,8 @@ namespace Entidades
         public void SetEstado(bool _estado) { Estado = _estado; }
 
         //gets
-        public string GetIdMP() { return ID_MP ; }
-        public string GetIdUsuario() { return ID_Usuario.GetId(); }
+        public string GetIdMP() { return metodoPago.Id; }
+        public string GetIdUsuario() { return usuario.GetId(); }
         public string GetnroTarjeta() { return Nro_Tarjeta; }
         public string GetEmail() { return Email; }
         public string GetClave() { return Clave_Seguridad; }
