@@ -12,14 +12,17 @@
     align-items: center;
 }
 
-    .DataList_div img {
-        width: 100%;
-        height: 250px;
+.DataList_div input {
+    width: 100%;
+    height: 250px;
         background: green;
-        position: relative;
-        bottom: 43px;
-    }
+    position: relative;
+    bottom: 43px;
+}
 
+.DataList_div input[type=image]:hover {
+    opacity: 0.6;
+}
 
 .Div_Nombre_Precio {
     width: 400px;
@@ -29,6 +32,14 @@
     top: 250px;
     background: #0000007d;
     align-items: center;
+}
+
+.Cuadro_Catalogo {
+    background: #3a3a3a87;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    width: 470px;
 }
 
 

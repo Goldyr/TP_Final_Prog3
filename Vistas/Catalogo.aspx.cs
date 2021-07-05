@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
 using Negocio;
 using Entidades;
 
@@ -18,7 +20,7 @@ namespace WebApplication1
         NegocioCategoriaXJuego ns_catxjue = new NegocioCategoriaXJuego();
         protected void Page_Load(object sender, EventArgs e)//Se tiene que llamar desde busqueda
         {
-            if (!IsPostBack) 
+            if (!IsPostBack)
             {
                 if (Request["busqueda"] != null)
                 {
@@ -51,6 +53,33 @@ namespace WebApplication1
                 dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Precio(Convert.ToInt32(ddl_Precio.SelectedValue));
                 dl_Catalogo.DataBind();
             }
+
         }
+
+        protected void dl_Catalogo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void imbImagen_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "SeleccionJuego")
+            {
+                Response.Redirect($"DescripcionJuego.aspx?id={e.CommandArgument}"); //?id=" + e.CommandArgument.ToString());
+
+            }
+        }
+
+
+        /*protected void imbImagen_Command(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "SeleccionJuego")
+            {
+                Response.Redirect($"DescripcionJuego.aspx?id={e.CommandArgument}"); //?id=" + e.CommandArgument.ToString());
+
+            }
+
+        }*/
     }
+
 }

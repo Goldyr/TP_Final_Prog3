@@ -62,7 +62,8 @@
            </div>
             
             <section class="Section_Catalogo">
-                <asp:DataList ID="dl_Catalogo" runat="server" GridLines="Horizontal" Font-Bold="False" Font-Names="Rubik" HorizontalAlign="Center" Width="350px" >
+                <div class="Cuadro_Catalogo">
+                <asp:DataList ID="dl_Catalogo" runat="server" GridLines="Horizontal" Font-Bold="False" Font-Names="Rubik" HorizontalAlign="Center" Width="350px" OnSelectedIndexChanged="dl_Catalogo_SelectedIndexChanged" >
                     <FooterStyle />
                     <HeaderStyle />                    
                     <ItemStyle BackColor="#1d1d1d" ForeColor="white" BorderStyle="Solid" BorderWidth="3px" BorderColor="#6a3db2" Font-Names="Rubik" Height="250px"/>
@@ -70,16 +71,16 @@
                     <ItemTemplate>
                         <div class="DataList_div">
                             <div class="Div_Nombre_Precio">
-                        <asp:Label class="_Titulo" ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>                      
-                        <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                        <asp:Label class="_Titulo" ID="lbl_Nom_Cat" runat="server" Text='<%# Eval("Nombre_J") %>'></asp:Label>                      
+                        <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Eval("PU_J") %>'></asp:Label>
                             </div>
-                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' />
+                        <asp:ImageButton ID="imbImagen" runat="server" ImageUrl='<%# Eval("Imagen_J") %>' BorderStyle="None" CauseValidation="False" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="SeleccionJuego" OnCommand="imbImagen_Command" />
                         </div>
 
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
-                
+                </div>
             </section>
             
     </form>
