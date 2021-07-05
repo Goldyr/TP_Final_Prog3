@@ -67,7 +67,7 @@
            
 
                 <div class="sectionBML_wrapper">
-                    <asp:GridView ID="grdBMLJuegos" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" Style="margin-top: 0px; margin-bottom: 0px;" OnRowEditing="grdBMLJuegos_RowEditing" OnRowCancelingEdit="grdBMLJuegos_RowCancelingEdit" OnRowUpdating="grdBMLJuegos_RowUpdating" OnRowDeleting="grdBMLJuegos_RowDeleting">
+                    <asp:GridView ID="grdBMLJuegos" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" Style="margin-top: 0px; margin-bottom: 0px;" OnRowEditing="grdBMLJuegos_RowEditing" OnRowCancelingEdit="grdBMLJuegos_RowCancelingEdit" OnRowUpdating="grdBMLJuegos_RowUpdating" OnRowDeleting="grdBMLJuegos_RowDeleting" AllowPaging="True" OnPageIndexChanging="grdBMLJuegos_PageIndexChanging" PageSize="15">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
@@ -146,7 +146,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Descripcion">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="txt_Descripcion_eit" runat="server" Text='<%# Bind("Descripcion_J") %>'></asp:TextBox>
+                                    <asp:TextBox ID="txt_Descripcion_eit" runat="server" Text='<%# Bind("Descripcion_J") %>' Height="53px" TextMode="MultiLine" Width="449px"></asp:TextBox>
 
 
                                     <asp:CustomValidator ID="cv_eit_Desc" runat="server" ControlToValidate="txt_Descripcion_eit" OnServerValidate="cv_eit_Desc_ServerValidate">** Solo se permiten un maximo de 300 caracteres</asp:CustomValidator>

@@ -135,5 +135,11 @@ namespace WebApplication1
             grdBMLJuegos.DataBind();
             rbl_Tipolistado.SelectedValue = "2";
         }
+
+        protected void grdBMLJuegos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdBMLJuegos.PageIndex = e.NewPageIndex;
+            cargarGrid();
+        }
     }
 }
