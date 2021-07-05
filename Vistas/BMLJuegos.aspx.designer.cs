@@ -51,25 +51,25 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_Tipolistado;
 
         /// <summary>
-        /// Label1 control.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// tb_Busqueda control.
+        /// Control tb_Busqueda.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Busqueda;
 
         /// <summary>
-        /// grdBMLJuegos control.
+        /// Control grdBMLJuegos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

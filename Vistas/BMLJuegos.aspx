@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BMLJuegos.aspx.cs" Inherits="WebApplication1.WebForm9" %>
+﻿<%@ Page MaintainScrollPositionOnPostback="true" Language="C#" AutoEventWireup="true" CodeBehind="BMLJuegos.aspx.cs" Inherits="WebApplication1.WebForm9" %>
 
 <!DOCTYPE html>
 
@@ -68,7 +68,7 @@
            
 
                 <div class="sectionBML_wrapper">
-                    <asp:GridView ID="grdBMLJuegos" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" Style="margin-top: 0px; margin-bottom: 0px;" OnRowEditing="grdBMLJuegos_RowEditing" OnRowCancelingEdit="grdBMLJuegos_RowCancelingEdit" OnRowUpdating="grdBMLJuegos_RowUpdating" OnRowDeleting="grdBMLJuegos_RowDeleting" AllowPaging="True" OnPageIndexChanging="grdBMLJuegos_PageIndexChanging" PageSize="15">
+                    <asp:GridView ID="grdBMLJuegos" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" Style="margin-top: 0px; margin-bottom: 0px;" OnRowEditing="grdBMLJuegos_RowEditing" OnRowCancelingEdit="grdBMLJuegos_RowCancelingEdit" OnRowUpdating="grdBMLJuegos_RowUpdating" OnRowDeleting="grdBMLJuegos_RowDeleting" AllowPaging="True" OnPageIndexChanging="grdBMLJuegos_PageIndexChanging" PageSize="7">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>

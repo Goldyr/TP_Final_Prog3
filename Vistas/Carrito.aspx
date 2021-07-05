@@ -119,9 +119,30 @@
                             <asp:TextBox ID="txt_CP" runat="server" ValidationGroup="met"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txt_CP" ErrorMessage="Ingrese un codigo postal" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
+                        <script>
+                        function solonumeros(e) {
+
+                            var key;
+
+                            if (window.event) // IE
+                            {
+                                key = e.keyCode;
+                            }
+                            else if (e.which) // Netscape/Firefox/Opera
+                            {
+                                key = e.which;
+                            }
+
+                            if (key < 48 || key > 57) {
+                                return false;
+                            }
+
+                            return true;
+                        }
+                        </script>
                         <div class="wrapper-div-content">
                             <p>Telefono</p>
-                            <asp:TextBox ID="txt_telefono" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:TextBox ID="txt_telefono" runat="server" onkeypress="javascript:return solonumeros(event)" ValidationGroup="met"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txt_telefono" ErrorMessage="Ingrese un telefono" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
