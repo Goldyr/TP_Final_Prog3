@@ -182,8 +182,9 @@ namespace WebApplication1
             if (e.CommandName == "Ver_Detalle")
             {
                 string ID_Venta = e.CommandArgument.ToString();
-                string Consulta = $"SELECT SerieKey_DV,CodJuego_DV, Precio_DV, ID_DV " +
+                string Consulta = $"SELECT SerieKey_DV  , Nombre_J, Precio_DV, ID_DV " +
                 "FROM DetalleVentas " +
+                "inner join juegos on CodJuego_DV = Codigo_J "+
                 "inner join Ventas on ID_Venta_DV = ID_V " +
                 $"where Ventas.ID_Usuario_V = '{user.GetId()}' AND ID_Venta_DV = '{ID_Venta}'";
 
@@ -199,6 +200,13 @@ namespace WebApplication1
         protected void btn_metodo_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarMetodosdePago.aspx");
+        }
+
+        protected void grd_ventas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grd_ventas.PageIndex = e.NewPageIndex;
+            grd_ventas.DataSource = negVentas.NV_CargarGridVentas(this.Request.Cookies["IDUsuario"].Value);
+            grd_ventas.DataBind();
         }
     }
 }

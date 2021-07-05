@@ -14,6 +14,7 @@ namespace WebApplication1
     {
         private Usuario user = new Usuario();
         private MetodoXUsuario metodosUsuario = new MetodoXUsuario();
+        private NegocioDetalleVenta negDV = new NegocioDetalleVenta();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -68,7 +69,7 @@ namespace WebApplication1
             if (user.GetId() != null)
             {
                 lblInicioSesionCompra.Style["display"] = "none";
-                wrapperCompra.Style["display"] = "block";
+                wrapperCompra.Style["display"] = "flex";
             }
             else
             {
@@ -329,6 +330,8 @@ namespace WebApplication1
                 NegDVta.NV_GuardarDetalleVenta(detalleVenta); // if bla bla bla
             }
 
+
+
         }
 
         protected void cargarMetodoxUsuario(MetodoXUsuario MXU)
@@ -496,6 +499,7 @@ namespace WebApplication1
 
                 CrearVenta(nroTarjetaSeleccionado);
                 LimpiarSession();
+                VerCompra.Style["display"] = "block";
             }
 
         }

@@ -39,5 +39,12 @@ namespace Dao
 
         }
 
+        public DataTable getDetalles(string consulta) {
+           
+            DataTable dt = datos.ObtenerTabla("Detalles_venta", consulta);
+            return dt;
+
+        }
+
     }
 }

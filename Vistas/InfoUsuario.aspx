@@ -161,7 +161,7 @@
             </div>
 
             <div class="historial_wrapper">
-                <asp:GridView ID="grd_ventas" runat="server" AllowPaging="True" AutoGenerateColumns="False">
+                <asp:GridView ID="grd_ventas" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="grd_ventas_PageIndexChanging">
                     <Columns>
                         <asp:TemplateField HeaderText="N°Venta">
                             <ItemTemplate>
@@ -194,10 +194,9 @@
                 <asp:Label ID="lblMostrarDetalle" runat="server" Text="Label" Visible="False"></asp:Label>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID_DV" DataSourceID="sql_Detallesventas" Visible="False" AllowPaging="True">
                     <Columns>
-                        <asp:BoundField DataField="SerieKey_DV" HeaderText="SerieKey_DV" SortExpression="SerieKey_DV" />
-                        <asp:BoundField DataField="CodJuego_DV" HeaderText="CodJuego_DV" SortExpression="CodJuego_DV" />
-                        <asp:BoundField DataField="Precio_DV" HeaderText="Precio_DV" SortExpression="Precio_DV" />
-                        <asp:BoundField DataField="ID_DV" HeaderText="ID_DV" ReadOnly="True" SortExpression="ID_DV" />
+                        <asp:BoundField DataField="SerieKey_DV" HeaderText="Serial" SortExpression="SerieKey_DV" />
+                        <asp:BoundField DataField="Nombre_J" HeaderText="Nombre" SortExpression="Nombre_J" />
+                        <asp:BoundField DataField="Precio_DV" HeaderText="Precio" SortExpression="Precio_DV" />
                     </Columns>
                 </asp:GridView>
 

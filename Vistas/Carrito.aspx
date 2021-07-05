@@ -70,18 +70,18 @@
                         </div>
                         <div class="wrapper-div-content">
                             <p>Numero de tarjeta</p>
-                            <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_tarjeta" ErrorMessage="Ingrese un numero de tarjeta"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_tarjeta" runat="server" AutoPostBack="True" MaxLength="16" OnTextChanged="txt_tarjeta_TextChanged" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_tarjeta" ErrorMessage="Ingrese un numero de tarjeta" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Fecha de caducidad</p>
-                            <asp:TextBox ID="txt_fecha" runat="server" TextMode="Month"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_fecha" ErrorMessage="Ingrese una fecha"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_fecha" runat="server" TextMode="Month" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_fecha" ErrorMessage="Ingrese una fecha" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Codigo de seguridad</p>
-                            <asp:TextBox ID="txt_clave" runat="server" MaxLength="4"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_clave" ErrorMessage="Ingrese un código de seguridad"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_clave" runat="server" MaxLength="4" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_clave" ErrorMessage="Ingrese un código de seguridad" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
 
                     </div>
@@ -89,44 +89,44 @@
                     <div class="wrapper-div compra-datos-personales">
                         <div class="wrapper-div-content">
                             <p>Nombres</p>
-                            <asp:TextBox ID="txt_Nombres" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_Nombres" ErrorMessage="Ingrese un nombre"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_Nombres" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_Nombres" ErrorMessage="Ingrese un nombre" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Apellidos</p>
-                            <asp:TextBox ID="txt_apellidos" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txt_apellidos" ErrorMessage="Ingrese un apellido"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_apellidos" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txt_apellidos" ErrorMessage="Ingrese un apellido" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Dni</p>
-                            <asp:TextBox ID="txt_dni" runat="server" MaxLength="8"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txt_dni" ErrorMessage="Ingrese el DNI del titular"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_dni" runat="server" MaxLength="8" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txt_dni" ErrorMessage="Ingrese el DNI del titular" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Email</p>
-                            <asp:TextBox ID="txt_email" runat="server" TextMode="Email"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txt_email" ErrorMessage="Ingrese un mail"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_email" runat="server" TextMode="Email" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txt_email" ErrorMessage="Ingrese un mail" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
                     <div class="wrapper-div compra-datos-contacto">
                         <div class="wrapper-div-content">
                             <p>Direccion de facturacion</p>
-                            <asp:TextBox ID="txt_direccion" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txt_direccion" ErrorMessage="Ingrese una dirección"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_direccion" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txt_direccion" ErrorMessage="Ingrese una dirección" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Codigo postal</p>
-                            <asp:TextBox ID="txt_CP" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txt_CP" ErrorMessage="Ingrese un codigo postal"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_CP" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txt_CP" ErrorMessage="Ingrese un codigo postal" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
                             <p>Telefono</p>
-                            <asp:TextBox ID="txt_telefono" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txt_telefono" ErrorMessage="Ingrese un telefono"></asp:RequiredFieldValidator>
+                            <asp:TextBox ID="txt_telefono" runat="server" ValidationGroup="met"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txt_telefono" ErrorMessage="Ingrese un telefono" ValidationGroup="met"></asp:RequiredFieldValidator>
                         </div>
                         <div class="wrapper-div-content">
-                            <asp:Button ID="btnAgregarMP" runat="server" Text="Agregar Metodo de Pago" OnClick="Btn_AgregarMP" />
+                            <asp:Button ID="btnAgregarMP" runat="server" Text="Agregar Metodo de Pago" OnClick="Btn_AgregarMP" ValidationGroup="met" />
                             <asp:Label ID="lbl_confirmacionAgregarMP" runat="server"></asp:Label>
                         </div>
                     </div>
@@ -178,10 +178,12 @@
                     </Columns>
                 </asp:GridView>
                 <asp:Label ID="lbl_ErrorEditing" runat="server" Visible="False"></asp:Label>
+                 <br />
+                <p id="VerCompra" runat="server">Puedes ver tu compra <a href="InfoUsuario.aspx">aqui</a></p>
             </div>
         </section>
-    </form>
-         <footer>
+
+                 <footer>
             <div class="footer-div">
                 <h4>Acerca</h4>
                 <p>
@@ -200,5 +202,7 @@
                 </ul>
             </div>
         </footer>
+    </form>
+
 </body>
 </html>
