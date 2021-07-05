@@ -3,52 +3,42 @@
     justify-content: space-evenly;
 }
 
-.Cuadro_Opciones a {
-    color: aquamarine;
-    padding-left: 50px;
-    padding-right: 50px;
-    background: #3a3a3a89;
-    border: 1px solid #3a3a3a89;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 5px;
-}
-
-    .Cuadro_Opciones a:hover {
-        box-shadow: 5px 5px 5px #333232;
-        background: linear-gradient(153deg, rgb(156 83 173) 26%, rgb(116 44 130) 68%, rgba(57,48,58,1) 81%);
+    .Cuadro_Opciones a {
+        color: aquamarine;
+        padding-left: 50px;
+        padding-right: 50px;
+        background: #3a3a3a89;
+        border: 1px solid #3a3a3a89;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 5px;
     }
+
+        .Cuadro_Opciones a:hover {
+            box-shadow: 5px 5px 5px #333232;
+            background: linear-gradient(153deg, rgb(156 83 173) 26%, rgb(116 44 130) 68%, rgba(57,48,58,1) 81%);
+        }
 
 
 .S_Keys {
     display: flex;
-    margin-top: 50px;
-    padding-left: 100px;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: space-around;
+    height: 500px;
+    align-items: center;
 }
 
 .Cuadro_Keys {
     color: aquamarine;
     width: 450px;
-    height: 320px;
-    margin: 20px;
-    padding-left: 0px;
+    height: 380px;
+    /* margin: 20px; */
+    /* padding-left: 0px; */
     box-shadow: 0px 0px 15px #3b3240;
     background: #3a3a3a87;
     border-radius: 5px;
 }
 
-.Interior_Keys {
-    margin: 10px;
-}
-
-.Interior_Keys p {
-    margin: 5px 0px;
-}
-
-.Interior_Keys h1 {
-    color: #cbd8d4;
-}
 
 
 .Interior_Keys_Div {
@@ -56,9 +46,24 @@
     margin-bottom: 0px;
 }
 
-    .Interior_Keys_Div p, span {
-        display: inline-block;
+.cuadroKey__wrapper {
+    margin: 20px;
+}
+
+.cuadroKey__div {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+
+    .cuadroKey__div :nth-child(2) {
+        color: white;
     }
+
+    .cuadroKey__div h1 {
+        color: white;
+    }
+
 
 #rfvJuego {
     display: inline-block;
@@ -80,8 +85,8 @@
         border-radius: 5px;
     }
 
-#lbl_key{
-    color:#311027;
+#lbl_key {
+    color: #311027;
 }
 
 #RequiredFieldValidator1 {

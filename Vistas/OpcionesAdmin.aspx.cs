@@ -15,8 +15,17 @@ namespace WebApplication1
         NegocioUsuario ns_user = new NegocioUsuario();
         NegocioJuego ns_juego = new NegocioJuego();
         NegocioVentas ns_ventas = new NegocioVentas();
+        Usuario user = new Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.Request.Cookies["IDUsuario"] != null)
+            {
+                user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                ns_user.CargarUsuarioPorID(user);
+                infoUsuario_hl.Text = user.GetUser();
+            }
+
             if (!IsPostBack)
             {
                 //Si no tienen data en la base de datos comenten esto

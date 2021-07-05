@@ -1,0 +1,36 @@
+﻿.agregar__wrapper {
+    width: 60%;
+    margin: 0 auto;
+    background: #1d1d1d66;
+}
+
+.titulo-section {
+    background: #1d1d1d;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.agregar__container {
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.titulo-section h1 {
+    margin: 0;
+}
+
+.agregar-div {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+}
+
+    .agregar-div p, span {
+        margin: 0;
+        color: #e4e4e4;
+    }

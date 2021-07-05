@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Inicio</title>
+    <title>New Wave Games</title>
+    <link rel="icon" type="image/png" href="/imagenes/favicon/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
     <link rel="stylesheet" type="text/css" href="/css/P_Inicio.css" />
     <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
@@ -141,25 +142,25 @@
             <div class="titulo-section">
                 <h1>BUSCAR JUEGOS POR CATEGORIAS</h1>
             </div>
-             <asp:UpdatePanel ID="upSetSession" runat="server">
-            <ContentTemplate>
-            <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
-                <ItemTemplate>
-                    <div class="lvListCat__div">
-                     <asp:HyperLink Id="Hyper" runat="server" class="lvListCat__div__info"  NavigateUrl='<%# Eval("Codigo_J", "~/DescripcionJuego.aspx?id={0}") %>'>
-                         <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
-                            <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                            <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
-                     </asp:HyperLink>
-                        <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" CausesValidation="False" />
-                    </div>
-                </ItemTemplate>
-                <LayoutTemplate>
-                    <div id="lvListCatWrapper" runat="server" style="">
-                        <span runat="server" id="itemPlaceholder" />
-                    </div>
-                    <div style="">
-                    </div>
+            <asp:UpdatePanel ID="upSetSession" runat="server">
+                <ContentTemplate>
+                    <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="lvListCat__div">
+                                <asp:HyperLink ID="Hyper" runat="server" class="lvListCat__div__info" NavigateUrl='<%# Eval("Codigo_J", "~/DescripcionJuego.aspx?id={0}") %>'>
+                                    <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
+                                    <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
+                                    <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
+                                </asp:HyperLink>
+                                <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" CausesValidation="False" />
+                            </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <div id="lvListCatWrapper" runat="server" style="">
+                                <span runat="server" id="itemPlaceholder" />
+                            </div>
+                            <div style="">
+                            </div>
 
                         </LayoutTemplate>
 
@@ -179,25 +180,26 @@
                 <asp:Parameter DbType="Date" DefaultValue="01/01/2019" Name="Fecha_Lanzamiento_J" />
             </SelectParameters>
         </asp:SqlDataSource>
-        
+
     </form>
     <footer>
-            <div class="footer-div">
-                <h4>Acerca</h4>
-                <p>
-                    Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
-                </p>
-            </div>
-            <div class="footer-div">
-                <h4>Integrantes</h4>
-                <ul>
-                    <li>Facundo Rivas</li>
-                    <li>Enzo Bogado</li>
-                    <li>Matias Flori</li>
-                    <li>Sebastian Buelga</li>
-                    <li>Sergio Rivera</li>
-                </ul>
-            </div>
-        </footer>
+        <div class="footer-div">
+            <h4>Acerca</h4>
+            <p>
+                Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+               
+            </p>
+        </div>
+        <div class="footer-div">
+            <h4>Integrantes</h4>
+            <ul>
+                <li>Facundo Rivas</li>
+                <li>Enzo Bogado</li>
+                <li>Matias Flori</li>
+                <li>Sebastian Buelga</li>
+                <li>Sergio Rivera</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

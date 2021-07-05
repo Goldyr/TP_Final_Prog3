@@ -5,7 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+          <title>New Wave Games</title>
+    <link rel="icon" type="image/png" href="/imagenes/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" href="/imagenes/favicon/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
     <link rel="stylesheet" type="text/css" href="/css/P_Catalogo.css" />
       <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>

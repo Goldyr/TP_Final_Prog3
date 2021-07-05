@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+       <title>New Wave Games</title>
+    <link rel="icon" type="image/png" href="/imagenes/favicon/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
     <link rel="stylesheet" type="text/css" href="/css/P_InfoUsuario.css" />
     <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
@@ -106,7 +107,7 @@
                             return true;
                         }
                     </script>
-                    <asp:TextBox ID="txt_telefono_IU" runat="server" MaxLength="30" Visible="False" ValidationGroup="ValidationUsuario" onkeypress="javascript:return solonumeros(event)" TextMode="Phone"></asp:TextBox>
+                    <asp:TextBox ID="txt_telefono_IU" runat="server" MaxLength="15" Visible="False" ValidationGroup="ValidationUsuario" onkeypress="javascript:return solonumeros(event)" TextMode="Phone"></asp:TextBox>
                 </div>
                 <div class="Usuario_Descripcion">
                     <p>Fecha de Nacimiento :</p>

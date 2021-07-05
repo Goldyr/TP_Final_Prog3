@@ -71,6 +71,8 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="Contacto.aspx" />
+    <Content Include="css\P_AgregarDisDes.css" />
+    <Content Include="css\P_AgregarJuegos.css" />
     <Content Include="css\P_BMLJuego.css" />
     <Content Include="css\Descripcion.css" />
     <Content Include="css\P_Catalogo.css" />
@@ -81,6 +83,7 @@
     <Content Include="css\P_OpcAdmin.css" />
     <Content Include="css\P_Registro.css" />
     <Content Include="DescripcionJuego.aspx" />
+    <Content Include="imagenes\favicon\favicon.ico" />
     <Content Include="imagenes\IMG-00001.jpg" />
     <Content Include="imagenes\IMG-00002.jpg" />
     <Content Include="imagenes\IMG-00003.jpg" />

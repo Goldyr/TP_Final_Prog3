@@ -1,0 +1,36 @@
+﻿.sAgregarJuegos {
+    width: 100%;
+}
+
+.AgregarJuegos_wrapper {
+    margin: 0 auto;
+    width: 60%;
+    background: #2929298f;
+}
+
+.titulo-section h1 {
+    margin 0;
+}
+
+.titulo-section {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background: #1d1d1d;
+}
+
+.AgregarJuegos__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.AgregarJuegos__div {
+    width: 250px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    color: white;
+}
