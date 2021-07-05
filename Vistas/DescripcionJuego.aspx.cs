@@ -43,8 +43,16 @@ namespace WebApplication1
             if(dto != 0)
             {
 
-                PCalc_JLabel.Text = CalcularDescuento(dto, _Juego.GetPrecio()).ToString();
+                PCalc_JLabel.Text = "$ " + CalcularDescuento(dto, _Juego.GetPrecio()).ToString();
                 PCalc_JLabel.Visible = true;
+                Descuento.Text = dto.ToString();
+            }
+            else
+            {
+                PU_JLabel.Style ["text-decoration"] = "none";
+                PU_JLabel.Style["color"] = "#ffffff";
+                PCalc_JLabel.Text = " ";
+                Descuento.Visible = false;
             }
 
             PU_JLabel.Text = _Juego.GetPrecio().ToString();

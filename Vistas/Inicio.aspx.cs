@@ -92,7 +92,13 @@ namespace WebApplication1
 
             ActualizarCss();
 
-            if (user.GetAdmin()) pInicio__lbladmin.Visible = true;
+            if (user.GetAdmin()) {
+                pInicio__lbladmin.Visible = true;
+            }
+            else
+            {
+                a_admin.Style["display"] = "none";
+            }
         }
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)

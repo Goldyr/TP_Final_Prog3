@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/Descripcion.css" />
     <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,25 +45,37 @@
                 </ul>
             </nav>
         </header>
-        <section>
-            <div>
-                <asp:Label ID="Nombre_JLabel" runat="server" />
-                <p>Precio</p>
-                <asp:Label ID="PU_JLabel" runat="server" />
-                <asp:Label ID="PCalc_JLabel" runat="server"></asp:Label>
-                <asp:Image ID="Image1" runat="server" />
-                <p>Acerca de</p>
-                <asp:Label ID="Descripcion_JLabel" runat="server" />
+        <section class="Section-InfoJuego">
+            <div class="Section-InfoJuego-Container">
+                <div class="Section-InfoJuego-Div__img">
+                    <asp:Image ID="Image1" runat="server" />
+                      <div class="Section-InfoJuego__descto">
+                          <asp:Label ID="Descuento" runat="server"></asp:Label>
+                      </div>
+                    <div class="Section-InfoJuego-Div__img-barra">   
+                        <div class="Div-img-barra_name">
+                            <asp:Label ID="Nombre_JLabel" runat="server" />
+                        </div>
+                        <div class="Div-img-barra-precio">
+                            <asp:Label ID="PU_JLabel" class="Tachado" runat="server" />
+                            <asp:Label ID="PCalc_JLabel" runat="server"></asp:Label>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="Section-InfoJuego-Descripcion">
+                    <h2>Acerca de</h2>
+                    <asp:Label ID="Descripcion_JLabel" runat="server" />
+                </div>
             </div>
-            <div>
-               <%-- <asp:Label ID="Label1" runat="server" Text="Cantidad"></asp:Label>--%>
-                <%--<asp:TextBox ID="TextBox1" runat="server" ReadOnly="True" TextMode="Number">1</asp:TextBox>
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="+" />
-                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="- " />--%>
+            <div class="Section-InfoJuego-Div__btn">
                 <asp:Button ID="Button3" runat="server" CommandName="agregarAlCarrito" OnCommand="btn_Carrito_Command" Text="Agregar al Carrito" />
                 <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
             </div>
         </section>
+
+
+
+
         <footer>
             <div class="footer-div">
                 <h4>Acerca</h4>

@@ -72,6 +72,7 @@
     <Content Include="Catalogo.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\P_BMLJuego.css" />
+    <Content Include="css\Descripcion.css" />
     <Content Include="css\P_Metodo.css" />
     <Content Include="css\P_Carrito.css" />
     <Content Include="css\P_Contacto.css" />

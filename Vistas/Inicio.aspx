@@ -95,7 +95,7 @@
             <div class="titulo-section">
                 <h1>JUEGOS DESTACADOS</h1>
             </div>
-            <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc">
+            <a href="OpcionesAdmin.aspx" class="pInicio__admin-opc" id="a_admin" runat="server">
                 <asp:Label ID="pInicio__lbladmin" runat="server" Text="Opciones de Administrador" Visible="False" />
             </a>
             <div class="pInicio__JuegosDestacados">
@@ -146,14 +146,13 @@
             <asp:ListView ID="lvListCat" runat="server" DataKeyNames="Codigo_J" OnItemDataBound="lvListCat_ItemDataBound">
                 <ItemTemplate>
                     <div class="lvListCat__div">
-                        <div class="lvListCat__div__info">
-                            <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
+                     <asp:HyperLink Id="Hyper" runat="server" class="lvListCat__div__info"  NavigateUrl='<%# Eval("Codigo_J", "~/DescripcionJuego.aspx?id={0}") %>'>
+                         <asp:Label ID="lblDto" runat="server" Text='<%# Bind("Descuento_J") %>' Visible="False"></asp:Label>
                             <asp:Label CssClass="infoNombre_lv" ID="lblNombreJuego" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
                             <asp:Label CssClass="infoPrecio_lv" ID="lblPrecio" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
-                        </div>
+                     </asp:HyperLink>
                         <asp:ImageButton CssClass="imgAnimated" ID="Image2" runat="server" ImageUrl='<%# Bind("Imagen_J") %>' OnCommand="red_Descripcion" CommandArgument='<%# Eval("Codigo_J") %>' CommandName="redirectDescripcion" CausesValidation="False" />
                     </div>
-
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div id="lvListCatWrapper" runat="server" style="">

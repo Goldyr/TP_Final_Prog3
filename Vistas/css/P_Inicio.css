@@ -190,6 +190,7 @@ section {
 
 
 .lvJuegosDestacados-div__desc {
+    cursor:default;
     padding: 10px;
     position: absolute;
     bottom: 0px;
