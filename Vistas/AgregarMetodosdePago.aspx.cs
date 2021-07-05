@@ -13,14 +13,14 @@ namespace Vistas
 {
     public partial class AgregarMetodosdePago : System.Web.UI.Page
     {
-        MetodoXUsuario _metodo = new MetodoXUsuario();
-        NegocioMetodoXUsuario negMetodo = new NegocioMetodoXUsuario();
-        NegocioUsuario negUser = new NegocioUsuario();
         Usuario user = new Usuario();
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            NegocioUsuario negUser = new NegocioUsuario();
+
             li_infoUsuario_iu.Visible = false;
             if (this.Request.Cookies["IDUsuario"] != null)
             {
@@ -35,20 +35,26 @@ namespace Vistas
 
         protected void btn_agregar_Click(object sender, EventArgs e)
         {
-            _metodo.SetIdMP(ddl_MP.SelectedValue);
-            _metodo.SetIdUsuario(this.Request.Cookies["IDUsuario"].Value);
-            _metodo.SetnroTarjeta(txt_Nro.Text);
-            _metodo.SetClave(txt_clave.Text);
-            _metodo.SetFecha(txt_FechaVencimiento.Text);
-            _metodo.SetNombres(txt_Nombres.Text);
-            _metodo.SetApellidos(txt_Apellidos.Text);
-            _metodo.SetDni(txt_DNI.Text);
-            _metodo.SetDireccion(txt_Direccion.Text);
-            _metodo.SetCodigoPostal(txt_CodigoPostal.Text);
-            _metodo.SetEmail(txt_Email.Text);
-            _metodo.SetTelefono(Txt_Telefono.Text);
+            NegocioMetodoXUsuario negMetodo = new NegocioMetodoXUsuario();
+            MetodoXUsuario _metodoUsuario = new MetodoXUsuario();
+            MetodoPago metodoPago = new MetodoPago();
 
-            if (negMetodo.NU_AgregarMetodo(_metodo))
+            metodoPago.Id = ddl_MP.SelectedValue;
+
+            _metodoUsuario.SetIdMP(metodoPago);
+            _metodoUsuario.SetIdUsuario(user);
+            _metodoUsuario.SetnroTarjeta(txt_Nro.Text);
+            _metodoUsuario.SetClave(txt_clave.Text);
+            _metodoUsuario.SetFecha(txt_FechaVencimiento.Text);
+            _metodoUsuario.SetNombres(txt_Nombres.Text);
+            _metodoUsuario.SetApellidos(txt_Apellidos.Text);
+            _metodoUsuario.SetDni(txt_DNI.Text);
+            _metodoUsuario.SetDireccion(txt_Direccion.Text);
+            _metodoUsuario.SetCodigoPostal(txt_CodigoPostal.Text);
+            _metodoUsuario.SetEmail(txt_Email.Text);
+            _metodoUsuario.SetTelefono(Txt_Telefono.Text);
+
+            if (negMetodo.NU_AgregarMetodo(_metodoUsuario))
             {
                 lbl_verif.Text = "Se agrego correctamente";
             }

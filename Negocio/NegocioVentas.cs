@@ -14,14 +14,26 @@ namespace Negocio
     {
         DaoVentas Dao = new DaoVentas();
 
-        public GridView NV_CargarGridVentas(string _Codigo)
+        public DataTable NV_CargarGridVentas(string _Codigo)
         {
             DataTable Dt;
             Dt=Dao.ListarVentas(_Codigo);
-            GridView grd = new GridView();
-            grd.DataSource = Dt;
-            grd.DataBind();
-            return grd;
+            return Dt;
+
+            //GridView grd = new GridView();
+            //grd.DataSource = Dt;
+            //grd.DataBind();
+            //return grd;
+        }
+        public bool NV_GuardarVentas(Ventas _ventas)
+        { 
+            if (Dao.AgregarVenta(_ventas))
+            {
+                return true;            
+            }
+            
+            return false;
+        
         }
 
         public DataTable NV_TotalVentas()

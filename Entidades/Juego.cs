@@ -37,7 +37,11 @@ namespace Entidades
        public void SetCodigoDis(string _CodigoDis) {  CodigoDis.SetCodigo(_CodigoDis); }
        public void SetCodigoDes(string _CodigoDes) { CodigoDes.SetCodigo(_CodigoDes); }
        public void SetDescripcion(string _Descrip) { Descripcion = _Descrip; }
-       public void SetFecha(string _Fecha) { Fecha = _Fecha; }
+       public void SetFecha(string _Fecha) {
+            _Fecha = _Fecha.Replace("00:00:00", "");
+            _Fecha = _Fecha.Replace("0:00:00", "");
+            Fecha = _Fecha; 
+        }
 
         //Get
        public bool GetEstado() { return this.Estado; }

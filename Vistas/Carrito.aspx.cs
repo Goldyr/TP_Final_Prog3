@@ -12,8 +12,27 @@ namespace WebApplication1
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        private Usuario user = new Usuario();
+        private MetodoXUsuario metodosUsuario = new MetodoXUsuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioUsuario negUser = new NegocioUsuario();
+
+
+            // Inicio de sesion de usuario
+
+            if (Request.Cookies["IDUsuario"] != null)
+            {
+                user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                negUser.CargarUsuarioPorID(user);
+                ddlCargarMxU();
+            }
+
+            ActualizarCss();
+
+            // Gridview y carrito
+
             if (!IsPostBack)
             {
                 if (Session["carrito"] != null)
@@ -21,17 +40,45 @@ namespace WebApplication1
 
                     cargarGrid();
                     organizarGrid();
-
+                    MontoTotal();
                 }
+
                 cargarGrid();
             }
+
         }
 
         // FUNCION QUE SE USA PARA ORGANIZAR EL GRIDVIEW Y CONTROLAR QUE
         // LAS CANTIDADES DE KEYS NO SUPEREN A LAS QUE TENEMOS
         // CARGADAS. 
 
-        private void organizarGrid()    
+
+        private void ActualizarCss()
+        {
+            if(user.GetId() != null)
+            {
+                infoUsuario_hl.Text = user.GetUser();
+                li_infoUsuario.Style["display"] = "block";
+            }
+            else
+            {
+                li_infoUsuario.Style["display"] = "none";
+            }
+
+            if (user.GetId() != null)
+            {
+                lblInicioSesionCompra.Style["display"] = "none";
+                wrapperCompra.Style["display"] = "block";
+            }
+            else
+            {
+                lblInicioSesionCompra.Style["display"] = "block";
+                wrapperCompra.Style["display"] = "none";
+            }
+                
+        }
+
+        private void organizarGrid()
         {
 
             DataTable dtSession = (DataTable)Session["carrito"];
@@ -59,7 +106,7 @@ namespace WebApplication1
 
             if (ExistenCoincidencias)
             {
-       
+
                 int cantidadVecesRepetido = 0;
 
                 // CONTAR LA CANTIDAD DE VECES QUE SE REPITE LA COINCIDENCIA
@@ -120,7 +167,7 @@ namespace WebApplication1
             return cantidad;
         }
 
-        private void SumarCantidadesGridView(DataTable dtSession, string nombreUltimoJuego, 
+        private void SumarCantidadesGridView(DataTable dtSession, string nombreUltimoJuego,
                                             int cantidadVecesRepetido)
         {
             bool primeraCoincidencia = true;
@@ -190,6 +237,167 @@ namespace WebApplication1
             }
         }
 
+        private void MontoTotal()
+        {
+            float suma = 0;
+            foreach (GridViewRow row in gvDetallesCarrito.Rows)
+            {
+
+                Label PrTotal = row.Cells[3].FindControl("lbl_Prpagar") as Label;
+                float prpagar = float.Parse(PrTotal.Text);
+                suma += prpagar;
+            }
+            lblMonto.Text = suma.ToString();
+        }
+
+        private void cargarGrid()
+        {
+            if(Session["carrito"] != null)
+            {
+                gvDetallesCarrito.DataSource = (DataTable)Session["carrito"];
+                gvDetallesCarrito.DataBind();
+                MontoTotal();
+            }
+            else
+            {
+                gvDetallesCarrito.DataSource = null;
+                gvDetallesCarrito.DataBind();
+            }
+           
+        }
+
+
+      
+
+        private void LimpiarSession()
+        {
+            Session["carrito"] = null;
+            cargarGrid();
+        }
+
+
+     
+        private void CrearVenta(string nroTarjeta)
+        {
+            //definicion variables
+            Ventas vta = new Ventas();
+            NegocioVentas NegVta = new NegocioVentas();
+
+            // Creo la venta
+            vta.SetIDUsuario(user);
+
+            string fecha = DateTime.Now.ToString("MM/dd/yyyy");
+
+            vta.SetFechaVenta(fecha);
+            vta.SetNroTarjeta(nroTarjeta);
+
+            NegVta.NV_GuardarVentas(vta);
+            // Creo el detalle
+ 
+            CrearDetalleVenta(vta);
+        }
+
+        private bool CrearMetodoxUsuario(MetodoXUsuario MetxUsuario)
+        {
+            NegocioMetodoXUsuario negMxU = new NegocioMetodoXUsuario();
+            return negMxU.NU_AgregarMetodo(MetxUsuario);
+        }
+
+
+        private void CrearDetalleVenta(Ventas vta)
+        {
+            NegocioDetalleVenta NegDVta = new NegocioDetalleVenta();
+            NegocioJuego NegJuego = new NegocioJuego();
+
+            DetalleVenta detalleVenta;
+            Juego juego;
+
+            //TODO: Ver como hacer un mensaje si se cargo correctamente
+
+            foreach (GridViewRow row in gvDetallesCarrito.Rows)
+            {
+                juego = new Juego();
+                detalleVenta = new DetalleVenta();
+
+                Label lblJuego = row.Cells[0].FindControl("lbl_Juego") as Label;
+                string nombreJuego = lblJuego.Text;
+
+                juego = NegJuego.cargarJuegoPorNombre(nombreJuego);
+                detalleVenta.setCodJuego(juego);
+                detalleVenta.setIdVenta(vta);
+
+                NegDVta.NV_GuardarDetalleVenta(detalleVenta); // if bla bla bla
+            }
+
+        }
+
+        protected void cargarMetodoxUsuario(MetodoXUsuario MXU)
+        {
+            MXU.SetApellidos(txt_apellidos.Text.Trim());
+            MXU.SetNombres(txt_Nombres.Text.Trim());
+            MXU.SetEmail(txt_email.Text.Trim());
+            MXU.SetTelefono(txt_telefono.Text.Trim());
+            MXU.SetnroTarjeta(txt_tarjeta.Text.Trim());
+            MXU.SetDni(txt_dni.Text.Trim());
+            MXU.SetDireccion(txt_direccion.Text.Trim());
+            MXU.SetCodigoPostal(txt_CP.Text.Trim());
+            MXU.SetClave(txt_clave.Text.Trim());
+            MXU.SetFecha(txt_fecha.Text.Trim());
+            MXU.SetIdUsuario(user);
+        }
+
+        private void limpiarTextBox()
+        {
+            txt_apellidos.Text = txt_clave.Text = txt_CP.Text = txt_direccion.Text = txt_dni.Text = txt_email.Text =
+                txt_fecha.Text = txt_Nombres.Text = txt_tarjeta.Text = txt_telefono.Text = "";
+        }
+        // ==================================
+        // DDL
+
+        protected void ddlCargarMxU()
+        {
+
+            NegocioMetodoXUsuario NegMxU = new NegocioMetodoXUsuario();
+            NegMxU.NU_CargarddlMetodosUsuarios(user, ddl_MetxUsuario);
+
+            if(ddl_MetxUsuario.Items.Count > 0)
+            {
+                string sTarjeta = ddl_MetxUsuario.SelectedValue;
+                lblTarjetaUsuario.Text = $"TARJETA TERMINADA EN ***{sTarjeta.Substring(sTarjeta.Length - 3)}";
+            }
+        
+
+        }
+
+        protected void txt_tarjeta_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txt_tarjeta.Text.StartsWith("4"))
+            {
+                lbl_tipo.Text = "Visa";
+            }
+            else if (txt_tarjeta.Text.StartsWith("5"))
+            {
+                lbl_tipo.Text = "MasterCard";
+            }
+        }
+
+        // =============================================
+        // EVENTOS GRIDVIEW
+
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DataTable dtSession = Session["carrito"] as DataTable;
+
+            dtSession.Rows[e.RowIndex].Delete();
+
+            Session["carrito"] = dtSession;
+
+            cargarGrid();
+        }
+
+
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvDetallesCarrito.EditIndex = e.NewEditIndex;
@@ -215,7 +423,7 @@ namespace WebApplication1
             cargarGrid();
         }
 
-        private void ActualizarTablaSessionGV(GridViewUpdateEventArgs e, string nombre, 
+        private void ActualizarTablaSessionGV(GridViewUpdateEventArgs e, string nombre,
                                               string cantidad, string prPagar, string prU)
         {
             Juego _juego = new Juego();
@@ -234,6 +442,7 @@ namespace WebApplication1
             {
                 dtSession.Rows[e.RowIndex][1] = cantidad;
                 precioPagar = precioUnitario * int.Parse(cantidad);
+
             }
             else
             {
@@ -249,21 +458,52 @@ namespace WebApplication1
 
         }
 
-        private void cargarGrid()
+        protected void Btn_AgregarMP(object sender, EventArgs e)
         {
-            gvDetallesCarrito.DataSource = (DataTable)Session["carrito"];
-            gvDetallesCarrito.DataBind();
+            MetodoPago MPago = new MetodoPago();
+            MetodoXUsuario MetxUsuario = new MetodoXUsuario();
+
+            if (user.GetId() != null)
+            {
+                //AVERIGUO  
+
+                if (txt_tarjeta.Text.StartsWith("4")) MPago.Id = "MET1";
+
+                else if (txt_tarjeta.Text.StartsWith("5")) MPago.Id = "MET2";
+
+                cargarMetodoxUsuario(MetxUsuario);
+
+                MetxUsuario.SetIdMP(MPago);
+
+                //CREO LA VENTA Y EL DETALLE
+
+                if (CrearMetodoxUsuario(MetxUsuario))
+                {
+                    lbl_confirmacionAgregarMP.Text = "El método se agrego correctamente";
+                    limpiarTextBox();
+                }
+                else lbl_confirmacionAgregarMP.Text = "Error al agregar el método";
+            }
+
+            ddlCargarMxU();
         }
 
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void Btn_comprar_Click(object sender, EventArgs e)
         {
-            DataTable dtSession = Session["carrito"] as DataTable;
+            if (user.GetId() != null && Session["carrito"] != null)
+            {
+                string nroTarjetaSeleccionado = ddl_MetxUsuario.SelectedValue;
 
-            dtSession.Rows[e.RowIndex].Delete();
+                CrearVenta(nroTarjetaSeleccionado);
+                LimpiarSession();
+            }
 
-            Session["carrito"] = dtSession;
+        }
 
-            cargarGrid();
+        protected void ddl_MetxUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sTarjeta = ddl_MetxUsuario.SelectedValue;
+            lblTarjetaUsuario.Text = $"TARJETA TERMINADA EN ***{sTarjeta.Substring(sTarjeta.Length - 3)}";
         }
     }
 }

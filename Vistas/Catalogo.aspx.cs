@@ -39,17 +39,18 @@ namespace WebApplication1
         {
             dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Nombre(txt_Busqueda_local.Text);//Listara por la string en la txtbox
             dl_Catalogo.DataBind();
-            ddl_Precio.SelectedValue = "0";
+
+
+
         }
 
         protected void ddl_Precio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(ddl_Precio.SelectedValue) != 0) 
+            if (Convert.ToInt32(ddl_Precio.SelectedValue) != 0)
             {
                 dl_Catalogo.DataSource = ns_jue.NJ_ListarJuegos_Precio(Convert.ToInt32(ddl_Precio.SelectedValue));
                 dl_Catalogo.DataBind();
             }
-            
         }
     }
 }

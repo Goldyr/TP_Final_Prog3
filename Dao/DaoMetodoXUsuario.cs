@@ -18,8 +18,15 @@ namespace Dao
         {
             string consulta = $"select ID_MP_MxU, ID_Usuario_MxU, Nro_Tarjeta_MxU, Email_MxU, Clave_Seguridad_MxU, Fecha_Vencimiento_MxU, DNI_MxU, Nombres_MxU, Apellidos_MxU, Estado_MxU, Telefono_MxU, CodigoPostal_MxU, Direccion_MxU  from MetodosxUsuarios where ID_MP_MxU = '{_metodo.GetIdMP()}' and ID_Usuario_MxU= '{_metodo.GetIdUsuario()}'";
             DataTable dt = ad.ObtenerTabla("Metodos", consulta);
-            _metodo.SetIdMP(dt.Rows[0][0].ToString());
-            _metodo.SetIdUsuario(dt.Rows[0][1].ToString());
+
+            MetodoPago metodoPago = new MetodoPago();
+            Usuario usuario = new Usuario();
+
+            metodoPago.Id = dt.Rows[0][0].ToString();
+            usuario.SetId(dt.Rows[0][1].ToString());
+
+            _metodo.SetIdMP(metodoPago);
+            _metodo.SetIdUsuario(usuario);
             _metodo.SetnroTarjeta(dt.Rows[0][2].ToString());
             _metodo.SetEmail(dt.Rows[0][3].ToString());
             _metodo.SetClave(dt.Rows[0][4].ToString());
@@ -42,6 +49,13 @@ namespace Dao
             return ad.existe(consulta);
         }
 
+        public DataTable ListarMetodos(string consulta)
+        {
+            DataTable dt = new DataTable();
+            dt = ad.ObtenerTabla("MetodosxUsuarios", consulta);
+            return dt;
+        }
+
         private void ArmarParametrosAgregarMetodo(ref SqlCommand Comando, MetodoXUsuario _metodo)
         {
             SqlParameter SqlParametros = new SqlParameter();
@@ -53,19 +67,19 @@ namespace Dao
             SqlParametros = Comando.Parameters.Add("@id_usuario", SqlDbType.Char, 10);
             SqlParametros.Value = _metodo.GetIdUsuario();
 
-            //Nro
+            //Nro tarjeta
             SqlParametros = Comando.Parameters.Add("@nro", SqlDbType.VarChar, 16);
             SqlParametros.Value = _metodo.GetnroTarjeta();
 
-            //mail
+            //mail 
             SqlParametros = Comando.Parameters.Add("@mail", SqlDbType.VarChar, 30);
             SqlParametros.Value = _metodo.GetEmail();
 
-            //clave
+            //clave de seguridad
             SqlParametros = Comando.Parameters.Add("@clave_seg", SqlDbType.VarChar, 4);
             SqlParametros.Value = _metodo.GetClave();
 
-            //fecha
+            //fecha de caducidad
             SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
             SqlParametros.Value = _metodo.GetFecha();
 

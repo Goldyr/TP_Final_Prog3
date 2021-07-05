@@ -45,6 +45,7 @@
     <Compile Include="DaoCategoria.cs" />
     <Compile Include="DaoCategoriaxJuego.cs" />
     <Compile Include="DaoDes.cs" />
+    <Compile Include="DaoDetalleVenta.cs" />
     <Compile Include="DaoDis.cs" />
     <Compile Include="DaoJuego.cs" />
     <Compile Include="DaoKey.cs" />

@@ -47,10 +47,6 @@ aside {
     display: flex;
 }
 
-#li_infoUsuario {
-    color: #768dff;
-}
-
 .main-header__content__log-in {
     background: whitesmoke;
     display: flex;
@@ -83,7 +79,7 @@ aside {
         text-decoration: underline
     }
 
-    .header-botones input[type=submit] {
+    .header-botones input[type=submit], #header_btn_LogOut, #btnBuscar {
         background: #2d418c;
         border: none;
         border-radius: 9px;
@@ -190,7 +186,7 @@ section {
 
 
 .lvJuegosDestacados-div__desc {
-    cursor:default;
+    cursor: default;
     padding: 10px;
     position: absolute;
     bottom: 0px;
@@ -219,8 +215,6 @@ section {
     margin: 0;
 }
 
-
-
 .lvJuegosDestacados-div__descto {
     background: #409a40;
     position: absolute;
@@ -238,6 +232,7 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 50px 0px;
 }
 
 

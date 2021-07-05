@@ -19,9 +19,23 @@ namespace WebApplication1
             {
                 user.SetId(this.Request.Cookies["IDUsuario"].Value);
                 negUser.CargarUsuarioPorID(user);
-                infoUsuario_hl_iu.Text = user.GetUser();
-                li_infoUsuario_iu.Visible = true;
-                infoUsuario_hl_iu.Visible = true;
+
+            }
+
+            ActualizarCss();
+        }
+
+        private void ActualizarCss()
+        {
+            if(user.GetId() == null)
+            {
+                li_infoUsuario.Style["display"] = "none";
+            }
+
+            else
+            {
+                li_infoUsuario.Style["display"] = "block";
+                infoUsuario_hl.Text = user.GetUser();
             }
         }
     }

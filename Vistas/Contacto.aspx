@@ -16,36 +16,36 @@
         <header class="default-header">
             <nav class="nav-menu">
                 <ul class="nav-menu__ul">
-                   <li id="li_infoUsuario_iu" runat="server">
-                        <asp:HyperLink ID="infoUsuario_hl_iu" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="false">[infoUsuario_hl_iu]</asp:HyperLink>
+                    <li id="li_infoUsuario" runat="server">
+                        <asp:HyperLink ID="infoUsuario_hl" runat="server" NavigateUrl="~/InfoUsuario.aspx" Visible="True">[infoUsuario_hl]</asp:HyperLink>
                     </li>
-                    
+
                     <li>
-                       <a href="Inicio.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
-                        Inicio</a>
-                   </li>
+                        <a href="Inicio.aspx">
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>
+                            Inicio</a>
+                    </li>
 
                     <li class="seleccionado">
-                       <a href="Contacto.aspx">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>Contacto</a>
-                   </li>
-                   <li>
-                       <a href="Carrito.aspx" class="nav-menu__ul__carrito">
-                       <span id="nav-menu__span1"></span>
-                       <span id="nav-menu__span2"></span>
-                       <span id="nav-menu__span3"></span>
-                       <span id="nav-menu__span4"></span>
-                         
-                            <i class="fas fa-shopping-cart"></i>
+                        <a href="Contacto.aspx">
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>Contacto</a>
+                    </li>
+                    <li class="nav-menu__li__carrito">
+                        <i class="fas fa-shopping-cart"></i>
+                        <a href="Carrito.aspx" class="nav-menu__li__carrito">
+                            <span class="nav-menu__span1"></span>
+                            <span class="nav-menu__span2"></span>
+                            <span class="nav-menu__span3"></span>
+                            <span class="nav-menu__span4"></span>
+                            compras
                         </a>
-                   </li>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -75,7 +75,25 @@
                 </table>
             </div>
         </section>
-        
+
     </form>
+    <footer>
+        <div class="footer-div">
+            <h4>Acerca</h4>
+            <p>
+                Esta página fue creada para un proyecto de la materia Programación III de la Universidad Tecnológica Nacional. 
+            </p>
+        </div>
+        <div class="footer-div">
+            <h4>Integrantes</h4>
+            <ul>
+                <li>Facundo Rivas</li>
+                <li>Enzo Bogado</li>
+                <li>Matias Flori</li>
+                <li>Sebastian Buelga</li>
+                <li>Sergio Rivera</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

@@ -14,20 +14,21 @@ namespace WebApplication1
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        NegocioUsuario negUser = new NegocioUsuario();
         Usuario user = new Usuario();
-        NegocioJuego negjueg = new NegocioJuego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            NegocioJuego negjueg = new NegocioJuego();
+            NegocioUsuario negUser = new NegocioUsuario();
+
             if (!IsPostBack)
             {
                 if (this.Request.Cookies["IDUsuario"] != null)
                 {
-                   user.SetId(this.Request.Cookies["IDUsuario"].Value);
-                   negUser.CargarUsuarioPorID(user);
-               }
+                    user.SetId(this.Request.Cookies["IDUsuario"].Value);
+                    negUser.CargarUsuarioPorID(user);
+                }
 
                 if (user.GetUser() != null) IniciarSesion();
 
@@ -38,14 +39,18 @@ namespace WebApplication1
             lvListCat.DataBind();
         }
 
+
+
         private void ActualizarCss()
         {
+            NegocioJuego negjueg = new NegocioJuego();
+
             // ACTUALIZAR CSS DEPENDIENDO SI SE INICIO SESION O NO
 
             //==================================
             //  HEADER
 
-            if(user.GetUser() == null)
+            if (user.GetUser() == null)
             {
                 mainHeader__content.Style["display"] = "flex";
                 mainHeader.Style["height"] = "240px";
@@ -54,7 +59,6 @@ namespace WebApplication1
                 lvListCat.DataSource = negjueg.NJ_ListarJuegos_True();
                 lvListCat.DataBind();
                 //Cargo el listado de checks
-                
 
             }
             else
@@ -64,24 +68,29 @@ namespace WebApplication1
 
             }
 
-            
-             //=====================================
-             // DIV DE INICIAR SESION
+            //=====================================
+            // DIV DE INICIAR SESION
 
-             if (user.GetUser() == null) MostrarHeaderLogIn();
-             else EsconderHeaderLogIn();
+            if (user.GetUser() == null) MostrarHeaderLogIn();
+            else EsconderHeaderLogIn();
 
-             //=====================================
-             // LI DEL NAV MENU
+            //=====================================
+            // LI DEL NAV MENU
 
-             if (user.GetUser() == null) li_infoUsuario.Style["display"] = "none";
-             else li_infoUsuario.Style["display"] = "flex";
+            if (user.GetUser() == null) li_infoUsuario.Style["display"] = "none";
+            else li_infoUsuario.Style["display"] = "flex";
 
-             //=====================================
-             // HYPERLINK DEL NAV MENU
+            //=====================================
+            // HYPERLINK DEL NAV MENU
 
-             if (user.GetUser() == null) infoUsuario_hl.Visible = false;
-             else infoUsuario_hl.Visible = true;
+            if (user.GetUser() == null) infoUsuario_hl.Visible = false;
+            else infoUsuario_hl.Visible = true;
+
+            if (user.GetAdmin() == null || user.GetAdmin() == false)
+            {
+                a_admin.Style["display"] = "none";
+            }
+            else a_admin.Style["display"] = "block";
         }
 
 
@@ -92,7 +101,8 @@ namespace WebApplication1
 
             ActualizarCss();
 
-            if (user.GetAdmin()) {
+            if (user.GetAdmin())
+            {
                 pInicio__lbladmin.Visible = true;
             }
             else
@@ -103,6 +113,8 @@ namespace WebApplication1
 
         protected void header_btnLogIn_Click(object sender, EventArgs e)
         {
+            NegocioUsuario negUser = new NegocioUsuario();
+
             // AL HACER CLIC, SE GUARDA LA INFO DE LOS TEXTBOX EN EL OBJETO USUARIO
             user.SetEmail(header_tbUsuario.Text);
             user.SetPassword(header_tbContra.Text);
@@ -130,8 +142,8 @@ namespace WebApplication1
         private void EsconderHeaderLogIn()
         {
             divLogin.Style["display"] = "none";
-            lilogout.Style["display"]="inline-block";
-            
+            lilogout.Style["display"] = "inline-block";
+
         }
 
         private void MostrarHeaderLogIn()
@@ -161,12 +173,12 @@ namespace WebApplication1
             Response.Cookies.Clear();
             Response.Cookies.Add(ck_ID);
         }
-     
+
         protected void header_btn_LogOut_Click(object sender, EventArgs e)
         {
             BorrarCookie();
 
-            ActualizarCss();                
+            ActualizarCss();
         }
 
         // =======================
@@ -175,7 +187,7 @@ namespace WebApplication1
 
         protected void lvJuegosDestacados_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-    
+
             Label lblDescuento = (Label)e.Item.FindControl("Descuento");
             Label lblPrecio = (Label)e.Item.FindControl("Precio");
             Panel divPrecio = (Panel)e.Item.FindControl("panelPrecio");
@@ -229,23 +241,24 @@ namespace WebApplication1
 
         protected void cbl_Categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            NegocioJuego negjueg = new NegocioJuego();
+
             string prueba = "";
 
             for (int x = 0; x <= cbl_Categorias.Items.Count - 1; x++)
             {
-                if(cbl_Categorias.Items[x].Selected == true)
+                if (cbl_Categorias.Items[x].Selected == true)
                 {
                     {
 
-                           prueba += $" and Codigo_J in (select CodigoJuego_CxJ from CategoriasXJuegos where CodigoCat_CxJ = '{cbl_Categorias.Items[x].Value}') ";
+                        prueba += $" and Codigo_J in (select CodigoJuego_CxJ from CategoriasXJuegos where CodigoCat_CxJ = '{cbl_Categorias.Items[x].Value}') ";
 
-                         //prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
+                        //prueba += " AND CodigoCat_CxJ = '" + cbl_Categorias.Items[x].Value + "' ";
                     }
                 }
             }
 
-           // lbl_pruebas_si.Text = prueba;
+            // lbl_pruebas_si.Text = prueba;
 
 
             lvListCat.DataSource = negjueg.NJ_ListarJuegoXcategoria(prueba);
@@ -254,7 +267,7 @@ namespace WebApplication1
 
         protected void txt_Prueba_TextChanged(object sender, EventArgs e)
         {
-           // Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
+            // Response.Redirect("Catalogo.aspx?busqueda=" + txt_Prueba.Text);
         }
 
         protected void red_Descripcion(object sender, CommandEventArgs e)
@@ -262,7 +275,7 @@ namespace WebApplication1
             if (e.CommandName == "redirectDescripcion")
             {
                 Response.Redirect($"DescripcionJuego.aspx?id={e.CommandArgument}"); //?id=" + e.CommandArgument.ToString());
-               
+
 
             }
         }
@@ -275,7 +288,7 @@ namespace WebApplication1
             int valDescuento = Int32.Parse(descuento.Text);
             float valPrecio = float.Parse(precio.Text);
 
-            if(valDescuento != 0)
+            if (valDescuento != 0)
             {
                 valPrecio = CalcularDescuento(valDescuento, valPrecio);
                 precio.Text = valPrecio.ToString();

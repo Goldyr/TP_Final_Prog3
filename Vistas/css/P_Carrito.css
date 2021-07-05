@@ -14,7 +14,7 @@ section p {
 }
 
 #sectionCompra {
-    min-height: 180px;
+    height: auto;
 }
 
 .titulo__section {
@@ -42,31 +42,65 @@ section h1 {
     }
 
 .wrapper__compra {
-    width: 80%;
+    width: 100%;
     display: flex;
-    margin: 0 auto;
-    height: 200px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-around;
+    min-height: 600px;
 }
 
-.wrapper-div {
-    width: 300px;
+#wrapperDiv {
+    border: #b7b7b7 solid 2px;
+    padding: 10px;
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+}
+
+.wrapper-div-content p {
+    margin: 0;
+}
+
+.wrapper-div-content {
+    height: 70px;
+    margin: 15px 0px;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 5px;
+    justify-content: space-around;
 }
 
-    .wrapper-div p {
-        margin: 0;
-        padding: 10px 0px;
-        text-align: left;
+    .wrapper-div-content span {
+        color: #ff6262;
     }
 
-input[type=submit] {
-    margin: 0 auto;
-    width: 150px;
-    border-radius: 3px;
+#lblMonto {
+    color: white;
+}
+
+    #lblMonto:before {
+        content: "$ "
+    }
+
+#lblTarjetaUsuario {
+    font-weight: 500;
+    color: #9cfbab;
+    text-align: center;
+}
+
+#lbl_confirmacionAgregarMP {
+    color: #ffda9b;
+}
+
+#lbl_tipo {
+    color: #2e87dc;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#lblInicioSesionCompra {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
 }

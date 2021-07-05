@@ -40,6 +40,15 @@ namespace Negocio
             return dt;
         }
 
+        public bool NJ_existejuego(string codjuego)
+        {
+            string consulta = $"SELECT * FROM Juegos WHERE Codigo_J = '{codjuego}' ";
+            if (dao.ExisteJuego(consulta))
+            {
+                return true;
+            }
+            else return false;
+        }
 
         public DataTable NJ_ListarJuego()
         {
@@ -173,5 +182,7 @@ namespace Negocio
         {
             return dao.TopSeller();
         }
+
+      
     }
 }

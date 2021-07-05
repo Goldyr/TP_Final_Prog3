@@ -15,7 +15,6 @@ namespace WebApplication1
         Juego _Juego;
         int cantidadKeys; 
      
-
         protected void Page_Load(object sender, EventArgs e)
         {
             NegocioJuego _NJuego = new NegocioJuego();
@@ -131,6 +130,13 @@ namespace WebApplication1
         {
             DataRow dr = dt.NewRow();
             dr["Juego"] = juego;
+
+            if(_Juego.GetDescuento() > 0)
+            {
+                float nuevoPrecio = CalcularDescuento((int)_Juego.GetDescuento(), _Juego.GetPrecio());
+                PU = prPagar = nuevoPrecio.ToString();
+            }
+
             dr["Precio_a_Pagar"] = prPagar;
             dr["PrecioUnitario"] = PU;
             dr["Cantidad"] = cantidad;

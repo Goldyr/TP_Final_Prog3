@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/Estilos.css" />
+    <link rel="stylesheet" type="text/css" href="/css/P_Catalogo.css" />
       <script src="https://kit.fontawesome.com/cf8c340397.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -59,22 +60,27 @@
             </asp:DropDownList>
             
            </div>
-            <div>
-                <asp:DataList ID="dl_Catalogo" runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" Width="1000px">
-                    <FooterStyle BackColor="White" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="White" ForeColor="#333333" Font-Bold="False" Font-Italic="False" Font-Names="Agency FB" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+            
+            <section class="Section_Catalogo">
+                <asp:DataList ID="dl_Catalogo" runat="server" GridLines="Horizontal" Font-Bold="False" Font-Names="Rubik" HorizontalAlign="Center" Width="350px" >
+                    <FooterStyle />
+                    <HeaderStyle />                    
+                    <ItemStyle BackColor="#1d1d1d" ForeColor="white" BorderStyle="Solid" BorderWidth="3px" BorderColor="#6a3db2" Font-Names="Rubik" Height="250px"/>
+                    
                     <ItemTemplate>
-                        <asp:Label ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>
-                        <br />
+                        <div class="DataList_div">
+                            <div class="Div_Nombre_Precio">
+                        <asp:Label class="_Titulo" ID="lbl_Nom_Cat" runat="server" Text='<%# Bind("Nombre_J") %>'></asp:Label>                      
                         <asp:Label ID="lbl_PU_Cat" runat="server" Text='<%# Bind("PU_J") %>'></asp:Label>
-                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' Width="200px" />
+                            </div>
+                        <asp:Image ID="img_dl_cat" runat="server" ImageAlign="Right" ImageUrl='<%# Bind("Imagen_J") %>' />
+                        </div>
+
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
-                <br />
-                <br />
-            </div>
+                
+            </section>
             
     </form>
 </body>
