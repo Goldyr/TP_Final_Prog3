@@ -37,11 +37,7 @@ namespace WebApplication1
 
             Juego _Juego = new Juego();
 
-
-            //_Juego.SetCodigo(Cod_J_txtBox.Text.Trim());
             _Juego.SetNombre(Nom_J_txtBox.Text.Trim());
-
-            //TODO: Ver como hacer esto para ingresar datos nulos !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             _Juego.SetPrecio(Convert.ToSingle(Pre_J_txtBox.Text.Trim()));
             _Juego.SetImagen( Img_J_txtBox.Text.Trim());

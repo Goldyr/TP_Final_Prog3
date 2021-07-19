@@ -202,12 +202,9 @@
                 <p id="VerCompra" runat="server">Puedes ver tu compra <a href="InfoUsuario.aspx">aqui</a></p>
             </div>
         </section>
-<<<<<<< Updated upstream
+    </form>
+            <footer>
 
-                 <footer>
-=======
-        <footer>
->>>>>>> Stashed changes
             <div class="footer-div">
                 <h4>Acerca</h4>
                 <p>
@@ -226,7 +223,5 @@
                 </ul>
             </div>
         </footer>
-    </form>
-
 </body>
 </html>

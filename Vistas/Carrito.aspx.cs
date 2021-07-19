@@ -27,7 +27,6 @@ namespace WebApplication1
             {
                 user.SetId(this.Request.Cookies["IDUsuario"].Value);
                 negUser.CargarUsuarioPorID(user);
-                ddlCargarMxU();
             }
 
             ActualizarCss();
@@ -36,6 +35,9 @@ namespace WebApplication1
 
             if (!IsPostBack)
             {
+
+                if (Request.Cookies["IDUsuario"] != null) ddlCargarMxU();
+
                 if (Session["carrito"] != null)
                 {
 
@@ -268,8 +270,7 @@ namespace WebApplication1
         }
 
 
-      
-
+ 
         private void LimpiarSession()
         {
             Session["carrito"] = null;
@@ -495,11 +496,11 @@ namespace WebApplication1
         {
             if (user.GetId() != null && Session["carrito"] != null)
             {
-                string nroTarjetaSeleccionado = ddl_MetxUsuario.SelectedValue;
+                    string nroTarjetaSeleccionado = ddl_MetxUsuario.SelectedValue;
 
-                CrearVenta(nroTarjetaSeleccionado);
-                LimpiarSession();
-                VerCompra.Style["display"] = "block";
+                    CrearVenta(nroTarjetaSeleccionado);
+                    LimpiarSession();
+                    VerCompra.Style["display"] = "block";
             }
 
         }
