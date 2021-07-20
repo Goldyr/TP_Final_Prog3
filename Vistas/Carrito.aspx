@@ -202,8 +202,7 @@
                 <p id="VerCompra" runat="server">Puedes ver tu compra <a href="InfoUsuario.aspx">aqui</a></p>
             </div>
         </section>
-    </form>
-            <footer>
+         <footer>
 
             <div class="footer-div">
                 <h4>Acerca</h4>
@@ -223,5 +222,6 @@
                 </ul>
             </div>
         </footer>
+    </form>
 </body>
 </html>
